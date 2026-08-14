@@ -53,6 +53,10 @@
         return $gameTroop.members()[this._context.activeEnemyIndex] || null;
     };
 
+    Battle.enemyEntryText = function(incoming) {
+        return incoming.name() + " enters the active slot.";
+    };
+
     Battle.prepareEnemyEntry = function() {
         const current = this.activeEnemy();
         if (current && !current.isDeathStateAffected()) {
@@ -73,7 +77,7 @@
         if (BattleManager._logWindow) {
             BattleManager._logWindow.push(
                 "addText",
-                incoming.name() + " enters the active slot."
+                this.enemyEntryText(incoming)
             );
             BattleManager._logWindow.push("wait");
             BattleManager._logWindow.push("clear");

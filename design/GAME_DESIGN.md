@@ -1,6 +1,6 @@
 # HUSHWAKE — Game Design
 
-> **Document status:** Revised first-draft hypothesis with the warm synthetic-life direction integrated. Only vertical-slice test commitments are concrete; names, origins, exact numbers, and full-game structure remain provisional.
+> **Document status:** Revised foundation draft. The 1v1 structure, Tuner terminology, selected-lineup Field Data rule, and Wildkin intelligence baseline are canonical; names, origins, balance values, and full-game structure remain provisional.
 
 ## One-sentence pitch
 
@@ -44,9 +44,9 @@ Every main area combines traversal, wildkin habitats, civic systems, local lives
 
 ### 3. Readable, brisk switching tactics
 
-Standard battles place one active wildkin against one active opponent, with reserves entering sequentially. Players read intent, decide whether to Answer or spend the round switching, and build shared Focus that persists across companions. A support-oriented wildkin can create an opening a later striker spends. Normal wild duels target 3–6 rounds; important team battles and guardians use longer authored sequences.
+Standard battles place one active wildkin against one active opponent, with reserves entering sequentially. Players judge current Resolve, Aspects, known techniques, visible conditions, prior behavior, and the cost of switching. The opponent's next action is not universally revealed. Shared Focus remains a future team-synergy layer, not part of the present foundation milestone. Normal wild duels target 3–6 rounds; important Tuner battles and guardians use longer authored sequences.
 
-**Test:** A loss should teach a readable lesson about staying, switching, composition, or timing—not demand levels, hidden knowledge, or an automatic type counter.
+**Test:** A loss should teach a readable lesson about staying, switching, composition, or timing—not demand levels, hidden knowledge, universal prediction, or an automatic type counter.
 
 ### 4. Accord, not acquisition roulette
 
@@ -62,7 +62,7 @@ Progress is organized around short regional problems. Each major encounter is th
 
 ### 6. Respect for the player’s time
 
-Visible encounters, whole-roster catch-up experience, fast rematches, refillable field supplies, concise scenes, and no traversal moves tied to the current battle team keep friction low.
+Visible encounters, full Field Data for every Wildkin in the selected battle lineup, fast rematches, refillable field supplies, concise scenes, and no traversal moves tied to the current battle team keep friction low.
 
 **Test:** Repetition must create a new decision, discovery, or mastery. If it only consumes time, remove it.
 
@@ -83,7 +83,7 @@ Visible encounters, whole-roster catch-up experience, fast rematches, refillable
 | Disposable early-game creatures | **Remove** | Every species needs a tactical niche through the end of the slice. |
 | Long move messages and repeated animations | **Remove** | Information appears once, resolves quickly, and offers a fast animation option. |
 | Large evil organization of anonymous grunts | **Replace** | The Meridian Office is a credible safety and infrastructure authority that also controls cradle licenses, continuity standards, and old root credentials. |
-| Mandatory type tutorials | **Replace** | The opening battles teach through intent icons, highlighted outcomes, and short optional help. |
+| Mandatory type tutorials | **Replace** | The opening battles teach through Aspect previews, visible outcomes, authored behavior cues, and short optional help. |
 
 ## Core loop
 
@@ -104,9 +104,16 @@ The loop should alternate activities every 5–12 minutes in the slice. Extended
 - Standard combat contains **one active wildkin per side**. Carried reserves enter by switching or free replacement after the active companion becomes Spent.
 - The final carried party-size limit is deliberately undecided. Design data and UI should not hard-code a three- or six-member assumption.
 - Additional bonded wildkin stay voluntarily at the nearest refuge, a social habitat and service station, and can be invited into the carried reserve roster at frequent wayposts.
-- Participating wildkin receive full experience; carried reserves and the refuge roster receive generous catch-up experience.
+- After a victorious qualifying battle, every Wildkin in the currently selected battle lineup receives the full base Field Data reward. Participation is not required and the reward is never split.
+- Wildkin outside the selected lineup do not receive this base reward. Any future refuge catch-up rule is an open design point.
 - A newly bonded species enters near the current readiness floor, not at an unusable level.
-- Every prototype species has a reason to remain active, a reason it might hand off momentum, and at least one useful response to enemy intent.
+- Every prototype species has a reason to remain active and a reason it might hand off matchup responsibility or future shared momentum.
+
+### Field Data and Levels
+
+Player-facing progression uses **Data**, or **Field Data** in post-battle context, while implementation may retain RPG Maker MZ's native EXP storage and class curves. The field system records combat telemetry and synchronizes it across the selected lineup, explaining why active and reserve Wildkin receive the same full reward.
+
+The standard result language is **“Field Data synchronized.”** When a threshold is crossed, use **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”** Levels increase Resolve, Force, Guard, and Tempo through provisional species growth curves. Participation bonuses, reserve penalties, refuge-wide rewards, Reweaving triggers, and final technique-replacement rules are not defined yet.
 
 ### Wayfinding
 
@@ -126,7 +133,7 @@ Optional wildkin traits can change the flavor or reward of an interaction, but n
 
 ### Why this structure
 
-1v1 action makes each companion legible while switching and shared Focus carry team synergy across rounds. Separating traversal from the carried roster preserves freedom to use favorites. Waymarks give progress a tangible form without committing the project to a gym-shaped campaign.
+1v1 action makes each companion legible while switching carries team strategy across rounds; shared Focus may add cross-switch synergy later. Separating traversal from the carried roster preserves freedom to use favorites. Waymarks give progress a tangible form without committing the project to a gym-shaped campaign.
 
 ## Protagonist and first companion
 
@@ -168,7 +175,7 @@ The cable-line Thrumble crisis follows immediately, so the player moves within 9
 - Its seedcore uses a braided architecture rather than the concentric lattice of registered wildkin.
 - No accepted registry match exists; most early characters assume a rare local mutation or unsafe reconstruction.
 - Its body is small and recently stabilized. Early stats sit beside common wildkin, not above them.
-- Its provisional Gale role reads enemy timing and builds Focus efficiently, making it a useful cross-switch relay rather than a universal attacker.
+- Its provisional Gale role notices timing patterns and may build Focus efficiently once that deferred system exists, making it a future cross-switch relay rather than a universal attacker.
 - Old relays occasionally accept Skein as a peer, and ancient wildkin may recognize a signal the protagonist cannot perceive.
 - New structures can emerge during later Reweaving without having been part of the protagonist’s body scaffold.
 
@@ -211,6 +218,14 @@ Wildkin maintain waterways, move cargo, inspect structures, map air currents, po
 
 Most people call wildkin partners, but law and infrastructure still contain older assumptions that classify seedcores as equipment. Accord requires consent at the user layer; Meridian’s alleged emergency root access raises the larger story question: **can a society claim partnership while retaining an unseen override?**
 
+### Wildkin intelligence and communication
+
+Wildkin are fully intelligent autonomous synthetic beings. They reason, plan, learn, remember, disagree, understand technical systems, form preferences and relationships, communicate intentionally, and make voluntary Accord decisions. They can speak and participate in dialogue.
+
+Their cognition is not simply human cognition in a creature body. A typical Wildkin is comparatively literal, direct, and low-context: often highly capable in technical, tactical, environmental, or specialized domains while finding sarcasm, hints, euphemism, social ritual, concealed motives, and unspoken emotional subtext less intuitive. This is an asymmetric cognitive tendency, not inferior intelligence. Individual voices must still differ.
+
+Skein is unusual because it appears comparatively skilled at reading hesitation, sarcasm, contradictory feelings, hidden motives, and why humans avoid saying what they mean. Skein is not special merely because it can speak, and it is not the only Wildkin capable of deep social understanding.
+
 ### Why this layer
 
 It makes technology visible in ordinary life before it becomes frightening. The unsettling reveal is not “the animals were robots”; players know they are synthetic from the beginning. The reveal concerns who built the system, what Accord descended from, which memories can be rewritten, and who still holds the keys.
@@ -236,11 +251,11 @@ These are targets, not immutable laws. Playtest observation outranks the stopwat
 - Encounter preview showing active opponent, known Aspects, and whether sequential reserves are expected.
 - Near-instant normal battle entry and exit.
 - A battle-speed option and skippable previously seen introductions.
-- Exact technique power, cost, duration, and intent interaction in tooltips.
+- Exact technique power, cost, duration, and relevant conditional interaction in tooltips.
 - Type/Aspect outcomes previewed before action confirmation.
 - Deterministic Accord with the Open condition shown.
 - Refillable field-kit healing at wayposts; limited charges create choices without shopping chores.
-- Whole-roster catch-up experience and no evolution-by-grind requirements in the slice.
+- Full Field Data for every selected battle-lineup member and no Reweaving-by-grind requirements in the slice.
 - Retry a lost major battle from immediately before it, with active/reserve-edit access.
 - Retreat succeeds against ordinary wild encounters unless the encounter is explicitly story-bound.
 - Quest log entries state the current lead in plain language.
@@ -287,10 +302,10 @@ The slice must prove the expensive uncertainties—1v1 switching combat, Skein a
 
 ## Playtest questions
 
-1. Does 1v1 combat create a satisfying “Answer, stay, or switch” decision?
-2. Do intent icons create anticipation without making the correct switch automatic?
+1. Does 1v1 combat create a satisfying “stay, act, or switch” decision without universally revealing the enemy's next action?
+2. Can players learn opponent patterns from fair behavior, technique history, and authored cues without feeling blind?
 3. Does deterministic Accord still feel earned?
-4. Are players switching because of role, Resolve, Focus, and intent—or only because of Aspect advantage?
+4. Are players switching because of role, Resolve, matchup, and future team resources—or only because of Aspect advantage?
 5. Does the Hush mystery remain clear while retaining unanswered questions?
 6. Is the path through the opening area obvious without flattening exploration?
 7. Do side routes reward curiosity without making critical information feel hidden?
@@ -306,7 +321,10 @@ The slice must prove the expensive uncertainties—1v1 switching combat, Skein a
 - **Working title:** HUSHWAKE.
 - **Creature term:** wildkin; they are living organic-synthetic beings grown around seedcores, and consensual bonding is called Accord.
 - **Setting identity:** the Merefold as a colorful technological society built into the Chorus, an inherited ecological communications lattice.
-- **Combat foundation:** one active wildkin per side, sequential reserves, meaningful action-cost switching, visible intents, and Focus shared across switches.
+- **Combat foundation:** one active wildkin per side, sequential reserves, meaningful action-cost switching, no universal enemy-action reveal, and room for future shared Focus.
+- **Encounter roles:** autonomous opponents use Wild Encounters; bonded opposing lineups use Tuner Battles with the Tuner represented independently.
+- **Progression foundation:** every selected lineup member receives the full base Field Data reward after a qualifying victory; internal native EXP storage is acceptable.
+- **Wildkin cognition:** fully intelligent and verbal, with a literal/low-context baseline and individual variation; Skein is unusually socially perceptive.
 - **Protagonist:** cradle-repair apprentice pursuing Wayfinder certification.
 - **First companion:** one canonical unregistered wildkin, Skein, reconstructed from a damaged seedcore and choosing Accord during activation.
 - **Starter recommendation:** canonical Skein rather than three configurable bodies; optional reversible technique calibration can be tested later.

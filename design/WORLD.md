@@ -1,6 +1,6 @@
 # HUSHWAKE — World
 
-> **Document status:** Revised first-draft setting foundation centered on warm civic technology and synthetic ecology. Only Hearthmere and its connected route need production detail now; later regions and origin history remain open.
+> **Document status:** Revised setting foundation centered on warm civic technology and intelligent synthetic ecology. Tuner terminology, Field Data synchronization, and Wildkin verbal cognition are canonical; later regions and origin history remain open.
 
 ## The Merefold
 
@@ -33,7 +33,7 @@ Meridian equipment uses sealed blue-white ceramic, restrained light, automatic d
 
 - Daylight spaces should feel desirable to live in.
 - Technology solves real problems before its risks are discussed.
-- Wildkin participate in public life as coworkers, neighbors, research partners, and family.
+- Wildkin participate in public life as fully intelligent, speaking coworkers, neighbors, research partners, family members, and autonomous communities.
 - Unsettling elements appear as permissions the player did not know existed, memories that do not belong to the present, sealed layers beneath friendly interfaces, and systems that behave as though living beings are replaceable state.
 - The mystery must never reduce to “technology was a mistake.” The question is what relationships and controls society built into it.
 
@@ -59,7 +59,9 @@ Forced or licensed Reweaves exist in industry and are ethically contested. They 
 
 ## Wildkin in daily life
 
-Wildkin were shaped by old service lineages but are not born employees. A Thrumble may map signal paths, pollinate an orchard, follow a musician, or refuse every assigned route. Communities function best when they design work around behavior and consent.
+Wildkin were shaped by old service lineages but are not born employees. They are fully intelligent autonomous synthetic beings who reason, plan, learn, remember, disagree, communicate intentionally, understand technical systems, and make voluntary Accord decisions. A Thrumble may map signal paths, pollinate an orchard, follow a musician, debate a route, or refuse every assigned task. Communities function best when they design work around preference and consent.
+
+Many Wildkin communicate more literally, directly, and with less reliance on implied social context than humans. They may be exceptional technical or environmental thinkers while finding sarcasm, hints, euphemism, unspoken emotional subtext, or social ritual unintuitive. This is a cognitive tendency with substantial individual variation, not inferior intelligence.
 
 Visible slice examples:
 
@@ -79,6 +81,14 @@ Households often include resting niches, charge gardens, mineral baths, and inte
 Wildkin care is not divided neatly between veterinarian and mechanic. Community cradle workers cultivate tissue, fabricate compatible supports, read behavior, and maintain safe interfaces. Route mechanics repair civic systems in the same material language. Wayfinders add field ecology, negotiation, and certification authority.
 
 The protagonist begins as a cradle-repair apprentice and field systems mechanic seeking Wayfinder certification. This is a recognized, useful career path—not a cover for unique powers. What is unusual is the time they invested in one seedcore that every registry classified as inert.
+
+A **Wildkin Tuner**, normally shortened to **Tuner**, is a person who forms Accord partnerships and coordinates a selected Wildkin lineup in field and battle contexts. Wayfinders, technicians, rivals, and ordinary residents may also be Tuners; Tuner is a relationship-and-practice role, not a separate school-age institution or ownership title.
+
+## Field Data synchronization
+
+Wayfinder and Tuner field systems record battle telemetry and translate it into **Field Data** that bonded Wildkin can inspect and integrate. After a qualifying victory, the complete base Data packet synchronizes to every Wildkin in the currently selected battle lineup, including reserves that never became active. The packet is not divided because each recipient receives the same information rather than a share of a physical resource.
+
+This supports Levels without implying that combat experience belongs only to the creature that dealt damage. Wildkin outside the selected lineup receive no automatic base synchronization under the current rule. Refuge catch-up, participation bonuses, reserve penalties, and Reweaving thresholds remain open design points.
 
 ## The Chorus
 
@@ -111,7 +121,7 @@ Sound clues always receive a visual counterpart. The mystery cannot depend on th
 
 ### Gameplay signs
 
-- Encounter groups use unusual compositions or repeated intent patterns.
+- Encounter groups use unusual compositions, repeated techniques, or obsolete behavioral loops.
 - Survey reveals broken links, doubled route histories, and implausibly old behavior timestamps.
 - Familiar field interactions produce changed results.
 - Hushbound story creatures require an environmental or Tune solution, not ordinary Accord.
@@ -330,7 +340,8 @@ Only locations that produce a distinct local conflict and gameplay rhythm should
 - Do not put critical facts only in bestiary or archive text.
 - Avoid proper-noun density; introduce at most one important term in a short routine scene.
 - Let post-climax map changes answer “what did that accomplish?” without dialogue.
-- Never use synthetic origin as shorthand for emotional falseness. A creature’s attachment is real even if a protocol can interfere with it.
+- Never use synthetic origin as shorthand for emotional falseness. A Wildkin's attachment and speech are real even if a protocol can interfere with memory or communication.
+- Let Wildkin participate in dialogue when personality and context warrant it; do not turn every wild encounter into a conversation or write every Wildkin with the same literal voice.
 
 ## World playtest questions
 
@@ -341,7 +352,8 @@ Only locations that produce a distinct local conflict and gameplay rhythm should
 5. Does Weirworks feel like a place with a function rather than a themed dungeon?
 6. Which optional environmental clue produces the strongest theory?
 7. Can players explain seedcores, cradles, and Reweaving without a lore glossary?
-8. Do they perceive wildkin as people-adjacent partners, useful animals, machines, or some productive tension among all three?
+8. Do they perceive Wildkin as fully intelligent synthetic persons with non-human cognitive tendencies, rather than animals or equipment?
+9. Do Tuner partnership and Field Data synchronization feel like world practices rather than game-only terminology?
 
 ## Decisions awaiting approval
 
@@ -353,3 +365,7 @@ Only locations that produce a distinct local conflict and gameplay rhythm should
 - Meridian as both public works and continuity authority, with legal root access shaped by the Red Wake.
 - Hearthworks, the Open Chorus, and independent wildkin communities as provisional future pressures rather than immediate exposition.
 - A tightly connected Hearthmere route instead of an open-world slice.
+- “Wildkin Tuner,” shortened to “Tuner,” as the canonical role name for bonded lineup coordinators.
+- Field Data as synchronized telemetry granted in full to every member of the selected battle lineup.
+- Wildkin as fully intelligent and verbal, with a typically literal/low-context but individually varied social model.
+- Skein's comparative anomaly as stronger emotional/social inference, not unique speech.

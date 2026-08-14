@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "opponents": [
+    {
+      "key": "test_tuner",
+      "displayName": "Test Tuner",
+      "portrait": {
+        "faceName": "Actor1",
+        "faceIndex": 4
+      },
+      "lineup": ["thrumble_lab", "loamlet_lab"],
+      "leadWildkin": "thrumble_lab",
+      "battleMetadata": {
+        "prototype": true,
+        "purpose": "Tuner encounter foundation"
+      },
+      "introText": "Test Tuner challenges you.",
+      "victoryText": "Test Tuner's lineup is Spent.",
+      "defeatText": "Test Tuner holds the field.",
+      "victoryHooks": [],
+      "defeatHooks": [],
+      "rewardHooks": [],
+      "aiProfile": "graybox_sequential"
+    }
+  ],
+  "encounters": [
+    {
+      "key": "milestone_1a",
+      "name": "Wild Encounter Prototype",
+      "type": "wild",
+      "enemyKeys": ["thrumble_lab", "loamlet_lab"],
+      "leadWildkin": "thrumble_lab",
+      "rewards": {
+        "fieldData": 60
+      },
+      "qualifiesForFieldData": true,
+      "battleMetadata": {
+        "prototypeMode": "wild"
+      }
+    },
+    {
+      "key": "foundation_tuner",
+      "name": "Tuner Battle Prototype",
+      "type": "tuner",
+      "opponentKey": "test_tuner",
+      "rewards": {
+        "fieldData": 80
+      },
+      "qualifiesForFieldData": true,
+      "battleMetadata": {
+        "prototypeMode": "tuner"
+      }
+    },
+    {
+      "key": "field_data_test",
+      "name": "Field Data Synchronization Test",
+      "type": "wild",
+      "enemyKeys": ["thrumble_lab"],
+      "leadWildkin": "thrumble_lab",
+      "rewards": {
+        "fieldData": 40
+      },
+      "qualifiesForFieldData": true,
+      "battleMetadata": {
+        "prototypeMode": "fieldData"
+      }
+    },
+    {
+      "key": "level_up_test",
+      "name": "Level-Up Result Test",
+      "type": "tuner",
+      "opponentKey": "test_tuner",
+      "rewards": {
+        "fieldData": 100
+      },
+      "qualifiesForFieldData": true,
+      "battleMetadata": {
+        "prototypeMode": "levelUp"
+      }
+    }
+  ]
+}

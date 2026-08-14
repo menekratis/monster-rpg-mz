@@ -2,7 +2,7 @@
  * @target MZ
  * @plugindesc HUSHWAKE Milestone 1A.5 - compact battler overlays and unified battle HUD.
  * @author OpenAI
- * @orderAfter Hushwake_IntentAnswers
+ * @orderAfter Hushwake_BattleSystem
  *
  * @param overheadWidth
  * @text Overhead Width
@@ -96,8 +96,8 @@
  * The plugin reads only standard battler/action data plus the optional
  * Hushwake.Battle preview helpers. Species, encounter, story, and balance data
  * do not belong here. Later presentation modules can use the left-side bottom
- * context area for Intent, Focus, conditions, and Accord without changing the
- * battler data model.
+ * context area for encounter identity, future limited Intent effects, Focus,
+ * conditions, and Accord without changing the battler data model.
  */
 
 (() => {
@@ -105,7 +105,6 @@
 
     const Hushwake = (window.Hushwake = window.Hushwake || {});
     const Battle = Hushwake.Battle;
-    const Intent = Hushwake.IntentAnswers;
     const Hud = (Hushwake.BattleHud = Hushwake.BattleHud || {});
     const parameters = PluginManager.parameters("Hushwake_BattleHud");
 
@@ -159,79 +158,38 @@
         };
     };
 
-    Hud.plannedIntent = function() {
-        return Battle.plannedIntent ? Battle.plannedIntent() : null;
-    };
-
-    Hud.answerForItem = function(item) {
-        return Intent && Intent.answerForItem
-            ? Intent.answerForItem(item)
-            : null;
-    };
-
-    Hud.answerMatchesItem = function(item) {
-        return !!(
-            Intent &&
-            Intent.answerMatchesItem &&
-            Intent.answerMatchesItem(item)
-        );
-    };
-
     Hud.techniqueHelpText = function(item) {
-        const planned = this.plannedIntent();
-        if (!item) {
-            return planned ? "Enemy Intent: " + planned.name : "";
-        }
-        const lines = [String(item.description || "")];
-        const answer = this.answerForItem(item);
-        if (answer) {
-            const answerType = Intent.intentType(answer.intent);
-            const answerName = answerType ? answerType.name : answer.intent;
-            lines.push(
-                "Answer: " + answerName + " — " + String(answer.preview || "")
-            );
-            if (planned) {
-                lines.push(
-                    this.answerMatchesItem(item)
-                        ? "MATCHES CURRENT INTENT"
-                        : "Current Intent: " + planned.name
-                );
-            }
-        } else if (planned) {
-            lines.push("Current Intent: " + planned.name);
-        }
-        return lines.join("\n");
-    };
-
-    Hud.targetIntentText = function(item) {
-        const planned = this.plannedIntent();
-        const answer = this.answerForItem(item);
-        if (answer) {
-            const answerType = Intent.intentType(answer.intent);
-            const answerName = answerType ? answerType.name : answer.intent;
-            if (this.answerMatchesItem(item)) {
-                return "ANSWER MATCH  •  " + answerName + "  •  " + answer.preview;
-            }
-            return (
-                "Answer: " +
-                answerName +
-                (planned ? "  •  Current: " + planned.name : "")
-            );
-        }
-        return planned ? "Enemy Intent: " + planned.name : "";
+        return item ? String(item.description || "") : "";
     };
 
     Hud.switchHelpText = function(forced) {
         if (forced) {
             return "Active partner\nis Spent.\nChoose a free\nreplacement.";
         }
-        const planned = this.plannedIntent();
-        const name = planned ? planned.name : "None";
         return (
-            "INTENT: " +
-            name +
-            "\nSwitch uses this round.\nIncoming Wildkin\nreceives this action."
+            "Switch uses this round.\nThe incoming Wildkin receives\n" +
+            "the opponent's action if it remains valid."
         );
+    };
+
+    Hud._bottomContextRenderers = [];
+
+    Hud.registerBottomContext = function(renderer) {
+        if (
+            typeof renderer === "function" &&
+            !this._bottomContextRenderers.includes(renderer)
+        ) {
+            this._bottomContextRenderers.push(renderer);
+        }
+    };
+
+    Hud.drawBottomContext = function(windowObject) {
+        for (const renderer of this._bottomContextRenderers) {
+            if (renderer(windowObject) === true) {
+                return true;
+            }
+        }
+        return false;
     };
 
     Hud.bottomHeight = function() {
@@ -562,72 +520,12 @@
             this._lines.length === 0 &&
             Battle.isActive()
         ) {
-            this.drawHushwakeIntentContext();
+            Hud.drawBottomContext(this);
         }
-    };
-
-    Window_BattleLog.prototype.drawHushwakeIntentContext = function() {
-        const intent = Hud.plannedIntent();
-        if (!intent) {
-            return;
-        }
-        this.resetFontSettings();
-        this.contents.fontSize = 15;
-        this.changeTextColor(ColorManager.systemColor());
-        this.drawText("ENEMY INTENT", 0, -7, this.innerWidth);
-        this.contents.fontSize = 28;
-        this.changeTextColor(intent.color || ColorManager.normalColor());
-        this.drawText(intent.name, 0, 18, this.innerWidth);
-        this.contents.fontSize = 18;
-        this.resetTextColor();
-        this.drawText(intent.description, 0, 57, this.innerWidth);
-        this.resetFontSettings();
     };
 
     Window_BattleLog.prototype.hushwakeWait = function(frames) {
         this._waitCount = Math.max(this._waitCount, Number(frames || 0));
-    };
-
-    if (Intent && Intent.onAnswerResolved) {
-        Intent.onAnswerResolved(function(result) {
-            const logWindow = BattleManager._logWindow;
-            if (!logWindow) {
-                return;
-            }
-            logWindow.push("hushwakeShowAnswer", result);
-            logWindow.push("clear");
-        });
-    }
-
-    Window_BattleLog.prototype.hushwakeShowAnswer = function(result) {
-        this._lines = [
-            "ANSWER — " +
-                result.techniqueName +
-                " meets " +
-                result.intentName +
-                ".",
-            result.text
-        ];
-        this._baseLineStack = [];
-        this.refresh();
-        this._waitCount = Math.max(this._waitCount, 60);
-    };
-
-    const _Window_BattleLog_displayFailure =
-        Window_BattleLog.prototype.displayFailure;
-    Window_BattleLog.prototype.displayFailure = function(target) {
-        const action = BattleManager._action;
-        const item = action ? action.item() : null;
-        if (
-            Battle.isActive() &&
-            item &&
-            item.hushwake &&
-            item.hushwake.kind === "support" &&
-            item.hushwake.answer
-        ) {
-            return;
-        }
-        _Window_BattleLog_displayFailure.call(this, target);
     };
 
     Window_BattleLog.prototype.hushwakeFinishRetreat = function() {
@@ -810,7 +708,7 @@
         Window_BattleEnemy.prototype.itemHeight;
     Window_BattleEnemy.prototype.itemHeight = function() {
         return Battle.isActive()
-            ? this.lineHeight() * 3
+            ? this.lineHeight() * 2
             : _Window_BattleEnemy_itemHeight.call(this);
     };
 
@@ -837,7 +735,6 @@
         const preview = range
             ? relation + "  •  " + range.min + "–" + range.max + " predicted"
             : relation;
-        const intentText = Hud.targetIntentText(item);
 
         this.resetFontSettings();
         this.contents.fontSize = 21;
@@ -870,18 +767,6 @@
             rect.y + this.lineHeight(),
             rect.width - 370,
             "right"
-        );
-        this.contents.fontSize = 18;
-        this.changeTextColor(
-            Hud.answerMatchesItem(item)
-                ? ColorManager.powerUpColor()
-                : ColorManager.systemColor()
-        );
-        this.drawText(
-            intentText,
-            rect.x,
-            rect.y + this.lineHeight() * 2,
-            rect.width
         );
         this.resetFontSettings();
     };

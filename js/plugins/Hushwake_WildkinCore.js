@@ -246,7 +246,7 @@
             this._enemyIdByKey[definition.key] = id;
         }
 
-        for (const encounter of $dataHushwakeWildkin.encounters) {
+        for (const encounter of $dataHushwakeWildkin.encounters || []) {
             const id = $dataTroops.length;
             $dataTroops.push(this.makeTroop(encounter, id));
             this._encounterIdByKey[encounter.key] = id;

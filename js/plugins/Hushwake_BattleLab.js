@@ -1,11 +1,13 @@
 /*:
  * @target MZ
- * @plugindesc HUSHWAKE Milestone 1A - direct graybox Battle Lab launcher.
+ * @plugindesc HUSHWAKE foundation - direct graybox Battle Lab launcher.
  * @author OpenAI
+ * @orderAfter Hushwake_FieldData
+ * @orderAfter Hushwake_EncounterHud
  *
  * @help
- * Adds Battle Prototype to the title screen. It creates disposable graybox
- * Wildkin instances and launches the Milestone 1A encounter directly.
+ * Adds Battle Prototype to the title screen. Its compact selector launches
+ * disposable Wildkin rosters for wild, Tuner, Field Data, and Level-up tests.
  */
 
 (() => {
@@ -16,7 +18,27 @@
     const Battle = Hushwake.Battle;
     const BattleLab = (Hushwake.BattleLab = Hushwake.BattleLab || {});
 
-    BattleLab.setupGrayboxRoster = function() {
+    BattleLab.modes = {
+        wild: {
+            name: "Wild Encounter",
+            encounterKey: "milestone_1a"
+        },
+        tuner: {
+            name: "Tuner Battle",
+            encounterKey: "foundation_tuner"
+        },
+        fieldData: {
+            name: "Field Data Test",
+            encounterKey: "field_data_test"
+        },
+        levelUp: {
+            name: "Level-Up Test",
+            encounterKey: "level_up_test",
+            prepareLevelUp: true
+        }
+    };
+
+    BattleLab.setupGrayboxRoster = function(mode) {
         const lineup = [
             { speciesKey: "briarkid", nickname: "Briarkid" },
             { speciesKey: "kilnkit", nickname: "Kilnkit" },
@@ -32,13 +54,22 @@
             instances.map(instance => instance.instanceId())
         );
         $gameWildkinRoster.setActiveLead(instances[0].instanceId());
+
+        if (mode.prepareLevelUp) {
+            for (const instance of instances) {
+                instance.changeExp(
+                    Math.max(
+                        instance.currentLevelExp(),
+                        instance.nextLevelExp() - 25
+                    ),
+                    false
+                );
+            }
+        }
         return instances;
     };
 
-    BattleLab.launch = function() {
-        DataManager.setupNewGame();
-        this.setupGrayboxRoster();
-
+    BattleLab.runFoundationChecks = function() {
         const serializationResult = Hushwake.Wildkin.serializationCheck();
         if (!serializationResult.passed) {
             throw new Error(
@@ -46,21 +77,126 @@
                     JSON.stringify(serializationResult)
             );
         }
-        console.info(
-            "[HUSHWAKE] Wildkin serialization check passed.",
-            serializationResult
-        );
 
-        const troopId = Data.encounterId("milestone_1a");
-        if (!troopId) {
-            throw new Error("HUSHWAKE Milestone 1A encounter was not loaded.");
+        const progressionResult =
+            Hushwake.Wildkin.progressionSerializationCheck();
+        if (!progressionResult.passed) {
+            throw new Error(
+                "Wildkin progression serialization check failed: " +
+                    JSON.stringify(progressionResult)
+            );
         }
+
+        console.info(
+            "[HUSHWAKE] Wildkin serialization checks passed.",
+            {
+                instances: serializationResult,
+                progression: progressionResult
+            }
+        );
+    };
+
+    BattleLab.launch = function(modeKey) {
+        const mode = this.modes[modeKey];
+        if (!mode) {
+            throw new Error("Unknown HUSHWAKE Battle Lab mode: " + modeKey);
+        }
+
+        DataManager.setupNewGame();
+        this.setupGrayboxRoster(mode);
+        this.runFoundationChecks();
+
+        const troopId = Data.encounterId(mode.encounterKey);
+        if (!troopId) {
+            throw new Error(
+                "HUSHWAKE encounter was not loaded: " + mode.encounterKey
+            );
+        }
+
+        this._lastLaunchMode = modeKey;
         BattleManager.setup(troopId, true, true);
         Battle.begin();
         BattleManager.saveBgmAndBgs();
         SoundManager.playBattleStart();
         SceneManager.push(Scene_Battle);
     };
+
+    function Window_HushwakeBattleLabCommand() {
+        this.initialize(...arguments);
+    }
+
+    Window_HushwakeBattleLabCommand.prototype = Object.create(
+        Window_Command.prototype
+    );
+    Window_HushwakeBattleLabCommand.prototype.constructor =
+        Window_HushwakeBattleLabCommand;
+
+    Window_HushwakeBattleLabCommand.prototype.makeCommandList = function() {
+        for (const key of Object.keys(BattleLab.modes)) {
+            this.addCommand(BattleLab.modes[key].name, key, true);
+        }
+        this.addCommand("Back", "cancel", true);
+    };
+
+    function Scene_HushwakeBattleLab() {
+        this.initialize(...arguments);
+    }
+
+    Scene_HushwakeBattleLab.prototype = Object.create(
+        Scene_MenuBase.prototype
+    );
+    Scene_HushwakeBattleLab.prototype.constructor = Scene_HushwakeBattleLab;
+
+    Scene_HushwakeBattleLab.prototype.initialize = function() {
+        Scene_MenuBase.prototype.initialize.call(this);
+    };
+
+    Scene_HushwakeBattleLab.prototype.create = function() {
+        Scene_MenuBase.prototype.create.call(this);
+        this.createCommandWindow();
+    };
+
+    Scene_HushwakeBattleLab.prototype.start = function() {
+        Scene_MenuBase.prototype.start.call(this);
+        this._commandWindow.open();
+        this._commandWindow.activate();
+    };
+
+    Scene_HushwakeBattleLab.prototype.commandWindowRect = function() {
+        const width = 360;
+        const height = this.calcWindowHeight(5, true);
+        return new Rectangle(
+            Math.floor((Graphics.boxWidth - width) / 2),
+            Math.floor((Graphics.boxHeight - height) / 2),
+            width,
+            height
+        );
+    };
+
+    Scene_HushwakeBattleLab.prototype.createCommandWindow = function() {
+        this._commandWindow = new Window_HushwakeBattleLabCommand(
+            this.commandWindowRect()
+        );
+        for (const key of Object.keys(BattleLab.modes)) {
+            this._commandWindow.setHandler(
+                key,
+                this.commandLaunch.bind(this, key)
+            );
+        }
+        this._commandWindow.setHandler(
+            "cancel",
+            this.popScene.bind(this)
+        );
+        this.addWindow(this._commandWindow);
+    };
+
+    Scene_HushwakeBattleLab.prototype.commandLaunch = function(modeKey) {
+        this._commandWindow.close();
+        this._commandWindow.deactivate();
+        BattleLab.launch(modeKey);
+    };
+
+    window.Scene_HushwakeBattleLab = Scene_HushwakeBattleLab;
 
     const _Window_TitleCommand_makeCommandList =
         Window_TitleCommand.prototype.makeCommandList;
@@ -74,7 +210,10 @@
     Scene_Title.prototype.commandWindowRect = function() {
         const rect = _Scene_Title_commandWindowRect.call(this);
         rect.height = this.calcWindowHeight(4, true);
-        rect.y = Graphics.boxHeight - rect.height - 96 +
+        rect.y =
+            Graphics.boxHeight -
+            rect.height -
+            96 +
             $dataSystem.titleCommandWindow.offsetY;
         return rect;
     };
@@ -91,6 +230,6 @@
 
     Scene_Title.prototype.commandHushwakeBattleLab = function() {
         this._commandWindow.close();
-        BattleLab.launch();
+        SceneManager.push(Scene_HushwakeBattleLab);
     };
 })();

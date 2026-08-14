@@ -1,6 +1,6 @@
 # HUSHWAKE — Vertical Slice
 
-> **Document status:** Revised first-draft production target for the warm synthetic-life direction. This defines what the slice must prove, not a promise to implement every listed creature, Reweave, or polish feature at once.
+> **Document status:** Revised production target incorporating Tuner encounters, selected-lineup Field Data, intelligent speaking Wildkin, and no universal enemy-action reveal. This defines what the slice must prove, not an immediate implementation promise.
 
 ## Slice title and purpose
 
@@ -19,7 +19,7 @@ It does not need to prove the final game’s total length, full roster, or final
 ## Questions the slice must answer
 
 1. Is standard 1v1 combat quick, readable, and distinct when reserves and switching are available?
-2. Does visible enemy intent create a meaningful “Answer, stay, or switch” decision rather than an automatic counter?
+2. Can opponent behavior remain fair and learnable without universally revealing the next selected action?
 3. Does deterministic Accord make recruitment more satisfying and less frustrating?
 4. Can exploration, synthetic creature habitats, civic technology, and story evidence share the same small maps?
 5. Does one local conflict build naturally into two meaningful major battles?
@@ -28,7 +28,7 @@ It does not need to prove the final game’s total length, full roster, or final
 8. Do wildkin feel organically alive, mechanically integrated, socially useful, and individually charming at once?
 9. Does the root-access reveal feel like a disturbing deepening of an appealing world rather than a reversal into “technology bad”?
 10. Does the opening establish the protagonist as a skilled repairer and Skein as an autonomous companion without slowing the first battle?
-11. Does Focus shared across switches create team synergy despite only one active wildkin per side?
+11. Can the foundation support future Focus shared across switches without depending on universal Intent/Answers?
 
 Everything else is secondary to these questions.
 
@@ -60,7 +60,7 @@ Adjacent spaces can share one RPG Maker map when that reduces transitions. The t
 ### Characters with substantial dialogue
 
 - Protagonist.
-- Skein, a central nonverbal companion with authored behavior.
+- Skein, a central speaking Wildkin companion with authored behavior and unusually strong social/emotional inference.
 - Tavi Rook, rival/companion.
 - Warden Mara Venn, mentor and local authority.
 - Merrit Quill, Meridian field engineer.
@@ -74,12 +74,13 @@ Other villagers receive short functional or flavor conversations. Do not create 
 - Carried reserves, action-cost voluntary switching, free replacement after Spent, and persistent reserve Resolve.
 - Sequential opposing rosters; no fixed final player party-size limit yet.
 - Visible encounter groups.
-- Four intent categories and response bonuses.
-- Shared Focus that persists across switches and signature techniques that can spend another companion’s setup.
+- Wild Encounters with no opposing Tuner and Tuner Battles whose opponent identity persists independently across sequential Wildkin.
+- No universal enemy-action reveal or baseline Answer system; limited prediction may return through explicit special abilities.
+- Architecture compatible with future shared Focus and signatures, without implementing them in the current foundation.
 - Six Aspects and outcome preview.
 - Deterministic Accord and one temperament shortcut per wild species.
 - Active/reserve roster management at wayposts.
-- Whole-roster catch-up experience.
+- Full base Field Data for every Wildkin in the selected battle lineup after a qualifying victory, whether active or reserve, with native-MZ-backed Levels.
 - Survey, Tune, and Rig authored field interactions.
 - Simple quest log and bestiary updates.
 - Immediate major-battle retry with active/reserve-edit access.
@@ -88,7 +89,7 @@ Other villagers receive short functional or flavor conversations. Do not create 
 
 ### Systems explicitly not required
 
-- 2v2 or general multi-active battle support, switch hazards, deep switch-state rules, breeding, modular body construction, playable Reweaving, companion equipment slots, hacking minigames, trading, procedural encounters, crafting, equipment rarity, mounts, online play, day/night cycle, dynamic weather, stealth, relationship meters, branching endings, voiced scenes, or a generalized physics/puzzle framework.
+- 2v2 or general multi-active battle support, universal Intent reveal, Answers, Focus, signatures, advanced Tuner AI, Tuner voluntary switching, switch hazards, deep switch-state rules, breeding, modular body construction, playable Reweaving, companion equipment slots, hacking minigames, trading, procedural encounters, crafting, equipment rarity, mounts, online play, day/night cycle, dynamic weather, stealth, relationship meters, branching endings, voiced scenes, or a generalized physics/puzzle framework.
 
 Reweaving is visible in dialogue, cradle design, and later-form previews, but implementing evolution is deliberately deferred until the combat prototype proves creature identity and continuity.
 
@@ -99,12 +100,12 @@ Times are observation targets, not cutscene scripts.
 | Time | Activity | New element | Story movement |
 |---|---|---|---|
 | 0:00–0:03 | Perform final body checks; Skein wakes and offers Accord | Movement, naming, mutual Accord | `ROUTE PEER: RETURNED`; unplanned relay filament grows |
-| 0:03–0:06 | Ride Cable Approach; battle one Thrumble | 1v1 command, Assault intent | Relay swarm replays its route and Skein’s handshake |
+| 0:03–0:06 | Ride Cable Approach; battle one Thrumble | 1v1 command, Resolve, Aspect preview | Relay swarm replays its route and Skein’s handshake |
 | 0:06–0:15 | Enter Hearthmere; short introductions | Wayglass, community cradle | Festival sync failed; Merrit’s rollback prevents a cascade |
 | 0:15–0:30 | Survey Upper Track; form first wild Accord | Visible duels, Open/Accord, free replacement | A root handshake preceded the reversed route |
 | 0:30–0:50 | Explore fork and optional loop | Voluntary switch, shared Focus, Rig | Checksum rings and old credentials imply more than a broken weir |
 | 0:50–1:10 | Reach Bellwether Orchard | Open-protocol Tune, habitat interaction | Orralume is missing; it and Thrumble answer Skein’s signal |
-| 1:10–1:30 | Complete lower route / optional return | Reserve edits, fuller intent mix | Tavi and player form competing explanations |
+| 1:10–1:30 | Complete lower route / optional return | Reserve edits, broader technique patterns | Tavi and player form competing explanations |
 | 1:30–1:55 | Explore Weirworks and legacy cradle | Compact dungeon loop, archive clue | Skein is admitted as a peer; old consent interval offers a solution |
 | 1:55–2:10 | Cascade and Tavi confrontation | Sequential 1v1 team battle | Player earns the right to attempt consent before override |
 | 2:10–2:30 | Orralume rescue | 1v1 three-phase boss, switching, battle Tune | Orralume recognizes Skein, rejects rollback, restores route/pressure |
@@ -128,7 +129,7 @@ No single activity should dominate for more than about 15 minutes in the first h
 - **Opposing sequence:** Reedimp builds Focus, then Tavi spends a round switching to Loamlet at a readable safe moment. When Loamlet becomes Spent, the weakened Reedimp returns for at most one brief handoff attempt; if already Spent, that beat is skipped. Kilnkit enters last and spends the inherited momentum.
 - **Duration target:** 5–8 minutes on first attempt.
 - **Narrative function:** resolve who leads an immediate safety decision; expose Tavi’s Red Wake fear and emergency-override position.
-- **Mechanical function:** exam on Setup/Guard intents, action-cost switching, free replacement, and cross-switch Focus before the guardian fight.
+- **Mechanical function:** exam on action-cost switching, free replacement, lineup endurance, and readable authored technique patterns before the guardian fight. Tavi remains represented independently as the opposing Tuner.
 - **Battle shape:** Tavi establishes a sequential shield/tempo engine and makes one readable switch. Finishing Reedimp early disrupts that engine; otherwise its short return clarifies that switched reserves persist. Kilnkit remains the climax. Their partners still emote and improvise so coordination never reads as ownership.
 - **Failure handling:** instant retry prompt; “Review team” opens the nearby waypost; one short Tavi line changes after a loss.
 - **Aftermath:** full recovery before the cistern. The story does not punish the player with depleted resources for winning.
@@ -138,7 +139,7 @@ No single activity should dominate for more than about 15 minutes in the first h
 - **Recommended roster:** Any healthy set of active/reserve partners; Skein is not required to occupy the active slot.
 - **Duration target:** 7–10 minutes on first clear.
 - **Narrative function:** rescue an autonomous synthetic coordinator, preserve its present identity, and vent the weir safely.
-- **Mechanical function:** combine all four intent reads, switching under a known incoming action, reserve Resolve management, and an authored field action.
+- **Mechanical function:** combine learned technique patterns, switching during authored visible cues, reserve Resolve management, and an authored field action without universal prediction.
 - **Phase 1 — Panic:** clear Assault tells; sheltering and tempo control are strong.
 - **Phase 2 — Fold:** Orralume uses layered Guard and scale decoys; Break/Feint techniques create openings.
 - **Phase 3 — Root rollback:** Hush authorization creates Disrupt pressure. Tune exposes the old consent interval; Orralume’s own response, not the player’s command, replaces a damage race with a rescue finish.
@@ -198,7 +199,7 @@ Visible consequence is a required part of the reward, not polish to cut first.
 **Must prove:**
 
 - one active wildkin per side is readable;
-- “Answer, stay, or switch” remains interesting after the obvious Aspect tutorial;
+- “act, stay, or switch” remains interesting after the obvious Aspect tutorial without universal next-action reveal;
 - voluntary switching consumes the round, resolves first, and redirects the planned attack clearly;
 - free replacement after Spent is immediate and reserve Resolve persists;
 - Focus built by one wildkin is satisfying to spend with another;
@@ -284,7 +285,7 @@ Each uses existing maps and characters. None requires an exclusive system, a uni
 ## Difficulty and economy targets
 
 - Critical-path encounters alone keep Skein and any regularly used reserves within the expected readiness band.
-- Players who avoid all optional battles can still defeat Tavi with sound intent responses.
+- Players who avoid all optional battles can still defeat Tavi through sound switching, matchup, and Resolve management.
 - Optional encounters primarily provide roster choice, field observations, and technique experimentation—not required levels.
 - Field Kit starts with three refillable recovery charges and refills at wayposts.
 - Ordinary defeat returns the player to the last waypost without lost currency or recruited wildkin.
@@ -300,7 +301,8 @@ Record:
 - time to movement, Skein Accord, first battle, first wild Accord, first voluntary switch, orchard, Tavi, and ending;
 - number of avoidable encounters entered;
 - active/reserve selection, voluntary switches, and stated reasons;
-- intent icons misunderstood or ignored;
+- opponent cues or technique patterns misunderstood or ignored;
+- Tuner identity or Field Data result information misunderstood;
 - failed Accord attempts and why;
 - dialogue skipped;
 - wrong turns lasting more than two minutes;
@@ -330,7 +332,7 @@ Thresholds flag investigation; they are not statistical proof with such a small 
 The slice is “polished” only when:
 
 - its opening, two major battles, and ending can be completed without developer intervention;
-- all mandatory objectives and intent/Accord information are readable on keyboard and controller;
+- all mandatory objectives, battle information, Tuner identity, Field Data results, and future Accord information are readable on keyboard and controller;
 - all 12 implemented entries have a distinct 1v1/switching use and complete bestiary/Accord text;
 - all 12 communicate an integrated synthetic body function, daily-life role/history, and individual behavior;
 - the active wildkin and carried reserves can be changed at each intended waypost without assuming a final party-size limit;
@@ -345,10 +347,10 @@ The slice is “polished” only when:
 
 | Risk | Early response |
 |---|---|
-| Switching becomes automatic type correction | Make enemy intent, current Resolve, Focus, and the lost action matter; keep Aspect multipliers modest. |
-| Switching is rarely worth a round | Use readable pressure and cross-switch Focus opportunities before inventing hazards or free-pivot states. |
-| Sequential teams make battles long | Keep ordinary wild encounters to one opponent, resolve replacements instantly, and cap Tavi’s roster/animations tightly. |
-| Intent UI makes combat deterministic | Use intent category, timing, Focus, and reserve tradeoffs—not invisible randomness. |
+| Switching becomes automatic type correction | Make current Resolve, known techniques, visible state, prior behavior, and the lost action matter; keep Aspect multipliers modest. |
+| Switching is rarely worth a round | Use readable pressure and lineup-management opportunities before inventing hazards or free-pivot states. |
+| Sequential teams make battles long | Keep ordinary Wild Encounters to one opponent, resolve replacements instantly, and cap Tuner lineups/animations tightly. |
+| Combat feels blind without Intent UI | Strengthen consistent technique patterns, authored cues, state readability, and limited special prediction where earned; do not restore universal reveal. |
 | Accord feels automatic | Strengthen temperament interactions and presentation; do not reintroduce hidden capture odds first. |
 | Story requires too many bespoke scenes | Deliver clues through reusable interfaces, service behavior, creature placement, and altered ambience. |
 | Synthetic designs read as armored animals | Require integrated anatomy, growth needs, service history, and one personality behavior before art approval. |
@@ -365,6 +367,10 @@ The slice is “polished” only when:
 - A 2–3 hour target with 6–8 compact maps.
 - A staged roster of 6, then 12, then up to 26 playable entries.
 - Standard one-active-per-side combat with switching and sequential reserves; special multi-active formats deferred.
+- Wild/Tuner encounter distinction with stable Tuner identity independent from the active opposing Wildkin.
+- Full Field Data for every selected lineup member after qualifying victory, using Levels and native MZ progression internally.
+- No universal Intent reveal or Answer system; Focus/signatures remain deferred.
+- Fully intelligent, verbal Wildkin with literal/low-context tendencies and individual voices; Skein is unusually socially perceptive.
 - One canonical reconstructed companion, Skein, replacing a traditional starter choice.
 - Protagonist as cradle-repair apprentice/field mechanic pursuing Wayfinder certification.
 - Tavi and Orralume as the only mandatory major battles.

@@ -1,31 +1,5 @@
 {
-  "version": 2,
-  "intentTypes": [
-    {
-      "key": "assault",
-      "name": "Assault",
-      "description": "Immediate damage or focused pressure.",
-      "color": "#e88a68"
-    },
-    {
-      "key": "guard",
-      "name": "Guard",
-      "description": "Protection, recovery, or a counter posture.",
-      "color": "#7db6e8"
-    },
-    {
-      "key": "setup",
-      "name": "Setup",
-      "description": "A charged action or sequence is being prepared.",
-      "color": "#d5a7ed"
-    },
-    {
-      "key": "disrupt",
-      "name": "Disrupt",
-      "description": "Pressure that alters timing or battle state.",
-      "color": "#e6cf6a"
-    }
-  ],
+  "version": 3,
   "species": [
     {
       "key": "briarkid",
@@ -35,7 +9,7 @@
       "aspects": ["Verdant"],
       "baseStats": { "resolve": 120, "force": 26, "guard": 34, "tempo": 22 },
       "growth": { "resolve": 10, "force": 3, "guard": 3, "tempo": 2 },
-      "techniques": ["budding_bash", "root_stance", "fault_line"]
+      "techniques": ["budding_bash", "fault_line"]
     },
     {
       "key": "kilnkit",
@@ -100,25 +74,6 @@
       "animationId": 1
     },
     {
-      "key": "root_stance",
-      "name": "Root Stance",
-      "description": "Brace against immediate pressure.",
-      "kind": "support",
-      "target": "self",
-      "aspect": "Verdant",
-      "power": 0,
-      "priority": 20,
-      "iconIndex": 81,
-      "animationId": 1,
-      "answer": {
-        "intent": "assault",
-        "effect": "reduceDamage",
-        "value": 0.4,
-        "preview": "Pending damage -40%.",
-        "result": "The pending Assault is softened by 40%."
-      }
-    },
-    {
       "key": "coal_snap",
       "name": "Coal Snap",
       "description": "A forceful Ember strike.",
@@ -131,19 +86,12 @@
     {
       "key": "flashstep",
       "name": "Flashstep",
-      "description": "A quick Gale strike that breaks preparation.",
+      "description": "A quick Gale strike.",
       "aspect": "Gale",
       "power": 1.05,
       "priority": 10,
       "iconIndex": 82,
-      "animationId": 1,
-      "answer": {
-        "intent": "setup",
-        "effect": "interrupt",
-        "value": 1,
-        "preview": "Interrupts the pending action.",
-        "result": "The pending Setup is interrupted."
-      }
+      "animationId": 1
     },
     {
       "key": "rill_lash",
@@ -169,7 +117,6 @@
       "key": "pollen_tap",
       "name": "Pollen Tap",
       "description": "A compact Gale impact.",
-      "intent": "assault",
       "aspect": "Gale",
       "power": 1.3,
       "priority": 0,
@@ -179,8 +126,7 @@
     {
       "key": "vine_hum",
       "name": "Vine Hum",
-      "description": "A telegraphed Verdant charge.",
-      "intent": "setup",
+      "description": "A Verdant compression wave.",
       "aspect": "Verdant",
       "power": 1.45,
       "priority": 0,
@@ -191,7 +137,6 @@
       "key": "pebble_nudge",
       "name": "Pebble Nudge",
       "description": "A steady Stone impact.",
-      "intent": "assault",
       "aspect": "Stone",
       "power": 1.3,
       "priority": 0,
@@ -201,8 +146,7 @@
     {
       "key": "root_press",
       "name": "Root Press",
-      "description": "A telegraphed Verdant compression.",
-      "intent": "setup",
+      "description": "A forceful Verdant compression.",
       "aspect": "Verdant",
       "power": 1.4,
       "priority": 0,
@@ -230,13 +174,6 @@
       "techniqueSequence": ["pebble_nudge", "root_press"],
       "screenX": 260,
       "screenY": 300
-    }
-  ],
-  "encounters": [
-    {
-      "key": "milestone_1a",
-      "name": "Milestone 1A: Sequential Lineup",
-      "enemyKeys": ["thrumble_lab", "loamlet_lab"]
     }
   ]
 }

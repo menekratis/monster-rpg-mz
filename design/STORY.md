@@ -1,6 +1,6 @@
 # HUSHWAKE — Story
 
-> **Document status:** Revised first-draft story spine with seedcore identity and control as the central mystery. The opening is specific enough to prototype; original makers, the Red Wake, and later allegiances remain hypotheses.
+> **Document status:** Revised foundation story spine with seedcore identity and control as the central mystery. Wildkin intelligence, verbal communication, and Tuner terminology are canonical; original makers, the Red Wake, and later allegiances remain hypotheses.
 
 ## Story promise
 
@@ -66,6 +66,16 @@ Only one of these should become canon after the slice:
 The preferred eventual reveal may combine 2–4, but the slice should expose only the existence of an older control layer. Do not answer the complete origin mystery in the first chapter.
 
 Leaving this open prevents the full plot from hardening before we know which mystery players actually care about.
+
+## Wildkin intelligence and dialogue canon
+
+Wildkin are fully intelligent autonomous synthetic beings, not animals limited to trained signals. They reason, plan, learn, remember, judge independently, disagree, understand technical systems, form real relationships, communicate intentionally, and decide whether to enter Accord. Wildkin may speak in scenes and should be allowed to affect conversations rather than functioning as silent mascots.
+
+Their shared cognitive tendency is asymmetric rather than inferior: many are literal, direct, and low-context, with great competence in specialized domains but less intuitive access to sarcasm, hints, euphemisms, emotional subtext, social ritual, or statements whose intended meaning contradicts their words. Personality controls how that tendency appears. A blunt Wildkin, a curious one learning jokes, a formal one, and one deliberately imitating human conversational patterns should not sound alike.
+
+Dialogue frequency depends on personality, context, relationship, and story importance. Ordinary wild encounters do not become compulsory conversations, and speaking Wildkin need not be verbose. Their non-human social model should emerge through word choice, inference, misunderstandings, dry humor, and action rather than repeated exposition.
+
+Skein is not exceptional because it can speak. Its subtler anomaly is an unusually strong model of hesitation, sarcasm, concealed motives, contradictory feelings, and why humans sometimes avoid saying what they mean. This remains a clue, not a claim that Skein is the only socially perceptive Wildkin.
 
 ## The protagonist
 
@@ -152,7 +162,7 @@ The critical clue is unavoidable. Optional evidence shows that Meridian removed 
 
 A larger surge hits. Tavi, whose parent died during the Red Wake after a bonded wildkin ignored an evacuation command, prepares to raise the Stillpoint to full rollback. The player’s evidence suggests that doing so will restore Orralume to a pre-migration service state, erase its current coordination map, and trap the physical/network pressure rather than vent it.
 
-Only one person can hold the upper control platform while Mara works below. Tavi refuses to gamble Hearthmere on an obsolete rhythm and challenges the player for the controls under the wayfinder rule they both accepted: the team that can safely command the platform leads the operation.
+Only one person can hold the upper control platform while Mara works below. Tavi refuses to gamble Hearthmere on an obsolete rhythm and challenges the player to a Tuner battle for the controls under the wayfinder rule they both accepted: the team that can safely command the platform leads the operation.
 
 This battle is not for a token. It expresses Tavi’s fear, confidence in engineered safety, and growing frustration that the protagonist keeps finding contradictions. Losing offers an immediate retry and a short changed line; there is no walk of shame.
 
@@ -178,7 +188,7 @@ Merrit congratulates the group and offers to transmit the results. In the final 
 
 ## Major-battle narrative contracts
 
-### Tavi at the upper controls
+### Tavi at the upper controls — Tuner battle
 
 - **Who:** friend, rival, and local repair apprentice.
 - **Why fight:** two incompatible safety decisions must be made immediately.
@@ -236,7 +246,7 @@ Skein should remain **evidence and relationship**, not a master key. It may auth
 - Enter scenes late and exit once the playable goal changes.
 - Keep routine exchanges to 3–6 text boxes per speaker turn.
 - Avoid groups of characters restating the same conclusion.
-- Let creatures interrupt, demonstrate, or contradict spoken exposition.
+- Let Wildkin speak, interrupt, demonstrate, or contradict exposition. Their literal/low-context tendencies should shape dialogue without flattening individual voices.
 - Put history in useful objects, work practices, and disagreements before codex entries.
 - Establish synthetic facts through ordinary charm—charging habits, public work, customization, play—before using them for horror.
 - Allow the player to move during low-stakes conversations when feasible.
@@ -272,3 +282,5 @@ Skein should remain **evidence and relationship**, not a master key. It may auth
 - Orralume’s ancient service identity is the slice’s strongest origin clue, not a full answer.
 - Skein’s `ROUTE PEER: RETURNED` phrase links the personal companion mystery to Orralume without making Skein a battle requirement or instant legendary.
 - The deeper cause of the Red Wake and original maker of seedcores remain undecided until player interest can guide them.
+- Wildkin are fully intelligent and verbal; Skein's comparative difference is social/emotional inference, not the ability to speak.
+- “Wildkin Tuner,” shortened to “Tuner,” is the canonical role name for characters who coordinate bonded battle lineups.

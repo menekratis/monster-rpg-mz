@@ -1,6 +1,6 @@
 # HUSHWAKE — Quests
 
-> **Document status:** Revised first-draft quest structure using synthetic creature roles, public systems, and root-access clues. Rewards remain design intents until combat and economy prototypes establish exact values.
+> **Document status:** Revised quest foundation using intelligent synthetic Wildkin, Tuner conflicts, public systems, and root-access clues. Field Data rules are canonical; exact reward values remain provisional.
 
 ## Quest design standard
 
@@ -42,7 +42,7 @@ This is one quest with clear stages, not a stack of simultaneous mandatory erran
 - Ride the cable car and complete the first 1v1 battle using a highlighted Assault tell.
 - Observe the swarm leaving along the route it arrived from.
 
-**Teaches:** Movement, protagonist repair identity, voluntary Accord, basic 1v1 command flow, Resolve, intent icon.
+**Teaches:** Movement, protagonist repair identity, voluntary Accord, basic 1v1 command flow, Resolve, and Aspect/damage preview. The battle does not universally reveal the opponent's next action.
 
 **Story result:** The player reaches Hearthmere with a companion that chose them; a beloved relay swarm repeats Skein’s impossible handshake while replaying an obsolete route.
 
@@ -53,7 +53,7 @@ This is one quest with clear stages, not a stack of simultaneous mandatory erran
 - Use Survey on the unavoidable fork.
 - Enter or avoid one visible encounter group.
 - Form the first Accord with an ordinary wildkin.
-- Make one clearly prompted but tactically real switch: the enemy’s displayed action targets the incoming reserve.
+- Make one clearly prompted but tactically real switch during an authored visible wind-up: the already-committed action targets the incoming reserve. This cue teaches targeting without making prediction universal.
 - Follow doubled tracks toward Lower Track.
 
 **Teaches:** Visible 1v1 encounters, Survey, wild Open/Accord, action-cost switching, shared Focus, route fork.
@@ -91,12 +91,12 @@ This is one quest with clear stages, not a stack of simultaneous mandatory erran
 
 - Tavi commits to full Stillpoint rollback.
 - Player presents the consent-interval evidence.
-- Complete Tavi’s sequential 1v1 team battle for operational lead.
+- Complete Tavi’s sequential 1v1 Tuner battle for operational lead.
 - Recover fully at the control-platform waypost.
 
-**Teaches:** Reading a coordinated plan across reserves, voluntary versus free replacement, cross-switch Focus, immediate retry.
+**Teaches:** Reading a coordinated Tuner lineup across reserves, voluntary versus free replacement, future cross-switch resource potential, immediate retry, and post-victory Field Data synchronization.
 
-**Story result:** Tavi grants the player one attempt and becomes an active part of the combined solution.
+**Story result:** Tavi grants the player one attempt and becomes an active part of the combined solution. Every Wildkin in the player's selected battle lineup receives the same full base Field Data reward.
 
 ### Stage 6: Bring Orralume out of the Hush
 
@@ -265,7 +265,7 @@ Priority order:
 4. Refillable utility improvement.
 5. Currency only if a meaningful economy exists.
 
-No randomized reward tables. The player should understand why this quest produced this benefit.
+No randomized reward tables. The player should understand why this quest produced this benefit. Qualifying battle Data is synchronized in full to every selected lineup member; it is never split by participation.
 
 ## Future quest variety
 
@@ -312,3 +312,6 @@ If the cut test has no strong answer, cut it.
 - No kill-count or multi-item collection padding.
 - Every side quest changes a route, public system, battle option, or interpretation of synthetic life.
 - Optional quests remain completable after the climax with compact state variants.
+- Tavi's confrontation is a Tuner battle; ordinary autonomous opponents use Wild Encounters.
+- Qualifying victories grant the full base Field Data reward to every Wildkin in the selected battle lineup.
+- Wildkin may speak during quest scenes when personality and context warrant it, without turning every wild encounter into dialogue.

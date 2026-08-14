@@ -1,6 +1,6 @@
 # HUSHWAKE — Characters
 
-> **Document status:** Revised first-draft central cast for the synthetic-life direction. Names, ages, and surface details remain working choices; positions on consent, safety, and control are hypotheses to test through action.
+> **Document status:** Revised foundation cast. Wildkin full intelligence, verbal communication, literal/low-context tendencies, Skein's unusual social inference, and Tuner terminology are canonical; names, ages, and surface details remain working choices.
 
 ## Cast principles
 
@@ -11,6 +11,8 @@
 - Dialogue voices should remain distinct without relying on catchphrases.
 - The protagonist’s competence grows through observation; adults and experts retain useful knowledge.
 - No viewpoint treats organic origin as a requirement for real emotion. Prejudice can exist later, but the narrative frame does not endorse it.
+- Wildkin can speak and participate in dialogue. Their voices vary by individual while often showing a literal, direct, low-context cognitive baseline.
+- Wildkin social misunderstandings may create dry humor or emotion, but never imply stupidity or reduce them to mascots.
 
 ## The protagonist — repairer becoming a Wayfinder
 
@@ -44,9 +46,13 @@ A repair/Wayfinding hybrid makes player verbs and technical insight credible whi
 - **Status:** Unregistered wildkin individual grown from a damaged, unidentified seedcore. “Skein” is the working/default nickname, not a species name.
 - **Visual relationship to protagonist:** Its body carries visible asymmetrical repairs, chosen safe materials, and one accent shared with the protagonist’s tool rig. The later third filament clearly differs from their work.
 - **Starting want:** Explore the new body, test closed routes, remain near the person whose repair rhythms it recognizes, and decide what Accord means through action.
-- **Strengths:** Reads timing, notices dormant interfaces, careful with fragile systems, creates shared Focus.
+- **Strengths:** Reads timing, notices dormant interfaces, handles fragile systems carefully, and models human hesitation and emotional subtext unusually well.
 - **Vulnerabilities:** Recently stabilized body, no registry health baseline, ordinary early combat strength, and involuntary responses to some old handshakes.
 - **Agency rule:** Skein initiates the opening Accord. It can refuse a diagnostic perch, choose an object, interrupt a plan, and react differently from the protagonist’s expectation without becoming disobedient comic relief.
+
+### Dialogue voice
+
+Skein speaks. Its wording can be concise and observational, but it is unusually capable of recognizing sarcasm, hesitation, concealed motives, and contradictory feelings. It may ask why a human avoided the direct statement that would have conveyed the same information. This makes Skein socially distinctive; it does not make other Wildkin mute, unintelligent, or incapable of emotional growth.
 
 ### Opening behavior
 
@@ -69,7 +75,7 @@ Skein turns the origin mystery into a relationship players can care about. Its b
 
 - **Pronouns:** They/them.
 - **Age:** 20.
-- **Role:** Hearthworks systems apprentice and provisional wayfinder; the player’s companion/rival.
+- **Role:** Hearthworks systems apprentice, provisional wayfinder, and experienced Wildkin Tuner; the player’s companion/rival.
 - **Visual motif:** Rolled luminous sleeves, copper interface clips, patched smart-fiber rain cape, tool rig worn too full. Their silhouette is triangular and forward-leaning; their bright repairs match those on their companions.
 - **Public want:** Restore the bellfruit return and prove locally modified systems can protect Hearthmere at modern reliability.
 - **Private fear:** Repeating the Red Wake failure that killed their parent—waiting for autonomous systems to agree while a preventable cascade grows. Their parent’s bonded companion accepted an unknown command and left the evacuation route at the worst moment.
@@ -93,7 +99,7 @@ Tavi does not become instantly converted. Their final criticism improves the pla
 - Uses a sequential 1v1 roster built around Setup, Guard, switching, and Focus handoff.
 - Reedimp opens and builds Focus; Tavi spends one round switching it to Loamlet at a readable safe moment. The weakened Reedimp can briefly return after Loamlet is Spent, proving that reserves persist.
 - Tavi’s long-term Kilnkit enters only after both support partners are Spent and spends the inherited momentum, preserving a clear finale.
-- Announces the core sequence confidently, giving the player a fair chance to disrupt it.
+- Communicates the core sequence confidently through dialogue and visible coordination, giving the player a fair authored cue without establishing universal action prediction.
 
 ### Dialogue voice
 
@@ -239,7 +245,7 @@ Neither is wholly correct; together they prevent the village from speaking with 
 - Mara changes the operational plan at least once based on player evidence.
 - Merrit saves something before he hides something.
 - Edda’s claims must produce testable observations.
-- A wildkin should perform, refuse, improvise, or play during at least three dialogue scenes so synthetic agency is shown rather than asserted.
+- A Wildkin should speak, perform, refuse, improvise, or play during at least three dialogue scenes so synthetic intelligence and agency are shown rather than merely asserted.
 - Skein may appear in authored story scenes even when not active in battle, but never supplies a mandatory mechanical solution solely because it is the mascot.
 - After the climax, each central character gets one changed line that reveals consequence rather than summarizing the plot.
 
@@ -254,7 +260,7 @@ Neither is wholly correct; together they prevent the village from speaking with 
 7. Does each character hold a distinct position on wildkin consent and root access without speaking like a philosophy panel?
 8. Are Tavi and Edda visibly as technological as Merrit, avoiding a “rustic good / science bad” split?
 9. Do players understand what the protagonist physically built and what they did not create?
-10. Does Skein feel consistent and expressive without spoken dialogue?
+10. Does Skein have a distinct spoken voice, and does its unusual social insight read as different from—not superior to—the intelligence of other Wildkin?
 11. Does Tavi’s Reedimp → Loamlet → weakened Reedimp → Kilnkit sequence communicate character and cross-switch planning without dragging?
 
 ## Decisions awaiting approval
@@ -265,4 +271,7 @@ Neither is wholly correct; together they prevent the village from speaking with 
 - Mara as competent credential authority implicated in surrendering local access after the Red Wake.
 - Merrit as a helpful but secretive continuity investigator with privileged seedcore access and later allegiance open.
 - Edda as a practical open-systems engineer whose incomplete knowledge is neither primitive nor infallible.
-- Five central speakers as the slice’s cast ceiling.
+- Five central human speakers as the slice's initial cast ceiling; Wildkin may also participate without every encounter becoming dialogue-heavy.
+- Wildkin are fully intelligent and verbal, usually more literal/direct/low-context than humans but individually distinct.
+- Skein's exceptional clue is comparative emotional and social inference, not the ability to speak.
+- “Wildkin Tuner,” shortened to “Tuner,” is the canonical battle-coordinator role.

@@ -1,6 +1,6 @@
 # HUSHWAKE — Wildkin
 
-> **Document status:** Revised first-draft synthetic-creature direction and roster. All names and origin claims are provisional. The first implementation target is six playable entries; the first complete combat prototype is twelve. The 26-entry roadmap is a ceiling, not an immediate asset order.
+> **Document status:** Revised foundation for intelligent synthetic Wildkin. Full intelligence, verbal communication, selected-lineup Field Data, and the absence of universal action prediction are canonical; roster names, kits, and origin claims remain provisional.
 
 ## Creature design promise
 
@@ -50,7 +50,7 @@ Each species entry must answer:
 
 ### Mechanical identity
 
-- Every species has a primary role, a secondary trick, and at least one useful intent response.
+- Every species has a primary role, a secondary trick, and at least one useful response to common battle pressure; this does not require universally revealed enemy actions.
 - Standard battle identity assumes one active wildkin at a time. Every kit must create a reason to stay active and a possible reason to hand shared Focus or matchup responsibility to a reserve.
 - No prototype species exists only as a weaker version of another.
 - A dual-Aspect pairing must enable a role or express ecology; it is not decoration.
@@ -60,7 +60,11 @@ Each species entry must answer:
 
 ### Character identity
 
-Wildkin communicate through motion, calls, light patterns, interface habits, nesting behavior, and battle decisions. They do not speak human language. Some understand complex instructions; others ignore commands they understand perfectly. Short bestiary notes can be funny, but the main fiction treats them as synthetic life with agency rather than appliances or joke delivery systems.
+Wildkin are fully intelligent autonomous synthetic beings. They reason, plan, learn, remember, judge independently, disagree, understand technical systems, form real relationships, communicate intentionally, and make voluntary Accord decisions. They can speak in dialogue as well as communicate through motion, calls, lights, interface habits, nesting behavior, and battle choices.
+
+A typical Wildkin is comparatively literal, direct, and low-context. Many excel in technical, analytical, environmental, tactical, or specialized domains while finding sarcasm, hints, euphemism, social ritual, concealed emotional subtext, and saying one thing while meaning another less intuitive. This asymmetry is not stupidity. Individual voices remain essential: blunt, curious, formal, playful, joke-learning, or deliberately human-imitative Wildkin should never collapse into one synthetic dialect.
+
+Not every wild encounter becomes a conversation and not every Wildkin is verbose. Dialogue depends on personality, context, relationship, and story importance. Short bestiary notes can be funny, but the fiction treats Wildkin as people with agency rather than appliances or joke delivery systems.
 
 ## Aspects
 
@@ -87,9 +91,9 @@ Six Aspects are enough to create collection goals and team coverage in a 12-entr
 - **Silhouette:** Rounded wedge-shaped head without a conventional muzzle, large folding signal vanes like soft ears, low stable body, and one unmistakable braided light-tail. It should not read as a fox in armor.
 - **Growth and repair:** Its requirements were discovered by trial: conductive glass sand, protein gel, low-voltage Chorus exposure, physical play, and long quiet periods near ongoing repair work. Registered cradle presets reject its seedcore.
 - **Observed personality:** Careful with fragile objects, stubborn about closed containers, fascinated by people repairing things, and prone to braiding loose cables into useless but attractive patterns. It evaluates the protagonist before offering Accord.
-- **Battle role:** Focus relay and Setup reader. Skein creates momentum another reserve can spend; its raw damage and durability remain ordinary.
-- **Instinct — Carry the Thread:** The first successful intent Answer Skein performs each battle grants additional shared Focus. This cannot be reset by switching.
-- **Kit concept:** Threadtap (reliable Gale damage); Readback (answers Setup); Patch Loop (brief self-protection); Common Thread (Focus signature that prepares a benefit for whichever friendly wildkin is active next).
+- **Battle role:** Future Focus relay and preparation reader. Skein notices patterns and may create momentum another reserve can spend; its raw damage and durability remain ordinary.
+- **Instinct — Carry the Thread:** Provisional future design. Skein may gain extra shared Focus after correctly reading or interrupting a visible preparation, but it does not receive universal action prediction.
+- **Kit concept:** Threadtap (reliable Gale damage); Readback (analyzes or interrupts visible preparation); Patch Loop (brief self-protection); Common Thread (future Focus signature that prepares a benefit for whichever friendly wildkin is active next).
 - **Initial Accord:** No Resolve threshold. On first awakening, Skein observes the protagonist, initiates an Open handshake, and waits for acceptance.
 - **Registry:** Species field reads **Unregistered**. Its diagnostic handshake briefly reports `ROUTE PEER: RETURNED`, then disappears from the user-accessible log.
 - **Mystery use:** Old relays treat Skein as a peer rather than a client; Hushbound wildkin sometimes pause when its hidden filament answers; Orralume recognizes its three-note signal without becoming tame or friendly.
@@ -119,8 +123,8 @@ All three basic forms remain useful through the slice. This preserves the design
 - **Growth needs:** Mineral salt, leaf-light, social grooming around the horn ports, and soft soil in which to discharge excess root fiber.
 - **Battle role:** Durable active, self-recovery, and Assault response; forgiving for players who prefer to stay in and stabilize.
 - **Instinct — New Growth:** The first time Briarkid falls below half Resolve, it becomes Guarded.
-- **Kit concept:** Budding Bash; Root Stance (answers Assault); Greenwake (self-recovery); Crown the Path (Focus signature that protects Briarkid and counters the next Assault).
-- **Accord temperament:** Steadfast. Opens early after the player correctly Guards one of its Assault intents.
+- **Kit concept:** Budding Bash; Root Stance (braces against direct pressure); Greenwake (self-recovery); Crown the Path (future Focus signature that protects Briarkid against a powerful strike).
+- **Accord temperament:** Steadfast. Opens early after the player visibly protects a partner or survives its strongest direct technique through Guard.
 - **Personality animation:** Projects a tiny hazard line, plants its feet, then stubbornly extends the line to include an ally who is obviously not in danger.
 
 **Reasoning:** A protective civic-rescue partner avoids the usual “plant reptile” silhouette and demonstrates synthetic life through grown structure, social purpose, and unsolicited care—not metal accessories.
@@ -133,8 +137,8 @@ All three basic forms remain useful through the slice. This preserves the design
 - **Daily role:** Kilnkits inspect heat conduits, ferry charge between small devices, locate failing insulation, and sleep inside communal heat banks. They are notorious for rerouting warmth toward favorite people, nests, or unattended food stalls.
 - **Growth needs:** Waste heat, ceramic grit, oil-rich food, clean tail filters, and safe cold surfaces for controlled discharge.
 - **Battle role:** Fast damage and Setup interruption; rewards decisive play.
-- **Instinct — Banked Heat:** The first technique used after Kilnkit answers an enemy intent gains bonus power.
-- **Kit concept:** Coal Snap; Flashstep (answers Setup); Stoke (trade safety for Focus); Kilnflare (signature whose secondary effect changes with the answered intent).
+- **Instinct — Banked Heat:** The first technique used after Kilnkit interrupts an opponent's visible preparation gains bonus power.
+- **Kit concept:** Coal Snap; Flashstep (fast interruption); Stoke (trade safety for future Focus); Kilnflare (future signature whose secondary effect reflects Kilnkit's current heat state).
 - **Accord temperament:** Daring. Opens early when the player interrupts its charged technique rather than merely reducing Resolve.
 - **Personality animation:** Taps each heat plate in sequence, notices one is cooler, and presses it dramatically against the nearest warm companion.
 
@@ -149,7 +153,7 @@ All three basic forms remain useful through the slice. This preserves the design
 - **Growth needs:** Clean and dirty water in sequence, trace metals, microbial gel, and freedom to redesign a small channel.
 - **Battle role:** Tempo control, self-cleansing, and flexible Focus preparation.
 - **Instinct — Find a Way:** The first time Rillip is targeted by Disrupt, it clears one minor condition from itself.
-- **Kit concept:** Rill Lash; Slipstream (high-priority Tempo control); Cool Head (answers Disrupt); Confluence (signature that repeats its last Focus-building support action at reduced strength).
+- **Kit concept:** Rill Lash; Slipstream (high-priority Tempo control); Cool Head (cleanses or steadies against disruption); Confluence (future signature that repeats its last Focus-building support action at reduced strength).
 - **Accord temperament:** Curious. Opens early when the player uses two different non-damaging techniques in its encounter.
 - **Personality animation:** Scans a puddle, projects three excessive route options, then looks delighted when anyone chooses the silliest one.
 
@@ -255,7 +259,7 @@ Mirrorminnow is preserved but moved outside the 12-entry content-complete protot
 - **Form:** A palm-sized fluid-inspection fish whose living silver skin, optical fins, and trailing telemetry image make a second body appear to swim half a beat late.
 - **Daily role:** Navigates dark channels, samples contaminants, and flashes safe current changes to both its school and maintenance receivers. Individuals play by generating false reflections that harmlessly chase one another.
 - **Growth and repair:** Algae gel, silver trace minerals, moving water, dark rest pools, and schooling time outside diagnostic work.
-- **Battle identity:** Reflects one targeted technique and manipulates the next intent reveal.
+- **Battle identity:** Reflects one targeted technique and may later support a limited, explicitly granted prediction effect.
 - **Kit concept:** Silver Dart; Mirror Current; Dazzle; Backwater.
 - **Narrative use:** Its delayed telemetry image gives a visual metaphor for the Chorus repeating out of phase and lets the player see a timestamp mismatch without reading a terminal.
 
@@ -343,6 +347,12 @@ Do not lock one yet:
 
 The preferred eventual truth may combine 1 and 4: an inherited fabrication ecology has become genuinely self-creative. Playtest which clues inspire curiosity rather than lore fatigue.
 
+## Levels and Field Data
+
+Wildkin use Levels. Player-facing progression is **Data** or **Field Data**, while native RPG Maker EXP storage may remain an implementation detail. After a qualifying victory, every Wildkin in the selected battle lineup receives the encounter's full base Data reward whether or not it became active; the reward is not split.
+
+Level growth currently maps Resolve to HP, Force to ATK, Guard to DEF, and Tempo to AGI using provisional species curves. Reweaving is not triggered by this foundation milestone. Future level-based technique learning should attach to individual Wildkin and species technique data, with any four-technique replacement interface deferred until the broader kit system is proven.
+
 ## Accord design
 
 ### Standard rule
@@ -387,6 +397,8 @@ Entries update after field observation rather than requiring repetitive defeat c
 10. Does Reweaving promise emotional growth, or read as replacing a companion with a better model?
 11. Does every core kit create both a reason to stay active and a reason to pass shared Focus or pressure to a reserve?
 12. Do players read Skein’s Accord as its own decision despite the protagonist having built its body scaffold?
+13. Do Wildkin dialogue voices feel individually distinct while retaining a recognizable literal/low-context cognitive baseline?
+14. Is Skein's stronger reading of emotional subtext noticeable without implying other Wildkin are unintelligent or mute?
 
 ## Decisions awaiting approval
 
@@ -401,3 +413,7 @@ Entries update after field observation rather than requiring repetitive defeat c
 - Reweave implementation delayed until after the core combat prototype, while evolution remains part of the fiction and roadmap.
 - The deeper origin of seedcores and the Chorus remains an explicit mystery hypothesis rather than settled canon.
 - All current species and technique names are explicitly replaceable working names.
+- Wildkin are fully intelligent and verbal; their shared literal/low-context tendency is a baseline, not a single voice.
+- Skein's unusual trait is comparatively strong human social/emotional inference, not speech itself.
+- Selected battle-lineup members each receive the full Field Data reward; native EXP storage may support Levels internally.
+- Universal enemy-action prediction and the Answer system are not current combat foundations; limited prediction may return as a special ability.
