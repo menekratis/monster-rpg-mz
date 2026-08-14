@@ -104,16 +104,20 @@ The loop should alternate activities every 5–12 minutes in the slice. Extended
 - Standard combat contains **one active wildkin per side**. Carried reserves enter by switching or free replacement after the active companion becomes Spent.
 - The final carried party-size limit is deliberately undecided. Design data and UI should not hard-code a three- or six-member assumption.
 - Additional bonded wildkin stay voluntarily at the nearest refuge, a social habitat and service station, and can be invited into the carried reserve roster at frequent wayposts.
-- After a victorious qualifying battle, every Wildkin in the currently selected battle lineup receives the full base Field Data reward. Participation is not required and the reward is never split.
-- Wildkin outside the selected lineup do not receive this base reward. Any future refuge catch-up rule is an open design point.
+- Each opposing Wildkin generates its configured Data yield when it becomes Spent. After a qualifying victory, every Wildkin in the currently selected battle lineup receives the full accumulated Field Data pool. Participation is not required and the reward is never split.
+- Wildkin outside the selected lineup do not receive this synchronized reward. Any future refuge catch-up rule is an open design point.
 - A newly bonded species enters near the current readiness floor, not at an unusable level.
 - Every prototype species has a reason to remain active and a reason it might hand off matchup responsibility or future shared momentum.
 
 ### Field Data and Levels
 
-Player-facing progression uses **Data**, or **Field Data** in post-battle context, while implementation may retain RPG Maker MZ's native EXP storage and class curves. The field system records combat telemetry and synchronizes it across the selected lineup, explaining why active and reserve Wildkin receive the same full reward.
+Player-facing progression uses **Data**, or **Field Data** in post-battle context, while implementation may retain RPG Maker MZ's native EXP storage and class curves. Each opposing Wildkin contributes its configured Data yield to a battle-local pool when it becomes Spent. The pool persists across sequential replacements. Only after a qualifying victory does the complete accumulated pool synchronize to every Wildkin selected for that battle, explaining why active and reserve Wildkin receive the same full reward.
 
-The standard result language is **“Field Data synchronized.”** When a threshold is crossed, use **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”** Levels increase Resolve, Force, Guard, and Tempo through provisional species growth curves. Participation bonuses, reserve penalties, refuge-wide rewards, Reweaving triggers, and final technique-replacement rules are not defined yet.
+The standard result language is **“Field Data synchronized.”** When a threshold is crossed, use **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”** Data synchronization, Level processing, and resulting Resolve, Force, Guard, and Tempo growth occur after victory, never between opposing replacements. Participation bonuses, reserve penalties, refuge-wide rewards, Reweaving triggers, and final technique-replacement rules are not defined yet.
+
+### Wild Coins
+
+The canonical player-facing currency is **Wild Coins**. Use **Wild Coin** for exactly one and **Wild Coins** otherwise. Tuner Battles may award an encounter-configured Wild Coin amount on victory; Wild Encounters do not normally award Wild Coins. Retreat and defeat grant neither normal Field Data synchronization nor Wild Coins.
 
 ### Wayfinding
 
@@ -255,7 +259,7 @@ These are targets, not immutable laws. Playtest observation outranks the stopwat
 - Type/Aspect outcomes previewed before action confirmation.
 - Deterministic Accord with the Open condition shown.
 - Refillable field-kit healing at wayposts; limited charges create choices without shopping chores.
-- Full Field Data for every selected battle-lineup member and no Reweaving-by-grind requirements in the slice.
+- Full accumulated Field Data for every selected battle-lineup member after victory and no Reweaving-by-grind requirements in the slice.
 - Retry a lost major battle from immediately before it, with active/reserve-edit access.
 - Retreat succeeds against ordinary wild encounters unless the encounter is explicitly story-bound.
 - Quest log entries state the current lead in plain language.
@@ -323,7 +327,7 @@ The slice must prove the expensive uncertainties—1v1 switching combat, Skein a
 - **Setting identity:** the Merefold as a colorful technological society built into the Chorus, an inherited ecological communications lattice.
 - **Combat foundation:** one active wildkin per side, sequential reserves, meaningful action-cost switching, no universal enemy-action reveal, and room for future shared Focus.
 - **Encounter roles:** autonomous opponents use Wild Encounters; bonded opposing lineups use Tuner Battles with the Tuner represented independently.
-- **Progression foundation:** every selected lineup member receives the full base Field Data reward after a qualifying victory; internal native EXP storage is acceptable.
+- **Progression foundation:** each Spent opponent adds its configured yield to a battle Data pool; every selected lineup member receives the full accumulated pool after a qualifying victory, and internal native EXP storage is acceptable. Tuner victories may grant encounter-configured Wild Coins; Wild victories normally do not.
 - **Wildkin cognition:** fully intelligent and verbal, with a literal/low-context baseline and individual variation; Skein is unusually socially perceptive.
 - **Protagonist:** cradle-repair apprentice pursuing Wayfinder certification.
 - **First companion:** one canonical unregistered wildkin, Skein, reconstructed from a damaged seedcore and choosing Accord during activation.

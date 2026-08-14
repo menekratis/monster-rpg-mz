@@ -158,7 +158,10 @@
             enemyKeys.unshift(leadWildkin);
         }
         const rewards = Object.assign({}, source.rewards || {});
-        rewards.fieldData = Math.max(0, Number(rewards.fieldData || 0));
+        rewards.wildCoins = Math.max(
+            0,
+            Math.round(Number(rewards.wildCoins || 0))
+        );
         return {
             key: key,
             name: String(source.name || key),

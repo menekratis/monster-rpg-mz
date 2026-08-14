@@ -126,6 +126,16 @@
     Data.makeEnemy = function(definition, id) {
         const species = this.species(definition.speciesKey);
         const level = Number(definition.level || 1);
+        const dataYield = Math.max(
+            0,
+            Math.round(
+                Number(
+                    definition.dataYield !== undefined
+                        ? definition.dataYield
+                        : species.dataYield || 0
+                )
+            )
+        );
         const sequence = definition.techniqueSequence.map(key => {
             const technique = this.technique(key);
             if (!technique) {
@@ -175,6 +185,7 @@
             speciesKey: species.key,
             formId: species.formId,
             level: level,
+            dataYield: dataYield,
             aspects: species.aspects.slice(),
             techniqueSequence: sequence.slice()
         };

@@ -80,7 +80,7 @@ Other villagers receive short functional or flavor conversations. Do not create 
 - Six Aspects and outcome preview.
 - Deterministic Accord and one temperament shortcut per wild species.
 - Active/reserve roster management at wayposts.
-- Full base Field Data for every Wildkin in the selected battle lineup after a qualifying victory, whether active or reserve, with native-MZ-backed Levels.
+- Per-opponent Data yields pooled as opposing Wildkin become Spent, then the full accumulated Field Data synchronized to every selected lineup member after a qualifying victory, whether active or reserve, with native-MZ-backed Levels.
 - Survey, Tune, and Rig authored field interactions.
 - Simple quest log and bestiary updates.
 - Immediate major-battle retry with active/reserve-edit access.
@@ -288,9 +288,9 @@ Each uses existing maps and characters. None requires an exclusive system, a uni
 - Players who avoid all optional battles can still defeat Tavi through sound switching, matchup, and Resolve management.
 - Optional encounters primarily provide roster choice, field observations, and technique experimentation—not required levels.
 - Field Kit starts with three refillable recovery charges and refills at wayposts.
-- Ordinary defeat returns the player to the last waypost without lost currency or recruited wildkin.
+- Ordinary defeat returns the player to the last waypost without lost Wild Coins or recruited wildkin and grants no normal battle rewards.
 - Major defeat returns to the pre-battle decision with full field-kit charges.
-- Currency exists only if it buys meaningful, limited choices in the slice; otherwise omit shops from the prototype.
+- **Wild Coins** are the canonical currency. Tuner victories may award encounter-configured Wild Coins; Wild victories normally do not. Shops remain out of scope until the currency buys meaningful, limited choices.
 
 ## Playtest protocol
 
@@ -368,7 +368,7 @@ The slice is “polished” only when:
 - A staged roster of 6, then 12, then up to 26 playable entries.
 - Standard one-active-per-side combat with switching and sequential reserves; special multi-active formats deferred.
 - Wild/Tuner encounter distinction with stable Tuner identity independent from the active opposing Wildkin.
-- Full Field Data for every selected lineup member after qualifying victory, using Levels and native MZ progression internally.
+- Each Spent opponent contributes configured Data to a battle pool; every selected lineup member receives the full accumulated Field Data after qualifying victory, using Levels and native MZ progression internally. Tuner victories may additionally grant encounter-configured Wild Coins.
 - No universal Intent reveal or Answer system; Focus/signatures remain deferred.
 - Fully intelligent, verbal Wildkin with literal/low-context tendencies and individual voices; Skein is unusually socially perceptive.
 - One canonical reconstructed companion, Skein, replacing a traditional starter choice.

@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "species": [
     {
       "key": "briarkid",
@@ -159,6 +159,7 @@
       "key": "thrumble_lab",
       "speciesKey": "thrumble",
       "level": 5,
+      "dataYield": 18,
       "battlerName": "Crow",
       "battlerHue": 0,
       "techniqueSequence": ["pollen_tap", "vine_hum"],
@@ -169,6 +170,7 @@
       "key": "loamlet_lab",
       "speciesKey": "loamlet",
       "level": 5,
+      "dataYield": 22,
       "battlerName": "Crab",
       "battlerHue": 0,
       "techniqueSequence": ["pebble_nudge", "root_press"],

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "opponents": [
     {
       "key": "test_tuner",
@@ -31,7 +31,7 @@
       "enemyKeys": ["thrumble_lab", "loamlet_lab"],
       "leadWildkin": "thrumble_lab",
       "rewards": {
-        "fieldData": 60
+        "wildCoins": 0
       },
       "qualifiesForFieldData": true,
       "battleMetadata": {
@@ -44,7 +44,7 @@
       "type": "tuner",
       "opponentKey": "test_tuner",
       "rewards": {
-        "fieldData": 80
+        "wildCoins": 120
       },
       "qualifiesForFieldData": true,
       "battleMetadata": {
@@ -55,14 +55,16 @@
       "key": "field_data_test",
       "name": "Field Data Synchronization Test",
       "type": "wild",
-      "enemyKeys": ["thrumble_lab"],
+      "enemyKeys": ["thrumble_lab", "loamlet_lab"],
       "leadWildkin": "thrumble_lab",
       "rewards": {
-        "fieldData": 40
+        "wildCoins": 0
       },
       "qualifiesForFieldData": true,
       "battleMetadata": {
-        "prototypeMode": "fieldData"
+        "prototypeMode": "fieldData",
+        "developerOnly": true,
+        "showDataPoolDebug": true
       }
     },
     {
@@ -71,7 +73,7 @@
       "type": "tuner",
       "opponentKey": "test_tuner",
       "rewards": {
-        "fieldData": 100
+        "wildCoins": 120
       },
       "qualifiesForFieldData": true,
       "battleMetadata": {

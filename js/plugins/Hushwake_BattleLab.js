@@ -28,7 +28,7 @@
             encounterKey: "foundation_tuner"
         },
         fieldData: {
-            name: "Field Data Test",
+            name: "Field Data Test (Debug)",
             encounterKey: "field_data_test"
         },
         levelUp: {

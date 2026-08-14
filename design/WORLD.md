@@ -86,9 +86,13 @@ A **Wildkin Tuner**, normally shortened to **Tuner**, is a person who forms Acco
 
 ## Field Data synchronization
 
-Wayfinder and Tuner field systems record battle telemetry and translate it into **Field Data** that bonded Wildkin can inspect and integrate. After a qualifying victory, the complete base Data packet synchronizes to every Wildkin in the currently selected battle lineup, including reserves that never became active. The packet is not divided because each recipient receives the same information rather than a share of a physical resource.
+Wayfinder and Tuner field systems record battle telemetry and translate it into **Field Data** that bonded Wildkin can inspect and integrate. Each opposing Wildkin generates a configured Data packet when it becomes Spent; those packets accumulate through sequential replacements. After a qualifying victory, the complete accumulated pool synchronizes to every Wildkin in the currently selected battle lineup, including reserves that never became active. The packet is not divided because each recipient receives the same information rather than a share of a physical resource.
 
-This supports Levels without implying that combat experience belongs only to the creature that dealt damage. Wildkin outside the selected lineup receive no automatic base synchronization under the current rule. Refuge catch-up, participation bonuses, reserve penalties, and Reweaving thresholds remain open design points.
+This supports Levels without implying that combat experience belongs only to the creature that dealt damage. Synchronization and Level processing happen after victory, not between opponents. Wildkin outside the selected lineup receive no automatic synchronization under the current rule. Refuge catch-up, participation bonuses, reserve penalties, and Reweaving thresholds remain open design points.
+
+## Wild Coins
+
+The canonical currency name is **Wild Coins**, with **Wild Coin** used for exactly one. A victorious Tuner encounter may transfer an encounter-defined Wild Coin reward through the Wayfinder's ordinary account system. Wild Encounters do not normally produce Wild Coins. Defeat and Retreat produce neither normal Field Data synchronization nor Wild Coins.
 
 ## The Chorus
 
@@ -315,7 +319,7 @@ This is the slice’s spectacle space. It earns a unique backdrop, altered light
 3. A shortcut or restored public service that respects return travel.
 4. A useful technique, diagnostic, or refill.
 5. Character perspective, bestiary observation, or social detail about synthetic life.
-6. Currency, only when the economy has meaningful purchases.
+6. Wild Coins, only when the economy has meaningful purchases.
 
 An optional branch should preferably combine two levels. Pure filler chests are not part of the world identity.
 
@@ -366,6 +370,6 @@ Only locations that produce a distinct local conflict and gameplay rhythm should
 - Hearthworks, the Open Chorus, and independent wildkin communities as provisional future pressures rather than immediate exposition.
 - A tightly connected Hearthmere route instead of an open-world slice.
 - “Wildkin Tuner,” shortened to “Tuner,” as the canonical role name for bonded lineup coordinators.
-- Field Data as synchronized telemetry granted in full to every member of the selected battle lineup.
+- Field Data as per-opponent telemetry pooled when opposing Wildkin become Spent, then synchronized in full to every selected lineup member after victory; Tuner victories may additionally grant encounter-configured Wild Coins.
 - Wildkin as fully intelligent and verbal, with a typically literal/low-context but individually varied social model.
 - Skein's comparative anomaly as stronger emotional/social inference, not unique speech.

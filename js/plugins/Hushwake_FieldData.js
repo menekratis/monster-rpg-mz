@@ -20,10 +20,21 @@
  * @type string
  * @default Data threshold reached.
  *
+ * @param coinSingular
+ * @text Singular Currency Name
+ * @type string
+ * @default Wild Coin
+ *
+ * @param coinPlural
+ * @text Plural Currency Name
+ * @type string
+ * @default Wild Coins
+ *
  * @help
- * Awards each Wildkin in the selected battle lineup the encounter's full base
- * Field Data reward. Internally this reuses Game_Actor EXP storage, class EXP
- * curves, changeExp, level-up handling, and level-based stat refresh.
+ * Pools Data yields from opposing Wildkin as they become Spent, then awards
+ * the full accumulated amount to each selected lineup member only on victory.
+ * Wild Coins reuse MZ's native party wallet. Data Levels reuse Game_Actor EXP,
+ * class curves, changeExp, level-up handling, and level-based stat refresh.
  */
 
 (() => {
@@ -42,7 +53,9 @@
         ),
         thresholdText: String(
             parameters.thresholdText || "Data threshold reached."
-        )
+        ),
+        coinSingular: String(parameters.coinSingular || "Wild Coin"),
+        coinPlural: String(parameters.coinPlural || "Wild Coins")
     };
 
     FieldData.statSnapshot = function(wildkin) {
@@ -54,6 +67,107 @@
         };
     };
 
+    FieldData.setupBattlePool = function() {
+        const context = Battle.context();
+        if (!context) {
+            return;
+        }
+        context.fieldDataPool = 0;
+        context.fieldDataEntries = [];
+        context.fieldDataCollectedEnemyIndexes = [];
+        this._lastAward = null;
+        this._lastWildCoinReward = 0;
+    };
+
+    FieldData.enemyYield = function(enemy) {
+        const data = enemy && enemy.enemy ? enemy.enemy() : null;
+        const hushwake = data ? data.hushwake : null;
+        return Math.max(
+            0,
+            Math.round(Number(hushwake ? hushwake.dataYield || 0 : 0))
+        );
+    };
+
+    FieldData.currentPool = function() {
+        const context = Battle.context();
+        return {
+            amount: context ? Number(context.fieldDataPool || 0) : 0,
+            entries:
+                context && Array.isArray(context.fieldDataEntries)
+                    ? context.fieldDataEntries.map(entry =>
+                          Object.assign({}, entry)
+                      )
+                    : []
+        };
+    };
+
+    FieldData.queuePoolDebug = function(entry) {
+        const encounter = Encounters.current();
+        const metadata = encounter ? encounter.battleMetadata : null;
+        const logWindow = BattleManager._logWindow;
+        if (!metadata || !metadata.showDataPoolDebug || !logWindow) {
+            return;
+        }
+        logWindow.push(
+            "addText",
+            "Battle Lab: " +
+                entry.enemyName +
+                " yielded " +
+                entry.amount +
+                " Data. Pool: " +
+                entry.total +
+                " Data."
+        );
+        logWindow.push("wait");
+        logWindow.push("clear");
+    };
+
+    FieldData.collectSpentEnemies = function(announce) {
+        const encounter = Encounters.current();
+        const context = Battle.context();
+        if (
+            !Battle.isActive() ||
+            !encounter ||
+            !encounter.qualifiesForFieldData ||
+            !context
+        ) {
+            return [];
+        }
+        context.fieldDataPool = Number(context.fieldDataPool || 0);
+        context.fieldDataEntries = Array.isArray(context.fieldDataEntries)
+            ? context.fieldDataEntries
+            : [];
+        context.fieldDataCollectedEnemyIndexes = Array.isArray(
+            context.fieldDataCollectedEnemyIndexes
+        )
+            ? context.fieldDataCollectedEnemyIndexes
+            : [];
+
+        const added = [];
+        $gameTroop.members().forEach((enemy, enemyIndex) => {
+            if (
+                !enemy.isDeathStateAffected() ||
+                context.fieldDataCollectedEnemyIndexes.includes(enemyIndex)
+            ) {
+                return;
+            }
+            const amount = this.enemyYield(enemy);
+            context.fieldDataCollectedEnemyIndexes.push(enemyIndex);
+            context.fieldDataPool += amount;
+            const entry = {
+                enemyIndex: enemyIndex,
+                enemyName: enemy.name(),
+                amount: amount,
+                total: context.fieldDataPool
+            };
+            context.fieldDataEntries.push(entry);
+            added.push(entry);
+            if (announce !== false) {
+                this.queuePoolDebug(entry);
+            }
+        });
+        return added;
+    };
     Game_Wildkin.prototype.currentData = function() {
         return this.currentExp();
     };
@@ -111,9 +225,10 @@
                 recipients: []
             };
         }
+        this.collectSpentEnemies(false);
         const amount = Math.max(
             0,
-            Math.round(Number(encounter.rewards.fieldData || 0))
+            Math.round(Number(context.fieldDataPool || 0))
         );
         const instanceIds = Array.isArray(context.playerLineupIds)
             ? context.playerLineupIds
@@ -205,6 +320,17 @@
         }
     };
 
+    FieldData.queueWildCoinResult = function(amount) {
+        const coins = Math.max(0, Math.round(Number(amount || 0)));
+        if (coins <= 0) {
+            return;
+        }
+        const label =
+            coins === 1
+                ? this.settings.coinSingular
+                : this.settings.coinPlural;
+        this.queuePage([coins + " " + label + " received."], 66);
+    };
     FieldData.award = function(reward) {
         const results = [];
         for (const recipient of reward ? reward.recipients : []) {
@@ -233,6 +359,24 @@
         return this._lastAward || null;
     };
 
+    FieldData.lastWildCoinReward = function() {
+        return Number(this._lastWildCoinReward || 0);
+    };
+
+    const _Battle_begin = Battle.begin;
+    Battle.begin = function() {
+        _Battle_begin.call(this);
+        FieldData.setupBattlePool();
+    };
+
+    const _BattleManager_endAction = BattleManager.endAction;
+    BattleManager.endAction = function() {
+        _BattleManager_endAction.call(this);
+        if (Battle.isActive()) {
+            FieldData.collectSpentEnemies(true);
+        }
+    };
+
     Window_BattleLog.prototype.hushwakeShowFieldDataPage = function(lines) {
         this._lines = lines.slice();
         this._baseLineStack = [];
@@ -243,8 +387,18 @@
     BattleManager.makeRewards = function() {
         _BattleManager_makeRewards.call(this);
         if (Battle.isActive()) {
+            const encounter = Encounters.current();
             this._rewards.exp = 0;
+            this._rewards.gold = encounter
+                ? Math.max(
+                      0,
+                      Math.round(
+                          Number(encounter.rewards.wildCoins || 0)
+                      )
+                  )
+                : 0;
             this._rewards.fieldData = FieldData.makeReward();
+            FieldData._lastWildCoinReward = this._rewards.gold;
         }
     };
 
@@ -255,6 +409,7 @@
             return;
         }
         FieldData.queueResultFlow(this._rewards.fieldData);
+        FieldData.queueWildCoinResult(this._rewards.gold);
     };
 
     const _BattleManager_gainExp = BattleManager.gainExp;

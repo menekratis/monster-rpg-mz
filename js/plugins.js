@@ -8,6 +8,6 @@ var $plugins =
 {"name":"Hushwake_Encounters","status":true,"description":"HUSHWAKE foundation - wild and Tuner encounter definitions.","parameters":{}},
 {"name":"Hushwake_BattleHud","status":true,"description":"HUSHWAKE Milestone 1A.5 - compact battler overlays and unified battle HUD.","parameters":{"overheadWidth":"232","overheadHeight":"58","overheadGap":"22","edgeMargin":"8","playerBattlerX":"270","playerBattlerY":"370","enemyBattlerX":"570","enemyBattlerY":"280","commandWidth":"192","techniqueListWidth":"320","switchListWidth":"496","showResolveNumbers":"false","resolveLabel":"Resolve"}},
 {"name":"Hushwake_EncounterHud","status":true,"description":"HUSHWAKE foundation - graybox wild and Tuner battle presentation.","parameters":{"showTunerPortrait":"true"}},
-{"name":"Hushwake_FieldData","status":true,"description":"HUSHWAKE foundation - party-wide Field Data and Wildkin Levels.","parameters":{"dataLabel":"Data","synchronizedText":"Field Data synchronized.","thresholdText":"Data threshold reached."}},
+{"name":"Hushwake_FieldData","status":true,"description":"HUSHWAKE foundation - party-wide Field Data and Wildkin Levels.","parameters":{"dataLabel":"Data","synchronizedText":"Field Data synchronized.","thresholdText":"Data threshold reached.","coinSingular":"Wild Coin","coinPlural":"Wild Coins"}},
 {"name":"Hushwake_BattleLab","status":true,"description":"HUSHWAKE foundation - direct graybox Battle Lab launcher.","parameters":{}}
 ];
