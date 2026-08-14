@@ -42,11 +42,11 @@ Every main area combines traversal, wildkin habitats, civic systems, local lives
 
 **Test:** If an area could be replaced by a generic route without changing its story, it needs another design pass.
 
-### 3. Readable, brisk team tactics
+### 3. Readable, brisk switching tactics
 
-Battles use a three-wildkin active team and visible enemy intent categories. Players answer threats, create openings, and spend earned Focus on signature techniques. Normal battles target 3–5 turns; important battles target 8–12 turns with changing behavior.
+Standard battles place one active wildkin against one active opponent, with reserves entering sequentially. Players read intent, decide whether to Answer or spend the round switching, and build shared Focus that persists across companions. A support-oriented wildkin can create an opening a later striker spends. Normal wild duels target 3–6 rounds; important team battles and guardians use longer authored sequences.
 
-**Test:** A loss should teach a readable lesson about composition or timing, not demand levels or hidden knowledge.
+**Test:** A loss should teach a readable lesson about staying, switching, composition, or timing—not demand levels, hidden knowledge, or an automatic type counter.
 
 ### 4. Accord, not acquisition roulette
 
@@ -72,9 +72,9 @@ Visible encounters, whole-roster catch-up experience, fast rematches, refillable
 |---|---|---|
 | Distinct collectible creatures | **Keep** | Recognition, affection, and team experimentation are central pleasures. |
 | Purely organic fantasy animals | **Replace** | Wildkin are integrated organic-synthetic life whose bodies, social roles, and mysteries express the technological setting. |
-| A small starter choice | **Keep, contextualize** | The early choice creates ownership, but each starter is a field partner chosen during a crisis rather than a ceremonial gift from a professor. |
+| A professor-style starter choice | **Remove** | The protagonist begins with one companion whose body they personally reconstructed; the companion chooses Accord after awakening. Early roster choice comes from first Accords, not a gift menu. |
 | Elemental affinities | **Keep, simplify** | A compact six-Aspect chart gives immediate texture without demanding encyclopedic knowledge. |
-| Four techniques per creature | **Keep provisionally** | Four is readable on controller and supports identity; the active trio creates breadth. |
+| Four techniques per creature | **Keep provisionally** | Four is readable on controller; switching and reserve composition provide breadth. |
 | Evolution | **Keep and reinterpret** | A wildkin can **Reweave** its body around retained memory and learned routines. Evolution marks adaptation and relationship, not a routine software upgrade or grind threshold. |
 | Random encounters | **Remove** | Visible groups improve pacing, habitat storytelling, and player agency. |
 | Consumable capture balls and hidden odds | **Remove** | Deterministic Accord avoids save-scumming and respects time. |
@@ -89,7 +89,7 @@ Visible encounters, whole-roster catch-up experience, fast rematches, refillable
 
 1. See a local service, habitat, or creature routine fail in a specific way.
 2. Choose a route and inspect visible wildkin groups, infrastructure, and signal traces.
-3. Battle, form Accords, and adjust the active trio at a waypost.
+3. Battle, form Accords, and choose an active wildkin plus available reserves at a waypost.
 4. Use observation and simple field interactions to open shortcuts and find evidence.
 5. Return information to characters who interpret it differently.
 6. Resolve a local decision or crisis in a major encounter.
@@ -101,11 +101,12 @@ The loop should alternate activities every 5–12 minutes in the slice. Extended
 
 ### Team
 
-- The active field team contains **three wildkin**; all three participate in battle.
-- Additional bonded wildkin stay voluntarily at the nearest refuge, a social habitat and service station, and can be exchanged at frequent wayposts.
-- All bonded wildkin receive catch-up experience; the active trio receives the full share.
+- Standard combat contains **one active wildkin per side**. Carried reserves enter by switching or free replacement after the active companion becomes Spent.
+- The final carried party-size limit is deliberately undecided. Design data and UI should not hard-code a three- or six-member assumption.
+- Additional bonded wildkin stay voluntarily at the nearest refuge, a social habitat and service station, and can be invited into the carried reserve roster at frequent wayposts.
+- Participating wildkin receive full experience; carried reserves and the refuge roster receive generous catch-up experience.
 - A newly bonded species enters near the current readiness floor, not at an unusable level.
-- Every prototype species has at least one reliable role and one useful response to enemy intent.
+- Every prototype species has a reason to remain active, a reason it might hand off momentum, and at least one useful response to enemy intent.
 
 ### Wayfinding
 
@@ -115,7 +116,7 @@ Waymarks are narrative records, not eight identical trophies. The full game does
 
 ### Exploration tools
 
-The player’s current battle team never gates mandatory traversal. The slice uses only three reusable verbs:
+The player’s current active wildkin or reserve selection never gates mandatory traversal. The slice uses only three reusable verbs:
 
 - **Tune:** restore or alter a local Chorus protocol through sound, light, and timing.
 - **Survey:** reveal tracks, growth signatures, damage, or network traces at authored points.
@@ -125,7 +126,72 @@ Optional wildkin traits can change the flavor or reward of an interaction, but n
 
 ### Why this structure
 
-Three active creatures make team synergy visible and fit RPG Maker MZ’s party-battle strengths. Separating traversal from the current team preserves freedom to use favorites. Waymarks give progress a tangible form without committing the project to a gym-shaped campaign.
+1v1 action makes each companion legible while switching and shared Focus carry team synergy across rounds. Separating traversal from the carried roster preserves freedom to use favorites. Waymarks give progress a tangible form without committing the project to a gym-shaped campaign.
+
+## Protagonist and first companion
+
+### Profession: cradle-repair apprentice becoming a Wayfinder
+
+The protagonist is an ordinary young adult trained in synthetic-life repair, small cradle operation, body-material fabrication, and field diagnostics. They are pursuing Wayfinder certification because remote route work combines those skills with ecological observation and grants legitimate access to damaged Chorus infrastructure.
+
+This hybrid identity solves several design needs:
+
+- **Agency:** the protagonist can inspect a wildkin body or public system without waiting for an expert to explain it.
+- **Humility:** they understand repair practice, not ancient root architecture; major discoveries still require other characters.
+- **World integration:** Rig, Survey, cradle care, Accord diagnostics, and creature design all belong to the same profession.
+- **Ordinary importance:** the protagonist matters because they noticed life in a discarded seedcore and spent substantial time helping it recover—not because of ancestry or fate.
+
+### First companion: Skein (working individual name)
+
+Before the game, a flood-clearance crew delivered an apparently inert, incomplete seedcore to the protagonist’s cooperative workshop as salvage. Registry tools returned no species, cradle lineage, or safe body plan. The protagonist noticed that its “noise” changed in response to nearby repairs and argued against recycling it.
+
+Over more than a year, the protagonist:
+
+- stabilized its living lattice in a low-power cradle;
+- grew test tissue and learned which materials it accepted or rejected;
+- fabricated a light ceramic/fiber body scaffold from those responses;
+- repaired failures and let the seedcore revise the design rather than forcing a standard template;
+- prepared a body capable of independent movement without knowing what personality, memory, or purpose might awaken.
+
+The protagonist helped make **a viable body**, not a mind, loyal program, or owned product.
+
+### Awakening and Accord
+
+The opening begins at a Cable Approach service bay as the protagonist completes Skein’s first unsupervised activation. Skein wakes, examines the body and the protagonist, ignores the offered diagnostic perch, retrieves a dropped tool of its own accord, and initiates an Open handshake. The player accepts Accord; no authority hands them a creature.
+
+During the handshake, the Wayglass briefly displays an obsolete three-note protocol and the impossible status **ROUTE PEER: RETURNED** before normalizing to “unregistered local form.” One relay filament then grows from Skein’s body despite not appearing in the protagonist’s scaffold plan. Neither event is explained.
+
+The cable-line Thrumble crisis follows immediately, so the player moves within 90 seconds and reaches the first battle around five minutes without a long workshop prologue.
+
+### Why Skein is unusual but not powerful
+
+- Its seedcore uses a braided architecture rather than the concentric lattice of registered wildkin.
+- No accepted registry match exists; most early characters assume a rare local mutation or unsafe reconstruction.
+- Its body is small and recently stabilized. Early stats sit beside common wildkin, not above them.
+- Its provisional Gale role reads enemy timing and builds Focus efficiently, making it a useful cross-switch relay rather than a universal attacker.
+- Old relays occasionally accept Skein as a peer, and ancient wildkin may recognize a signal the protagonist cannot perceive.
+- New structures can emerge during later Reweaving without having been part of the protagonist’s body scaffold.
+
+Skein may be renamed by the player. “Skein” remains the design-document label and can be the default nickname; its species continues to display as **Unregistered**.
+
+### Starter-structure recommendation
+
+**Recommend Option A: one canonical Skein body, not three configurable opening forms.**
+
+| Criterion | Canonical companion | Three early configurations |
+|---|---|---|
+| Story | One silhouette and behavior can recur in clues, reactions, and major scenes | Every clue and scene must work across three bodies |
+| Attachment | The player and protagonist share one specific reconstruction history | Body selection risks feeling like the player authored the companion’s identity |
+| Replay value | Lower at minute one; recovered through early Accord order and roster switching | Stronger immediate replay difference |
+| Mechanical choice | Begins focused, then opens quickly when Briarkid/Rillip become available | Provides an immediate Ember/Verdant/Current choice |
+| Visual identity | Strong mascot and recognizable damaged/repaired silhouette | Identity is divided across three asset variants |
+| Production scope | One map sprite, battler, animation set, and scene staging | Roughly triples companion visual, animation, and testing work |
+
+The canonical recommendation best serves story, emotional continuity, and small-project scope. If the opening needs more expression, test a **reversible starting calibration** that changes one early technique—not Skein’s body, Aspect, personality, or story identity. Later story-earned Reweaves can offer meaningful development after the player knows who Skein is.
+
+### Party freedom rule
+
+Skein is story-present but not battle-mandatory after the player forms additional Accords. If resting in reserve or at a refuge, it may appear in authored story scenes as a nearby companion without occupying the active slot. No major battle should require Skein unless the game clearly provides a story-specific field action separate from normal team composition.
 
 ## Synthetic life and society
 
@@ -153,7 +219,8 @@ It makes technology visible in ordinary life before it becomes frightening. The 
 
 - First controllable movement: **under 90 seconds**.
 - First battle: **within 5 minutes**.
-- First Accord and meaningful team choice: **within 20 minutes**.
+- Skein’s voluntary first Accord: **within 4 minutes**.
+- First wild Accord and meaningful reserve/switch choice: **within 20 minutes**.
 - No mandatory scene longer than roughly **2 minutes** in the first hour.
 - No more than two mandatory scenes between playable segments.
 - A main-path area should offer a new species, clue, interaction, shortcut, or character turn at least every 5–10 minutes.
@@ -166,7 +233,7 @@ These are targets, not immutable laws. Playtest observation outranks the stopwat
 ## Quality-of-life baseline
 
 - Visible encounter groups with clear silhouettes.
-- Encounter preview showing enemy count and known Aspects.
+- Encounter preview showing active opponent, known Aspects, and whether sequential reserves are expected.
 - Near-instant normal battle entry and exit.
 - A battle-speed option and skippable previously seen introductions.
 - Exact technique power, cost, duration, and intent interaction in tooltips.
@@ -174,7 +241,7 @@ These are targets, not immutable laws. Playtest observation outranks the stopwat
 - Deterministic Accord with the Open condition shown.
 - Refillable field-kit healing at wayposts; limited charges create choices without shopping chores.
 - Whole-roster catch-up experience and no evolution-by-grind requirements in the slice.
-- Retry a lost major battle from immediately before it, with team-edit access.
+- Retry a lost major battle from immediately before it, with active/reserve-edit access.
 - Retreat succeeds against ordinary wild encounters unless the encounter is explicitly story-bound.
 - Quest log entries state the current lead in plain language.
 - No missable species or permanent penalty in the vertical slice.
@@ -202,7 +269,7 @@ Target audience: players who enjoy creature teams and exploration but have limit
 
 - 2–3 hours for a first-time, moderately exploratory player.
 - One village, one connected field route, one orchard/wetland sub-area, one compact dungeon-like utility site, and one climax map.
-- 12 playable prototype species, then expansion toward **up to 25–30 forms/species only after the core is fun**.
+- 12 playable prototype entries including Skein, then expansion toward **up to 25–30 forms/species only after the core is fun**.
 - Two authored major battles—Tavi’s team and the multi-phase Orralume rescue; ordinary wild encounters fill the spaces between.
 - Three short optional quests.
 - One local story with a satisfying resolution and a larger mystery stinger.
@@ -216,14 +283,14 @@ Target audience: players who enjoy creature teams and exploration but have limit
 
 ### Why this scope
 
-The slice must prove the expensive uncertainties—team combat, Accord, exploration rhythm, and story integration. Content quantity cannot rescue those systems if they are not enjoyable.
+The slice must prove the expensive uncertainties—1v1 switching combat, Skein attachment, Accord, exploration rhythm, and story integration. Content quantity cannot rescue those systems if they are not enjoyable.
 
 ## Playtest questions
 
-1. Does controlling three active wildkin feel strategic or mentally noisy?
-2. Do intent icons create satisfying anticipation, or make normal encounters too predictable?
+1. Does 1v1 combat create a satisfying “Answer, stay, or switch” decision?
+2. Do intent icons create anticipation without making the correct switch automatic?
 3. Does deterministic Accord still feel earned?
-4. Are players changing their trio because they see interesting options, or only because of Aspect advantage?
+4. Are players switching because of role, Resolve, Focus, and intent—or only because of Aspect advantage?
 5. Does the Hush mystery remain clear while retaining unanswered questions?
 6. Is the path through the opening area obvious without flattening exploration?
 7. Do side routes reward curiosity without making critical information feel hidden?
@@ -231,13 +298,18 @@ The slice must prove the expensive uncertainties—team combat, Accord, explorat
 9. Do wildkin read as living synthetic beings rather than fantasy animals with metal accessories?
 10. Does the technological surface feel inviting and useful before the origin mystery becomes unsettling?
 11. Do players understand that Accord is consensual while suspecting a deeper control layer?
+12. Does Skein feel like an autonomous companion the protagonist helped, rather than a custom-built possession?
+13. Does one canonical companion create enough player ownership through naming, history, and early roster choice?
 
 ## Decisions awaiting approval
 
 - **Working title:** HUSHWAKE.
 - **Creature term:** wildkin; they are living organic-synthetic beings grown around seedcores, and consensual bonding is called Accord.
 - **Setting identity:** the Merefold as a colorful technological society built into the Chorus, an inherited ecological communications lattice.
-- **Combat foundation:** three active wildkin plus visible enemy intents.
+- **Combat foundation:** one active wildkin per side, sequential reserves, meaningful action-cost switching, visible intents, and Focus shared across switches.
+- **Protagonist:** cradle-repair apprentice pursuing Wayfinder certification.
+- **First companion:** one canonical unregistered wildkin, Skein, reconstructed from a damaged seedcore and choosing Accord during activation.
+- **Starter recommendation:** canonical Skein rather than three configurable bodies; optional reversible technique calibration can be tested later.
 - **Progress structure:** varied local Waymark arcs instead of gyms.
 - **Primary tension:** the Hush as destructive behavioral rollback and the Meridian Office’s well-intended but coercive continuity system.
 

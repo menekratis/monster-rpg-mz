@@ -1,41 +1,59 @@
 # HUSHWAKE — Combat
 
-> **Document status:** Revised first-draft combat specification. Accord now explicitly represents voluntary coordination, while root control remains story-only. Exact values are starting hypotheses; prove the loop with six wildkin first.
+> **Document status:** Revised first-draft 1v1-with-reserves specification. Switching, cross-switch Focus, and voluntary Accord are defined at prototype depth; exact values and the carried party limit remain playtest questions. Prove the loop with six wildkin first.
 
 ## Combat promise
 
-Combat is a brisk three-wildkin coordination puzzle about reading intent, combining organic-synthetic capabilities, covering vulnerabilities, and creating a shared opening. It should retain the satisfaction of creature matchups while removing hidden capture odds, long move-message chains, and routine grinding.
+Combat is a brisk **1v1 active duel with reserves** about reading intent, deciding whether to answer or switch, and building an advantage that another companion can inherit. It should retain the satisfaction of creature matchups while avoiding hidden capture odds, long move-message chains, routine grinding, and imitation of a basic type-checking battle system.
 
 The player should usually know **why** damage happened and what they could try next.
 
 ## Battle format
 
-- The player fields **three active wildkin simultaneously**.
-- Ordinary enemy groups contain one to three wildkin.
-- Each active wildkin chooses one technique per turn unless Spent or explicitly disabled.
+- Standard combat has **one active player wildkin and one active opposing wildkin**.
+- Either side may have reserve wildkin. Opposing wayfinders normally send their next reserve after the active one becomes Spent.
+- One active wildkin chooses one technique per round unless Spent or explicitly unable to act.
 - Each wildkin equips up to **four techniques**: usually three core techniques and one Focus signature.
-- The team shares one **Focus meter** from 0–100.
+- The player’s battle team shares one **Focus meter** from 0–100. Focus persists across switches, allowing one companion to build an opening and another to spend it.
 - Techniques have no consumable PP, ammunition, or battery chores. Wildkin metabolize, store, and recover battle energy as living systems. Signatures spend Focus; other strong effects rely on conditions or modest cooldowns only if testing proves repetition is a problem.
-- Battle commands are **Techniques, Accord, Field, Retreat**. Items are handled through a small Field Kit, not a large battle inventory.
+- Battle commands are **Techniques, Switch, Accord, Field, Retreat**. Items are handled through a small Field Kit, not a large battle inventory.
+- The final number of wildkin allowed in the player’s carried battle party is **not yet decided**. UI and balance specifications should say “active” and “reserves,” not assume a three- or six-member limit.
+- 2v2 battles, simultaneous multi-wildkin encounters, and other formats may appear later as authored exceptions. They are not the standard architecture and are outside the first graybox.
 
-### Why three active creatures
+### Why 1v1 with reserves
 
-- Team synergy happens on-screen rather than through frequent switch turns.
-- Support and defensive wildkin remain visibly useful.
-- RPG Maker MZ already supports party-based turns, reducing the number of systems that must be replaced.
-- A three-slot team is small enough that changing one member meaningfully changes the plan.
+- One command per round keeps intents fast to read and gives each companion more screen presence.
+- Switching turns roster construction into play rather than a decision made entirely before battle.
+- Shared Focus preserves cooperation across time: a support-oriented wildkin can prepare a signature for a later specialist.
+- Sequential opposing teams let an authored battle reveal character strategy without crowding the screen or multiplying simultaneous effects.
+- The format is easier to communicate and animate at RPG Maker scope while leaving rare multi-wildkin encounters special.
 
-The risk is command overload. If testing confirms that risk, reduce kit complexity and animation time before abandoning the format.
+The main risk is that Aspect advantage makes switching automatic. Intent Answers, Focus, revealed enemy plans, and the action cost of switching must make “stay or switch?” a genuine decision rather than a rote matchup correction.
+
+## Switching baseline
+
+Switching is an important tactical action, but detailed edge cases remain a playtest topic.
+
+- A voluntary switch uses the player’s action for that round.
+- A normal switch resolves before ordinary techniques.
+- The opponent’s already-planned action proceeds against the incoming wildkin when its target remains valid.
+- If the active wildkin becomes Spent, choosing an available replacement is free before the next round.
+- Reserve wildkin retain their current Resolve.
+- Shared Focus is not lost when switching.
+- Opposing teams automatically send the next planned reserve after one becomes Spent; important trainers may make a limited voluntary switch when their authored strategy calls for it.
+- Retreat and Accord remain separate commands; switching never manipulates recruitment odds.
+
+Provisional state persistence, switch-lock effects, pursuit attacks, entry hazards, and elaborate switch passives are intentionally **not** part of the first specification. Add one only when playtesting identifies a concrete tactical gap.
 
 ## Turn flow
 
 ### 1. Read
 
-Each enemy displays one planned **intent category** before commands are selected. Direct attacks also show their expected target when target selection is part of the tactic. Bosses may obscure a target or combine intents only after those exceptions have been taught.
+The active opponent displays one planned **intent category** before commands are selected. The intent belongs to the planned action, not to its current target; switching does not erase it. Bosses may obscure or combine intents only after those exceptions have been taught.
 
 ### 2. Plan
 
-The player selects one technique for each available wildkin. The UI previews:
+The player selects one technique for the active wildkin, switches to a reserve, or uses another battle command. The UI previews:
 
 - target;
 - Aspect result;
@@ -44,19 +62,21 @@ The player selects one technique for each available wildkin. The UI previews:
 - Focus gained or spent;
 - temporary states applied and duration.
 
+A switch preview shows the incoming wildkin’s current Resolve, Aspects, and the known outcome of the displayed enemy intent. It should not calculate an exact “best choice.”
+
 ### 3. Resolve
 
 Actions resolve by explicit priority, then Tempo, then a stable tie rule. The log groups outcomes and avoids separate text boxes for every passive tick.
 
 ### 4. Open
 
-The battle updates enemy Open/Accord state, Focus, temporary conditions, and next intents. Short phase-change moments may interrupt this step in major encounters.
+The battle updates enemy Open/Accord state, Focus, temporary conditions, available reserves, and next intent. A Spent side chooses or sends its replacement before the following Read step. Short phase-change moments may interrupt this sequence in major encounters.
 
 ## Enemy intents
 
 | Intent | Meaning | Typical answer | Player lesson |
 |---|---|---|---|
-| **Assault** | Immediate damage or focused pressure | Guard, redirect, weaken | Protect the threatened slot and earn tempo |
+| **Assault** | Immediate damage or focused pressure | Guard, weaken, or switch to a safer response | Decide whether the active partner should absorb the pressure |
 | **Guard** | Shield, recovery, counter posture | Break, Feint, condition | Do not waste the turn hitting the wall normally |
 | **Setup** | Charge, summon support, prepare sequence | Interrupt, accelerate, focus target | Act before the threat matures |
 | **Disrupt** | Slow, expose, displace, or alter state | Cleanse, Rally, exploit low damage | Decide whether to repair or race ahead |
@@ -72,6 +92,16 @@ A technique can be tagged as an **Answer** to one intent. When it meaningfully m
 - Focus begins at 0 and resets after battle.
 
 These values aim for one signature around turns 3–4 and a second only in longer encounters. Adjust the entire economy before tuning individual species around a bad baseline.
+
+### Cross-switch Focus identity
+
+Focus is the main team-synergy layer in the 1v1 format:
+
+- Answers and support techniques can build Focus even when their user is not the intended signature spender.
+- Switching preserves Focus but costs immediate tempo.
+- A signature should not become efficient enough that every battle follows “farm with support, switch to striker, spend.” Enemy intent, current Resolve, and signature function must sometimes reward staying in.
+- The opponent may have its own authored Focus or charge sequence, but the player does not need to track an invisible mirror meter.
+- No passive reserve Focus generation in the first prototype.
 
 ## Aspects
 
@@ -131,7 +161,7 @@ Start with four universal states. Species-specific marks may exist, but should r
 
 ### Why a small state list
 
-Three active allies, intents, Aspects, and Focus already create information load. A large status catalog would turn readable tactics into icon management.
+Intents, switching, Aspects, Focus, and reserve Resolve already create information load. A large status catalog would turn readable tactics into icon management.
 
 ## Technique structure
 
@@ -156,7 +186,7 @@ A prototype wildkin normally receives:
 3. one identity technique for support, pressure, or tempo;
 4. one Focus signature that changes the current decision.
 
-Avoid four near-identical attacks with different Aspects. Coverage belongs across a team, not on every individual.
+Avoid four near-identical attacks with different Aspects. Coverage belongs across a reserve roster, not on every individual. Each kit should also answer: **why would I keep this wildkin active, and why might I switch after it acts?**
 
 ## Accord, consent, and command fiction
 
@@ -167,7 +197,7 @@ Accord operates at a mutual companion layer:
 - either partner can end or refuse the link in fiction;
 - it shares intent, sensory shorthand, and trusted tactical requests—not continuous thoughts;
 - the Wayglass cannot rewrite memory, force Reweaving, or issue root commands;
-- existing partner teams cannot be “captured” because lowered Resolve does not revoke a current relationship;
+- existing partner teams cannot be recruited because lowered Resolve does not revoke a current relationship;
 - major Hush encounters are about restoring present choice, not hacking a stronger machine.
 
 The deeper story reveals unauthorized root access beneath this interface. Normal battle play should reinforce the ethical contrast rather than make coercion routine.
@@ -195,9 +225,9 @@ The tactical work is demonstrating coordination while managing the rest of the e
 ## Field Kit and recovery
 
 - The Field Kit begins with three recovery charges.
-- One charge restores a clear percentage of Resolve to one ally; exact amount starts at 40%.
+- One charge restores a clear percentage of Resolve to the active wildkin; exact amount starts at 40%.
 - Charges refill at wayposts and before major retries.
-- Field Kit use consumes that wildkin’s action or one team action—the graybox should compare both models.
+- Field Kit use consumes the player’s action for that round.
 - A Spent wildkin returns after an ordinary battle at 1 Resolve, preventing a dead roster slot but still encouraging a waypost visit.
 - Major battles begin from an adjacent full-recovery point.
 
@@ -206,7 +236,7 @@ Do not build a large shop/consumable economy until repeated play proves that res
 ## Defeat, retreat, and retry
 
 - A wildkin at 0 Resolve becomes **Spent**: it withdraws its Accord participation and enters protective low activity. No death, shutdown, or “broken machine” language is used.
-- If the full trio is Spent, ordinary defeat returns the player to the last waypost without lost currency, Accord progress, or story state.
+- If the active wildkin is Spent and no usable battle reserve remains, ordinary defeat returns the player to the last waypost without lost currency, Accord progress, or story state.
 - Major defeat returns to immediately before the encounter with **Retry**, **Review Team**, and **Leave** options.
 - Retreat from ordinary visible encounters succeeds by default. Story-bound encounters label the restriction before battle.
 - Previously seen boss introductions can be skipped on retry.
@@ -215,8 +245,8 @@ Failure should preserve the lesson and remove the commute.
 
 ## Experience and readiness
 
-- Active trio receives 100% encounter experience.
-- Bonded reserve roster receives 70% catch-up experience.
+- Any wildkin that participated receives 100% encounter experience.
+- Carried reserves and the bonded refuge roster receive catch-up experience; begin testing at 80% and 70% respectively.
 - Newly bonded wildkin are raised to no more than two readiness levels below the current highest story-appropriate member.
 - Major encounters are balanced against critical-path experience only.
 - The slice uses a shallow level range so a few optional battles create flexibility, not overwhelming stats.
@@ -228,17 +258,19 @@ If balance still produces grind, increase milestone readiness or reduce stat gro
 
 ### Ordinary encounters
 
-- Target duration: 3–5 turns, roughly 45–90 seconds after learning the UI.
-- Each group demonstrates one combination: focused Assault, shield plus Setup, tempo disruption, or an Accord temperament.
-- Groups are visible on the map and use habitat-appropriate species.
-- The same species can feel different in a mixed group without receiving random invisible traits.
+- A standard wild encounter begins 1v1 and normally contains one recruitable opponent.
+- Target duration: 3–6 rounds, roughly 35–75 seconds after learning the UI.
+- Each encounter demonstrates one readable pattern: focused Assault, Guard timing, Setup interruption, Disrupt recovery, or an Accord temperament.
+- Groups are visible on the map and use habitat-appropriate species; a map group may visually contain several wildkin without turning the battle into a simultaneous multi-target fight.
+- A scripted wild encounter may send a second opponent sequentially when the fiction and lesson justify it, but this is not the default catch encounter.
 - Encounter density leaves room to avoid at least half the optional groups.
 
 ### Rival/wayfinder teams
 
 - Communicate character through composition and sequencing.
 - Use a plan the player can identify and disrupt.
-- Adapt once in major fights; do not secretly counter-pick the player’s commands.
+- Use one active wildkin at a time; the sequence of reserves should create a plan across handoffs.
+- A major rival may voluntarily switch once or twice when a visible tactical reason exists; do not secretly counter-pick the player’s command.
 - Do not permit Accord.
 
 ### Guardians and autonomous coordinators
@@ -252,20 +284,21 @@ If balance still produces grind, increase milestone readiness or reduce stat gro
 
 Tavi’s team is provisional and should use species available in the slice. Their plan:
 
-1. Latchling or Reedimp creates early tempo.
-2. Loamlet establishes Guard/Seedbed.
-3. Their starter charges a visible finisher behind that safety.
+1. Reedimp opens, Answers a Setup/Disrupt pattern, and builds shared Focus.
+2. At a credible safe moment—and before Reedimp becomes Spent—Tavi spends a round switching to Loamlet. Loamlet stabilizes and forces a patient response.
+3. After Loamlet becomes Spent, the already-weakened Reedimp returns for one brief handoff attempt. If the player made Reedimp Spent before the switch condition, this return is skipped.
+4. Once both support partners are Spent, Kilnkit enters last as Tavi’s long-term companion and spends the accumulated Focus on a visible finishing sequence.
 
-The player can answer the Setup, break the protection, or outlast the sequence. Tavi changes target priority once after the first interrupt. This battle verifies that the player can read a team plan rather than only isolated icons.
+The player can stay in to protect Focus tempo, spend an action switching into a better Answer, knock Reedimp out before the handoff, or preserve a favored companion for Kilnkit. The low-Resolve return should last at most one or two rounds, keeping Kilnkit as the finale. Tavi’s one voluntary switch is authored for clarity rather than governed by a general hidden AI system.
 
-Starter selection should influence Tavi’s starter for contrast, but Tavi’s overall difficulty must not make one opening choice superior.
+This battle verifies that the player understands cross-switch Focus, free replacement after Spent, and the cost of a voluntary switch. Kilnkit’s role also repositions one former starter as a recognizable character companion.
 
 ## Orralume battle specification
 
 ### Phase 1 — Panic
 
 - Frequent Assault intents with clear targets.
-- Answering Assault removes one stack of **Wingbeat**, reducing incoming area pressure.
+- Answering Assault removes one stack of **Wingbeat**, reducing pressure on the active wildkin.
 - Teaches that survival is progress.
 
 ### Phase 2 — Fold
@@ -278,7 +311,7 @@ Starter selection should influence Tavi’s starter for contrast, but Tavi’s o
 
 - Orralume becomes Hushbound and repeats a three-turn Disrupt sequence.
 - A Tune action makes the old consent interval available. Using Tune into the correct visible interval breaks one forced authorization lock; it does not command Orralume.
-- The player must expose a small number of voluntary-response windows while keeping the trio active. Orralume’s own answer completes each release; raw damage cannot finish this phase.
+- The player must expose a small number of voluntary-response windows while managing active and reserve Resolve. Orralume’s own answer completes each release; raw damage cannot finish this phase.
 - On success, the battle ends with Orralume rejecting the root rollback, accepting the open route, and broadcasting its own correct Chorus phrase.
 
 The exact number of layers and locks should be minimized. The first test target is two of each.
@@ -310,22 +343,28 @@ Do not use higher enemy health to compensate for an unreadable or shallow patter
 ## Combat playtest questions
 
 1. Can a first-time player predict what each intent category means after two encounters?
-2. Does the shared Focus meter create cooperation or merely feed the strongest signature?
-3. Are three command choices per turn engaging at normal-battle frequency?
+2. Does shared Focus create meaningful cooperation across switches or merely feed the strongest signature?
+3. Is “Answer, switch, or stay” interesting without making every Aspect disadvantage demand a switch?
 4. Do players use role techniques when Aspect damage is neutral?
-5. Is Soothed worth a team slot for Accord without becoming mandatory?
-6. Can a favorite-based team recover from a disadvantaged matchup?
+5. Is Soothed worth carrying for Accord without becoming mandatory?
+6. Can a favorite-based roster recover from a disadvantaged matchup?
 7. Is an Orralume failure attributable to a specific missed response?
 8. Do tooltips prevent external chart/reference use?
 9. Does choosing actions feel like partnership rather than remote control once the story foregrounds synthetic personhood?
 10. Does the difference between Accord and root rollback remain clear during Orralume’s final phase?
+11. Does voluntary switching feel costly but useful, and is the incoming target rule immediately understood?
+12. Is free replacement after Spent fast and free of punitive extra damage?
 
 ## Decisions awaiting approval
 
-- Three active wildkin with four-technique kits.
-- One shared 0–100 Focus meter.
+- Standard battles use one active wildkin per side, with sequential reserves.
+- Voluntary switching consumes the round, resolves before ordinary techniques, and redirects the planned enemy action to the incoming wildkin.
+- Replacement after becoming Spent is free before the next round; reserve Resolve persists.
+- The player battle-party limit remains undecided.
+- Four-technique kits and one shared 0–100 Focus meter that persists across switches.
 - Four visible intent categories.
 - Four universal temporary states.
 - Deterministic, consensual Accord at Open state; the Wayglass has no root authority.
 - Minimal randomness: small damage variance, no baseline misses or hidden criticals.
 - Fast, consequence-light retry and whole-roster catch-up experience.
+- Special multi-wildkin formats remain possible later but are exceptions, not the base architecture.

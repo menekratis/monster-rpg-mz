@@ -74,6 +74,12 @@ Visible slice examples:
 
 Households often include resting niches, charge gardens, mineral baths, and interface surfaces scaled for different species. These details should make partnership ordinary before the plot questions who wrote the oldest rules.
 
+### Repair, fabrication, and field professions
+
+Wildkin care is not divided neatly between veterinarian and mechanic. Community cradle workers cultivate tissue, fabricate compatible supports, read behavior, and maintain safe interfaces. Route mechanics repair civic systems in the same material language. Wayfinders add field ecology, negotiation, and certification authority.
+
+The protagonist begins as a cradle-repair apprentice and field systems mechanic seeking Wayfinder certification. This is a recognized, useful career path—not a cover for unique powers. What is unusual is the time they invested in one seedcore that every registry classified as inert.
+
 ## The Chorus
 
 The Chorus is the name for the interlocking network by which water, roots, seedcores, wildkin calls, public relays, seasonal movement, and inherited infrastructure exchange timing and route information. It is simultaneously an ecosystem, a communications lattice, and a distributed control substrate. People disagree about whether it also possesses memory or intention beyond its participants.
@@ -177,6 +183,7 @@ The Red Wake is present through characters and altered systems, not sepia flashb
 
 ```text
 Cable Approach
+  service bay / Skein activation
       |
   Hearthmere ---- Field Refuge
       |
@@ -216,6 +223,8 @@ Before Orralume, festival objects feel abandoned mid-preparation and villagers w
 ### Story role
 
 Hearthmere demonstrates why people choose stability. The town is technically capable and affectionate toward wildkin; its harvest, transport, communications, and water safety depend on systems that are now in conflict.
+
+Skein is visually unusual but does not stop daily life. Most residents read its visible repairs as a talented apprentice’s nonstandard local reconstruction; only specialized diagnostics expose the deeper contradiction.
 
 ## Sunken Track
 

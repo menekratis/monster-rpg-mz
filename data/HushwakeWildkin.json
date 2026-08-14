@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "species": [
+    {
+      "key": "briarkid",
+      "name": "Briarkid",
+      "formId": "briarkid_base",
+      "actorTemplateId": 1,
+      "aspects": ["Verdant"],
+      "baseStats": { "resolve": 120, "force": 26, "guard": 34, "tempo": 22 },
+      "growth": { "resolve": 10, "force": 3, "guard": 3, "tempo": 2 },
+      "techniques": ["budding_bash", "fault_line"]
+    },
+    {
+      "key": "kilnkit",
+      "name": "Kilnkit",
+      "formId": "kilnkit_base",
+      "actorTemplateId": 3,
+      "aspects": ["Ember"],
+      "baseStats": { "resolve": 96, "force": 34, "guard": 20, "tempo": 32 },
+      "growth": { "resolve": 7, "force": 3, "guard": 2, "tempo": 3 },
+      "techniques": ["coal_snap", "flashstep"]
+    },
+    {
+      "key": "rillip",
+      "name": "Rillip",
+      "formId": "rillip_base",
+      "actorTemplateId": 2,
+      "aspects": ["Current"],
+      "baseStats": { "resolve": 108, "force": 27, "guard": 25, "tempo": 35 },
+      "growth": { "resolve": 8, "force": 3, "guard": 2, "tempo": 3 },
+      "techniques": ["rill_lash", "mirror_splash"]
+    },
+    {
+      "key": "thrumble",
+      "name": "Thrumble",
+      "formId": "thrumble_base",
+      "actorTemplateId": 4,
+      "aspects": ["Gale", "Verdant"],
+      "baseStats": { "resolve": 112, "force": 28, "guard": 24, "tempo": 31 },
+      "growth": { "resolve": 8, "force": 2, "guard": 2, "tempo": 2 },
+      "techniques": ["pollen_tap", "vine_hum"]
+    },
+    {
+      "key": "loamlet",
+      "name": "Loamlet",
+      "formId": "loamlet_base",
+      "actorTemplateId": 5,
+      "aspects": ["Stone", "Verdant"],
+      "baseStats": { "resolve": 140, "force": 29, "guard": 36, "tempo": 17 },
+      "growth": { "resolve": 10, "force": 2, "guard": 3, "tempo": 1 },
+      "techniques": ["pebble_nudge", "root_press"]
+    }
+  ],
+  "techniques": [
+    {
+      "key": "budding_bash",
+      "name": "Budding Bash",
+      "description": "A reliable Verdant strike.",
+      "aspect": "Verdant",
+      "power": 1.4,
+      "priority": 0,
+      "iconIndex": 96,
+      "animationId": 1
+    },
+    {
+      "key": "fault_line",
+      "name": "Fault Line",
+      "description": "A slower Stone pulse for testing coverage.",
+      "aspect": "Stone",
+      "power": 1.25,
+      "priority": 0,
+      "iconIndex": 101,
+      "animationId": 1
+    },
+    {
+      "key": "coal_snap",
+      "name": "Coal Snap",
+      "description": "A forceful Ember strike.",
+      "aspect": "Ember",
+      "power": 1.45,
+      "priority": 0,
+      "iconIndex": 64,
+      "animationId": 1
+    },
+    {
+      "key": "flashstep",
+      "name": "Flashstep",
+      "description": "A quick Gale technique with raised priority.",
+      "aspect": "Gale",
+      "power": 1.05,
+      "priority": 10,
+      "iconIndex": 82,
+      "animationId": 1
+    },
+    {
+      "key": "rill_lash",
+      "name": "Rill Lash",
+      "description": "A reliable Current strike.",
+      "aspect": "Current",
+      "power": 1.35,
+      "priority": 0,
+      "iconIndex": 67,
+      "animationId": 1
+    },
+    {
+      "key": "mirror_splash",
+      "name": "Mirror Splash",
+      "description": "A Gloam-tinged pulse for testing coverage.",
+      "aspect": "Gloam",
+      "power": 1.2,
+      "priority": 0,
+      "iconIndex": 72,
+      "animationId": 1
+    },
+    {
+      "key": "pollen_tap",
+      "name": "Pollen Tap",
+      "description": "A compact Gale impact.",
+      "aspect": "Gale",
+      "power": 1.3,
+      "priority": 0,
+      "iconIndex": 80,
+      "animationId": 1
+    },
+    {
+      "key": "vine_hum",
+      "name": "Vine Hum",
+      "description": "A resonant Verdant strike.",
+      "aspect": "Verdant",
+      "power": 1.2,
+      "priority": 0,
+      "iconIndex": 97,
+      "animationId": 1
+    },
+    {
+      "key": "pebble_nudge",
+      "name": "Pebble Nudge",
+      "description": "A steady Stone impact.",
+      "aspect": "Stone",
+      "power": 1.3,
+      "priority": 0,
+      "iconIndex": 99,
+      "animationId": 1
+    },
+    {
+      "key": "root_press",
+      "name": "Root Press",
+      "description": "A dense Verdant strike.",
+      "aspect": "Verdant",
+      "power": 1.2,
+      "priority": 0,
+      "iconIndex": 98,
+      "animationId": 1
+    }
+  ],
+  "enemyTemplates": [
+    {
+      "key": "thrumble_lab",
+      "speciesKey": "thrumble",
+      "level": 5,
+      "battlerName": "Crow",
+      "battlerHue": 0,
+      "techniqueSequence": ["pollen_tap", "vine_hum"],
+      "screenX": 260,
+      "screenY": 300
+    },
+    {
+      "key": "loamlet_lab",
+      "speciesKey": "loamlet",
+      "level": 5,
+      "battlerName": "Crab",
+      "battlerHue": 0,
+      "techniqueSequence": ["pebble_nudge", "root_press"],
+      "screenX": 260,
+      "screenY": 300
+    }
+  ],
+  "encounters": [
+    {
+      "key": "milestone_1a",
+      "name": "Milestone 1A: Sequential Lineup",
+      "enemyKeys": ["thrumble_lab", "loamlet_lab"]
+    }
+  ]
+}

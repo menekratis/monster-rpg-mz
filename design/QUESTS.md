@@ -32,17 +32,19 @@ If a quest only asks the player to collect items for currency, it does not belon
 
 This is one quest with clear stages, not a stack of simultaneous mandatory errands.
 
-### Stage 1: Clear the cable approach
+### Stage 1: Wake Skein and clear the cable approach
 
-**Player-facing lead:** “Help Mara move the confused Thrumble away from the cable line.”
+**Player-facing lead:** “Complete the final body checks before the Hearthmere cable departs.”
 
-- Choose Briarkid, Kilnkit, or Rillip.
-- Complete the first battle using a highlighted Assault tell.
+- Move through the service bay and complete three short physical checks on the body the protagonist reconstructed.
+- Let Skein examine its body and offer Accord; accept and optionally rename it.
+- Notice the transient `ROUTE PEER: RETURNED` message and unplanned relay filament without receiving an explanation.
+- Ride the cable car and complete the first 1v1 battle using a highlighted Assault tell.
 - Observe the swarm leaving along the route it arrived from.
 
-**Teaches:** Basic command flow, Resolve, intent icon.
+**Teaches:** Movement, protagonist repair identity, voluntary Accord, basic 1v1 command flow, Resolve, intent icon.
 
-**Story result:** The player reaches Hearthmere; a beloved relay swarm replaying an obsolete route becomes the first unanswered detail.
+**Story result:** The player reaches Hearthmere with a companion that chose them; a beloved relay swarm repeats Skein’s impossible handshake while replaying an obsolete route.
 
 ### Stage 2: Find where the swarm turned back
 
@@ -51,9 +53,10 @@ This is one quest with clear stages, not a stack of simultaneous mandatory erran
 - Use Survey on the unavoidable fork.
 - Enter or avoid one visible encounter group.
 - Form the first Accord with an ordinary wildkin.
+- Make one clearly prompted but tactically real switch: the enemy’s displayed action targets the incoming reserve.
 - Follow doubled tracks toward Lower Track.
 
-**Teaches:** Visible groups, Survey, Open/Accord, route fork.
+**Teaches:** Visible 1v1 encounters, Survey, wild Open/Accord, action-cost switching, shared Focus, route fork.
 
 **Story result:** The swarm reached the track, received a root-class handshake, then replayed its route backward. The broken-weir explanation becomes incomplete.
 
@@ -88,10 +91,10 @@ This is one quest with clear stages, not a stack of simultaneous mandatory erran
 
 - Tavi commits to full Stillpoint rollback.
 - Player presents the consent-interval evidence.
-- Complete Tavi’s team battle for operational lead.
+- Complete Tavi’s sequential 1v1 team battle for operational lead.
 - Recover fully at the control-platform waypost.
 
-**Teaches:** Reading a coordinated team plan; immediate retry.
+**Teaches:** Reading a coordinated plan across reserves, voluntary versus free replacement, cross-switch Focus, immediate retry.
 
 **Story result:** Tavi grants the player one attempt and becomes an active part of the combined solution.
 
@@ -100,10 +103,11 @@ This is one quest with clear stages, not a stack of simultaneous mandatory erran
 **Player-facing lead:** “Break the forced authorization locks and give Orralume a route it can accept.”
 
 - Complete the three-phase guardian encounter.
+- Switch under at least one displayed incoming action if the chosen roster requires it; no particular species is mandatory.
 - Use Tune during the visible inverted interval.
 - Return via the cistern lift.
 
-**Teaches:** Major-battle phases and Field actions in combat.
+**Teaches:** Major-battle phases, reserve Resolve management, and Field actions in 1v1 combat.
 
 **Story result:** Orralume rejects the rollback, accepts the open route, leads the Thrumble home, and restores the orchard mesh while the weir vents.
 

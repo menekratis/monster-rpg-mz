@@ -12,15 +12,16 @@
 - The protagonist’s competence grows through observation; adults and experts retain useful knowledge.
 - No viewpoint treats organic origin as a requirement for real emotion. Prejudice can exist later, but the narrative frame does not endorse it.
 
-## The protagonist — the new wayfinder
+## The protagonist — repairer becoming a Wayfinder
 
 - **Age framing:** Young adult; customizable name and appearance. Writing avoids school-specific or child-prodigy assumptions.
-- **Role:** New field-and-network apprentice arriving in Hearthmere for their first independent route certification.
-- **Starting want:** Complete a practical Waymark and prove they can be trusted away from supervision.
+- **Role:** Cradle-repair apprentice, body-material fabricator, and field systems mechanic arriving in Hearthmere for practical Wayfinder certification.
+- **Starting want:** Complete a practical Waymark, prove they can handle remote repair work, and establish a safe public record for Skein without surrendering its seedcore to a sealed lab.
 - **Need:** Learn that recording a route also means choosing whose account and risk become official.
-- **Strength:** Patient attention to creature personality, service behavior, physical evidence, and signal contradictions.
+- **Strength:** Patient hands-on repair, reading material response, and attention to creature personality, service behavior, physical evidence, and signal contradictions.
+- **Knowledge boundary:** Skilled with bodies, public cradles, and user-layer protocols; not an expert in root architecture, institutional history, large infrastructure, or every species.
 - **Vulnerability:** An outsider’s observation can be correct but incomplete; local trust must be earned.
-- **Story function:** The player’s curiosity is credible because surveying is their job, not because everyone else ignores obvious clues.
+- **Story function:** The player’s curiosity is credible because repair and surveying are their work. Their importance begins with one choice: recognizing that an “inert” salvage core was responsive and investing more than a year in its recovery.
 
 ### Player expression
 
@@ -31,10 +32,38 @@ Short responses lean Curious, Practical, or Empathetic. The game tracks no visib
 - No hidden royal, legendary, or Meridian lineage is planned.
 - The Wayglass is repairable Accord/survey equipment using open civic interfaces, not proof of destiny or secret root access.
 - The protagonist does not resolve expert disagreements by being automatically right; they bring missing evidence and act well under pressure.
+- Reconstructing Skein’s body did not create its mind, loyalty, memories, or identity. Dialogue and staging must never frame the protagonist as Skein’s inventor-owner.
 
 ### Why this protagonist
 
-A defined profession provides motive and useful tools while leaving personality space for the player. Removing a chosen-one reveal keeps attention on learned relationships and the region’s conflict.
+A repair/Wayfinding hybrid makes player verbs and technical insight credible while leaving personality space. Removing a chosen-one reveal keeps attention on learned relationships. The protagonist matters because of care, craft, observation, and decisions made after discovery.
+
+## Skein — reconstructed first companion
+
+- **Pronouns in design text:** It/they interchangeably until the final localization style is chosen; characters should normally use the player-selected nickname.
+- **Status:** Unregistered wildkin individual grown from a damaged, unidentified seedcore. “Skein” is the working/default nickname, not a species name.
+- **Visual relationship to protagonist:** Its body carries visible asymmetrical repairs, chosen safe materials, and one accent shared with the protagonist’s tool rig. The later third filament clearly differs from their work.
+- **Starting want:** Explore the new body, test closed routes, remain near the person whose repair rhythms it recognizes, and decide what Accord means through action.
+- **Strengths:** Reads timing, notices dormant interfaces, careful with fragile systems, creates shared Focus.
+- **Vulnerabilities:** Recently stabilized body, no registry health baseline, ordinary early combat strength, and involuntary responses to some old handshakes.
+- **Agency rule:** Skein initiates the opening Accord. It can refuse a diagnostic perch, choose an object, interrupt a plan, and react differently from the protagonist’s expectation without becoming disobedient comic relief.
+
+### Opening behavior
+
+Skein wakes at the Cable Approach service bay, tests each limb, retrieves a dropped driver, and offers Accord only after studying the protagonist. Its third relay filament grows during an impossible `ROUTE PEER: RETURNED` response. It then chooses to brace against the Thrumble collision before looking to the protagonist for a battle plan.
+
+### Slice behavior
+
+- Attempts to braid Tavi’s overly organized cable loops; Tavi is impressed and annoyed.
+- Is treated by Mara as a consent and health case, not confiscated evidence.
+- Causes one dead route plate to wake without opening a mandatory gate.
+- Receives a single answering signal from a distressed Thrumble.
+- Is admitted by the legacy cradle as a route peer after being rejected as an unregistered client.
+- Is directly addressed by Orralume before the climax, without gaining a combat advantage.
+
+### Why this companion
+
+Skein turns the origin mystery into a relationship players can care about. Its body demonstrates protagonist skill while its independent awakening proves that craft is not authorship of personhood. A single canonical form strengthens recurring visual clues and stays within production scope.
 
 ## Tavi Rook — rival, repairer, local advocate
 
@@ -61,10 +90,10 @@ Tavi does not become instantly converted. Their final criticism improves the pla
 
 ### Battle identity
 
-- Uses Setup, Guard, and timed sequences.
-- Team composition includes a fast coordinator, a shelter wildkin, and one of the remaining starter partners chosen to complement the plan rather than hard-counter the player.
+- Uses a sequential 1v1 roster built around Setup, Guard, switching, and Focus handoff.
+- Reedimp opens and builds Focus; Tavi spends one round switching it to Loamlet at a readable safe moment. The weakened Reedimp can briefly return after Loamlet is Spent, proving that reserves persist.
+- Tavi’s long-term Kilnkit enters only after both support partners are Spent and spends the inherited momentum, preserving a clear finale.
 - Announces the core sequence confidently, giving the player a fair chance to disrupt it.
-- Adapts target priority once; does not cheat by reading commands.
 
 ### Dialogue voice
 
@@ -195,6 +224,8 @@ Neither is wholly correct; together they prevent the village from speaking with 
 | Pair | Surface | Pressure underneath | Slice movement |
 |---|---|---|---|
 | Protagonist / Tavi | Friendly technical competition | Creature autonomy and outsider observation versus local responsibility | Respect becomes a real disagreement, then tested trust |
+| Protagonist / Skein | Repairer and recovered wildkin | Care without authorship; what each believes the other chose | Initial recognition becomes voluntary partnership under pressure |
+| Skein / Tavi | Fascinating nonstandard repair | Tavi admires the craft and fears the unverifiable seedcore | Suspicion becomes careful respect, not certainty |
 | Protagonist / Mara | Apprentice and mentor | Permission versus independent judgment | Mara grants responsibility as evidence accumulates |
 | Protagonist / Merrit | Helpful expert and field observer | Who controls uncertain evidence | Cooperation gains a residue of suspicion |
 | Tavi / Mara | Local apprentice and warden | Tavi thinks Mara waits too long; Mara sees Tavi’s fear | Both accept a combined operation for different reasons |
@@ -209,6 +240,7 @@ Neither is wholly correct; together they prevent the village from speaking with 
 - Merrit saves something before he hides something.
 - Edda’s claims must produce testable observations.
 - A wildkin should perform, refuse, improvise, or play during at least three dialogue scenes so synthetic agency is shown rather than asserted.
+- Skein may appear in authored story scenes even when not active in battle, but never supplies a mandatory mechanical solution solely because it is the mascot.
 - After the climax, each central character gets one changed line that reveals consequence rather than summarizing the plot.
 
 ## Character playtest questions
@@ -221,10 +253,14 @@ Neither is wholly correct; together they prevent the village from speaking with 
 6. Do player-expression choices feel meaningful without implying large branches?
 7. Does each character hold a distinct position on wildkin consent and root access without speaking like a philosophy panel?
 8. Are Tavi and Edda visibly as technological as Merrit, avoiding a “rustic good / science bad” split?
+9. Do players understand what the protagonist physically built and what they did not create?
+10. Does Skein feel consistent and expressive without spoken dialogue?
+11. Does Tavi’s Reedimp → Loamlet → weakened Reedimp → Kilnkit sequence communicate character and cross-switch planning without dragging?
 
 ## Decisions awaiting approval
 
-- A young-adult customizable wayfinder with no chosen-one lineage.
+- A young-adult cradle-repair apprentice and field mechanic pursuing Wayfinder certification, with no chosen-one lineage.
+- Skein as a canonical story companion whose body the protagonist reconstructed and whose Accord/personality remain autonomous.
 - Tavi as a technically skilled local rival whose major battle is about safety, consent, and emergency override.
 - Mara as competent credential authority implicated in surrendering local access after the Red Wake.
 - Merrit as a helpful but secretive continuity investigator with privileged seedcore access and later allegiance open.

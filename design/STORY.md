@@ -69,7 +69,11 @@ Leaving this open prevents the full plot from hardening before we know which mys
 
 ## The protagonist
 
-The protagonist is a customizable new **wayfinder**, not a chosen one. They arrive in Hearthmere to complete a practical field and network apprenticeship under Warden Mara Venn. Their Wayglass is standard survey-and-Accord equipment repaired with an open local interface piece. It reveals clues because the player compares physical, behavioral, and signal evidence—not because they possess unique access or a secret bloodline.
+The protagonist is a customizable young **cradle-repair apprentice and field systems mechanic** pursuing Wayfinder certification, not a chosen one. They can cultivate damaged tissue, fabricate adaptive body supports, operate small cradles, and diagnose user-layer Chorus faults. They arrive in Hearthmere for a practical route assessment under Warden Mara Venn because Wayfinder work combines repair with field ecology and grants legitimate access to damaged infrastructure.
+
+More than a year before the slice, the protagonist found responsive pattern-noise in a damaged seedcore classified as inert salvage. They argued against recycling it, stabilized its lattice, learned its material responses, and fabricated a viable body scaffold without a registry plan. The result is **Skein**, an unregistered small wildkin whose mind, personality, and choices were never designed by the protagonist.
+
+The protagonist’s Wayglass is standard survey-and-Accord equipment modified for repair diagnostics. It reveals clues because the player compares physical, behavioral, and signal evidence—not because the device or protagonist secretly possesses root access.
 
 Dialogue choices generally express one of three attitudes:
 
@@ -78,6 +82,20 @@ Dialogue choices generally express one of three attitudes:
 - **Empathetic:** ask who bears the cost.
 
 These choices alter responses and occasional optional help. They do not create an expensive branching main plot in the slice.
+
+### Personal stake in the mystery
+
+Skein makes the accepted history of wildkin incomplete in a way the protagonist cannot dismiss as an abstract policy issue. If Hush rollback can overwrite an unregistered companion, Meridian may classify Skein as unsafe, seize its cradle access, or restore it toward a body plan that does not exist. If old infrastructure recognizes Skein, the protagonist also needs to learn whether that recognition reflects ancestry, assigned function, stolen credentials, or something Skein may choose to reject.
+
+This does not make the protagonist universally famous. In the slice:
+
+- **Mara** provisionally records Skein as an unregistered local form and judges the relationship by observed consent.
+- **Tavi** admires the reconstruction but initially considers the nonstandard architecture a serious safety variable.
+- **Edda** treats Skein as an individual first and an origin question second.
+- **Merrit** calls it an unusual repair case while quietly preserving one diagnostic trace.
+- Ordinary residents mostly see a charming, visibly patched companion.
+
+Interpretations should evolve as evidence accumulates; nobody delivers the correct answer in the opening.
 
 ## Vertical-slice story: “The Missing Chorus”
 
@@ -88,16 +106,21 @@ Hearthmere’s bellfruit orchards rely on the spring return of Thrumble swarms f
 The local problem matters on three levels:
 
 - **Personal:** Tavi Rook has spent months repairing the festival bellline and wants to prove they can protect their home.
+- **Personal to the protagonist:** the same obsolete handshake that appears during Skein’s awakening is driving other wildkin backward.
 - **Material:** failed pollination, lost mesh timing, and an unstable water-and-transit control node threaten Hearthmere’s next season and immediate safety.
 - **Mysterious:** a mobile Meridian Stillpoint issued a root-class handshake before the first visible Hush symptoms, despite the public log claiming it arrived in response to them.
 
 ### Beat 1 — A welcome interrupted
 
-The player’s autonomous cable car stops outside Hearthmere when a confused Thrumble swarm reverses along the timing line and collides with its guide field. The player chooses one of three field partners from Mara’s mobile cradle carriers and helps clear the line.
+The game opens with immediate player control in a public service bay at the Cable Approach. The protagonist completes three short physical checks on the body they have spent more than a year rebuilding. This is characterization, not a cradle tutorial.
 
-The battle begins before explanations. Afterward, Mara points out one Thrumble’s calm, Open posture in a single sentence but does not recruit it; the player performs their first Accord on the Upper Track.
+Skein wakes, examines the fabricated body, ignores the diagnostic perch, retrieves the protagonist’s dropped driver, and offers an Accord handshake. The player accepts and may choose its nickname. During connection, the Wayglass flashes an obsolete three-note protocol and **ROUTE PEER: RETURNED**. Before the protagonist can reopen the log, the entry normalizes to “unregistered local form,” and an unplanned third relay filament emerges from Skein’s tail.
 
-**Information planted:** the swarm flies a familiar route in reverse; their body lights briefly display a retired service pattern; a faint three-note root handshake follows the silence.
+The autonomous cable car departs. Before it reaches Hearthmere, a confused Thrumble swarm reverses along the timing line and collides with its guide field. Skein independently braces on the car roof, then looks to the protagonist; their first standard 1v1 battle begins.
+
+Afterward, the swarm continues backward. The same three-note handshake appears beneath its normal timing call. Mara meets the delayed car at Hearthmere and focuses on the public emergency rather than instantly recognizing Skein’s importance. The player performs their first wild Accord later on the Upper Track.
+
+**Information planted:** Skein chooses connection; its body grows beyond the scaffold; an old system calls it “returned”; the Thrumble crisis repeats the same signal minutes later.
 
 ### Beat 2 — A festival without an arrival
 
@@ -109,7 +132,7 @@ Meridian continuity engineer Merrit Quill is already present with a mobile Still
 
 ### Beat 3 — The wrong-way trail
 
-On the Sunken Track, the player learns visible encounters, Accord, Survey, and a simple repair shortcut. Main-path evidence establishes that Thrumble reached the orchard, received an authorization burst, and replayed the return route backward. Optional paths reveal checksum rings and a reverted planting grid on a Loamlet shell, plus a stolen relay key stamped with a Meridian root format older than the Office’s official local presence.
+On the Sunken Track, the player learns visible encounters, wild Accord, switching, Survey, and a simple repair shortcut. Main-path evidence establishes that Thrumble reached the orchard, received an authorization burst, and replayed the return route backward. Optional paths reveal checksum rings and a reverted planting grid on a Loamlet shell, plus a stolen relay key stamped with a Meridian root format older than the Office’s official local presence. If Skein is anywhere in the carried roster, a dead route plate briefly wakes as it passes; the bestiary records the event without explanation.
 
 The player and Tavi disagree without hostility. Tavi reads the evidence as panic caused by the failing weir; the player can suggest the pulse itself changed the route.
 
@@ -117,13 +140,13 @@ The player and Tavi disagree without hostility. Tavi reads the evidence as panic
 
 The orchard is quiet, conductive blossoms unopened, and the local mesh falls out of time. Caretaker Edda Sorn explains that Orralume—the large autonomous coordinator that guides Thrumble through the weir gorge—has not authenticated any relay. Restoring two inspectable waybell protocols opens the service path and teaches Tune without a detached puzzle tutorial.
 
-A returned Thrumble carries gray checksum-scale dust and an impossible old service identifier from beneath the weir, placing Orralume inside the utility tunnels.
+A returned Thrumble carries gray checksum-scale dust and an impossible old service identifier from beneath the weir, placing Orralume inside the utility tunnels. Its timing bands answer Skein’s hidden filament once, then resume panicked noise; Edda notices but refuses to guess at the meaning.
 
 ### Beat 5 — Beneath the old weir
 
 Mara authorizes an inspection while Merrit holds the Stillpoint in low-power monitoring. The utility site mixes short traversal loops, wildkin sheltering from the handshake, maintenance surfaces, and an optional legacy cradle chamber. The player discovers an old **consent interval**: an open call-and-response protocol once used to vent water pressure and ask connected seedcores to release synchronization together.
 
-The critical clue is unavoidable. Optional evidence shows that Meridian removed the response interval from newer manuals because it was “operator-dependent” and replaced it with silent root authorization. Deeper in the cradle chamber, a topology flash suggests both protocols sit above an even older maker layer.
+The critical clue is unavoidable. Optional evidence shows that Meridian removed the response interval from newer manuals because it was “operator-dependent” and replaced it with silent root authorization. Deeper in the cradle chamber, a topology flash suggests both protocols sit above an even older maker layer. Skein is denied as an unregistered client, then admitted as a route peer—the opening contradiction in a second form.
 
 ### Beat 6 — A concrete disagreement
 
@@ -137,7 +160,7 @@ After the player wins, Tavi grants one attempt and helps rather than sulking.
 
 ### Beat 7 — Orralume in the Hush
 
-The player descends into a cistern built around an ancient cradle where Orralume is repeating the Stillpoint’s root handshake and broadcasting a service identifier older than the regional registry. The climax is a multi-phase battle framed as rescue:
+The player descends into a cistern built around an ancient cradle where Orralume is repeating the Stillpoint’s root handshake and broadcasting a service identifier older than the regional registry. Before attacking, Orralume turns toward Skein—even if Skein is in reserve—broadcasts the opening’s “returned peer” phrase, and receives no intelligible reply. The recognition raises the stakes but grants no battle bonus. The climax is a multi-phase 1v1 boss battle framed as rescue:
 
 1. survive its panicked assaults;
 2. break the defensive loop around its wings;
@@ -151,7 +174,7 @@ Orralume accepts the open route and leads the Thrumble through the gorge. The or
 
 Mara records the first Waymark in the player’s Wayglass: **The Hearthmere Return**. Tavi admits the open response worked but points out that the town cannot depend on one person, one creature, or one archive remembering a protocol. Their skepticism survives in a healthier form.
 
-Merrit congratulates the group and offers to transmit the results. In the final stinger, he quietly removes the Stillpoint’s black-box core. It shows that the root command originated outside his unit and addressed Orralume as **OR-LM / Regional Maintenance Coordinator**, with a creation date centuries older than accepted wildkin history. Merrit erases the public copy but secretly retains the evidence. Far across the valley, another three-note root handshake answers.
+Merrit congratulates the group and offers to transmit the results. In the final stinger, he quietly removes the Stillpoint’s black-box core. It shows that the root command originated outside his unit and addressed Orralume as **OR-LM / Regional Maintenance Coordinator**, with a creation date centuries older than accepted wildkin history. Beside it is Skein’s opening phrase: **ROUTE PEER: RETURNED**. Merrit erases the public copy but secretly retains the evidence. Far across the valley, another three-note root handshake answers.
 
 ## Major-battle narrative contracts
 
@@ -162,7 +185,7 @@ Merrit congratulates the group and offers to transmit the results. In the final 
 - **What the player learned:** the open consent interval and the identity cost of full rollback.
 - **What Tavi values:** predictable protection and reproducible safety; they have a personal reason to fear unverified autonomy during a cascade.
 - **What changes on victory:** the player leads a risky combined solution and Tavi helps make consent-based infrastructure technically credible rather than merely idealistic.
-- **Mechanical expression:** Tavi uses Setup intents, shields, linked companion routines, and a planned finishing sequence; they fight like a skilled coordinator, not an owner issuing perfect commands.
+- **Mechanical expression:** Reedimp builds Focus, then Tavi spends a round switching it to Loamlet at a readable safe moment. If not already Spent, the weakened Reedimp briefly returns after Loamlet falls; Kilnkit enters last and spends the inherited momentum. This makes Tavi a skilled coordinator without giving them perfect or hidden counterplay.
 
 ### Orralume in the cistern
 
@@ -176,6 +199,9 @@ Merrit congratulates the group and offers to transmit the results. In the final 
 
 | Clue | Placement | First reading | Later payoff candidate | Required? |
 |---|---|---|---|---|
+| Skein offers Accord after evaluating the protagonist | Opening activation | A touching first meeting | The protagonist built a body, but Skein’s agency and link behavior predate their work | Yes |
+| `ROUTE PEER: RETURNED` | Opening, legacy plate, final stinger | Diagnostic error caused by an unregistered repair | Skein belongs to or descends from a network category older than current wildkin registries | Yes |
+| Skein grows an unplanned third relay filament | Opening and later idle animations | Normal adaptive growth | Its seedcore carries a body plan the protagonist never possessed | Yes, lightly |
 | Wildkin perform routes and jobs backward | Opening and Sunken Track | Confusion or network fault | Hush restores cached service routines over present identity | Yes |
 | Inverted three-note handshake | Opening, waybells, Stillpoint | A memorable signal motif | It is a root-class rollback authorization hidden beneath Accord | Yes |
 | Checksum rings in grown tissue and ceramic | Side paths | Repair sickness | Each ring marks a body pattern restored from an earlier state | No |
@@ -184,6 +210,7 @@ Merrit congratulates the group and offers to transmit the results. In the final 
 | Missing response interval in the modern protocol | Weirworks | Streamlined automation | A mutual handshake was deliberately replaced with silent root access | Yes |
 | Tavi’s damaged family letter mentions a companion accepting an unknown command | Optional room | Disaster confusion | The Red Wake involved hidden authority, not only wild system failure | No |
 | Legacy cradle displays routes outside the Merefold | Cistern | Old infrastructure map | The Chorus and wildkin fabrication system predate regional history | Yes, brief |
+| Orralume addresses Skein before attacking | Cistern | Both are unusual relay creatures | Ancient coordinators recognize Skein’s protocol family | Yes |
 | Distant answering handshake after the festival | Final stinger | The threat is larger | Root infrastructure is active across the region or beyond | Yes |
 
 Foreshadowing should be repeated in different forms. No important reveal should depend on a single optional object.
@@ -201,6 +228,8 @@ The player reaches fabrication districts, independent wildkin communities, older
 ### Movement III — What safety sounds like
 
 The final conflict concerns who may alter root control, how wildkin consent can be represented at infrastructure scale, and what should replace centralized rollback—not merely whether to defeat a director or destroy a server. A viable ending should require technical knowledge, wildkin relationships, and trust built in prior local arcs. Exact origin and ending structure remain open until the slice proves players care about the dilemma.
+
+Skein should remain **evidence and relationship**, not a master key. It may authenticate forgotten interfaces, attract dangerous attention, or preserve a missing protocol fragment, but other wildkin, people, and local knowledge must remain necessary. The protagonist becomes important by choosing what to do with that evidence and earning collaborators—not because every ancient system exists for them.
 
 ## Cutscene and dialogue rules
 
@@ -224,14 +253,22 @@ The final conflict concerns who may alter root control, how wildkin consent can 
 7. At what point do players realize the Hush is rollback rather than disease, and is that realization earned?
 8. Do players interpret the old service identifier as proof Orralume is “only a machine”? If so, strengthen personhood framing earlier.
 9. Does the root-access mystery create concern about control without making all Accord bonding feel secretly coercive?
+10. Does Skein’s opening activation establish protagonist skill and companion agency within the pacing target?
+11. What do players think `ROUTE PEER: RETURNED` means after the opening, orchard, and final stinger?
+12. Do players see Skein as special because of mystery rather than superior battle strength?
+13. Does Tavi’s sequential battle team clearly demonstrate strategy across switches?
 
 ## Decisions awaiting approval
 
 - The opening crisis centers on a failed pollinator migration and an unstable old weir.
+- The protagonist is a cradle-repair apprentice/field mechanic pursuing Wayfinder certification.
+- The protagonist reconstructed Skein’s body from a damaged unregistered seedcore; Skein supplies its own mind, choices, and voluntary Accord.
+- One canonical Skein body replaces the traditional starter selection; naming and early reserve recruitment provide player ownership.
 - The first human major battle is a time-sensitive disagreement with Tavi, not a formal rank test.
 - Wildkin synthetic origin is public; the hidden revelation concerns ancient provenance and control access, not “they were robots all along.”
 - Meridian’s rollback technology is genuinely protective and genuinely harmful.
 - Orralume is rescued rather than recruited in the slice.
 - The Hush is a forced rollback into older seedcore states; its instigator and ultimate purpose remain open.
 - Orralume’s ancient service identity is the slice’s strongest origin clue, not a full answer.
+- Skein’s `ROUTE PEER: RETURNED` phrase links the personal companion mystery to Orralume without making Skein a battle requirement or instant legendary.
 - The deeper cause of the Red Wake and original maker of seedcores remain undecided until player interest can guide them.

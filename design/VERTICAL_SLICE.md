@@ -9,17 +9,17 @@
 The slice succeeds if a new player finishes wanting to:
 
 - form Accords with more wildkin;
-- try a different active trio;
+- try a different active/reserve sequence and Focus handoff;
 - learn what caused the Hush;
-- understand one companion as a living synthetic individual rather than a battle tool;
+- care about Skein as a living synthetic individual whose body the protagonist repaired but whose identity is its own;
 - revisit a changed location or follow the next route.
 
 It does not need to prove the final game’s total length, full roster, or final antagonist.
 
 ## Questions the slice must answer
 
-1. Is three-wildkin team combat quick, readable, and distinct?
-2. Does visible enemy intent produce good decisions rather than automatic counters?
+1. Is standard 1v1 combat quick, readable, and distinct when reserves and switching are available?
+2. Does visible enemy intent create a meaningful “Answer, stay, or switch” decision rather than an automatic counter?
 3. Does deterministic Accord make recruitment more satisfying and less frustrating?
 4. Can exploration, synthetic creature habitats, civic technology, and story evidence share the same small maps?
 5. Does one local conflict build naturally into two meaningful major battles?
@@ -27,6 +27,8 @@ It does not need to prove the final game’s total length, full roster, or final
 7. Can the project deliver this quality with a small RPG Maker MZ content footprint?
 8. Do wildkin feel organically alive, mechanically integrated, socially useful, and individually charming at once?
 9. Does the root-access reveal feel like a disturbing deepening of an appealing world rather than a reversal into “technology bad”?
+10. Does the opening establish the protagonist as a skilled repairer and Skein as an autonomous companion without slowing the first battle?
+11. Does Focus shared across switches create team synergy despite only one active wildkin per side?
 
 Everything else is secondary to these questions.
 
@@ -34,17 +36,17 @@ Everything else is secondary to these questions.
 
 - **First-time critical path:** 2 hours to 2 hours 30 minutes.
 - **Moderately exploratory path:** 2 hours 30 minutes to 3 hours.
-- **Replay/alternate starter path:** under 2 hours with seen text and animations accelerated.
-- **Mandatory battles:** approximately 7–9 ordinary groups, one Tavi team battle, one Orralume climax.
+- **Replay/alternate early-Accord path:** under 2 hours with seen text and animations accelerated.
+- **Mandatory battles:** approximately 7–9 ordinary 1v1 duels, one sequential Tavi team battle, one 1v1 multi-phase Orralume climax.
 - **Optional battles:** approximately 6–10 visible groups, all avoidable or retreatable.
-- **Playable species:** 12 at content-complete; expansion toward 25–30 forms/species only after approval gates.
+- **Playable entries:** Skein plus 11 registered species at content-complete; expansion toward 25–30 forms/species only after approval gates.
 - **Side quests:** 3, each 10–20 minutes and each serving at least two design purposes.
 
 ## Content boundary
 
 ### Locations
 
-1. **Cable Approach** — autonomous transit cold open, starter selection from mobile cradle carriers, first battle.
+1. **Cable Approach** — small public service bay, Skein’s activation and voluntary Accord, autonomous transit interruption, first 1v1 battle.
 2. **Hearthmere** — compact civic-tech hub, community cradle, resynchronization festival setup, returning aftermath.
 3. **Sunken Track: Upper** — exposed service spine, first Accord, simple fork, first system shortcut.
 4. **Sunken Track: Lower** — denser habitats, Hush symptom, connection to orchard.
@@ -58,6 +60,7 @@ Adjacent spaces can share one RPG Maker map when that reduces transitions. The t
 ### Characters with substantial dialogue
 
 - Protagonist.
+- Skein, a central nonverbal companion with authored behavior.
 - Tavi Rook, rival/companion.
 - Warden Mara Venn, mentor and local authority.
 - Merrit Quill, Meridian field engineer.
@@ -67,23 +70,25 @@ Other villagers receive short functional or flavor conversations. Do not create 
 
 ### Systems required
 
-- Three-wildkin active party.
+- Standard 1v1 active combat with one wildkin per side.
+- Carried reserves, action-cost voluntary switching, free replacement after Spent, and persistent reserve Resolve.
+- Sequential opposing rosters; no fixed final player party-size limit yet.
 - Visible encounter groups.
 - Four intent categories and response bonuses.
-- Focus resource and signature techniques.
+- Shared Focus that persists across switches and signature techniques that can spend another companion’s setup.
 - Six Aspects and outcome preview.
 - Deterministic Accord and one temperament shortcut per wild species.
-- Roster management at wayposts.
+- Active/reserve roster management at wayposts.
 - Whole-roster catch-up experience.
 - Survey, Tune, and Rig authored field interactions.
 - Simple quest log and bestiary updates.
-- Immediate major-battle retry with team-edit access.
+- Immediate major-battle retry with active/reserve-edit access.
 - Map-state changes after the climax.
 - Bestiary fields for observed behavior, registered service lineage, and unresolved anomaly.
 
 ### Systems explicitly not required
 
-- Breeding, modular body construction, playable Reweaving, companion equipment slots, hacking minigames, trading, procedural encounters, crafting, equipment rarity, mounts, online play, day/night cycle, dynamic weather, stealth, relationship meters, branching endings, voiced scenes, or a generalized physics/puzzle framework.
+- 2v2 or general multi-active battle support, switch hazards, deep switch-state rules, breeding, modular body construction, playable Reweaving, companion equipment slots, hacking minigames, trading, procedural encounters, crafting, equipment rarity, mounts, online play, day/night cycle, dynamic weather, stealth, relationship meters, branching endings, voiced scenes, or a generalized physics/puzzle framework.
 
 Reweaving is visible in dialogue, cradle design, and later-form previews, but implementing evolution is deliberately deferred until the combat prototype proves creature identity and continuity.
 
@@ -93,16 +98,17 @@ Times are observation targets, not cutscene scripts.
 
 | Time | Activity | New element | Story movement |
 |---|---|---|---|
-| 0:00–0:05 | Ride Cable Approach; choose starter; battle | Basic commands, Assault tell | Thrumble relay swarm replays its route backward |
-| 0:05–0:12 | Enter Hearthmere; short introductions | Wayglass, community cradle | Festival sync has failed; Merrit’s rollback prevents a cascade |
-| 0:12–0:25 | Survey Upper Track; form first Accord | Visible groups, mutual Open/Accord | Logs show a root handshake preceded the reversed route |
-| 0:25–0:45 | Explore fork and optional loop | Rig shortcut, service behaviors | Checksum rings and old credentials imply more than a broken weir |
-| 0:45–1:05 | Reach Bellwether Orchard | Open-protocol Tune, habitat interaction | Orralume is missing; its old identifier points beneath weir |
-| 1:05–1:25 | Complete lower route / optional quest return | Team swap, fuller intent mix | Tavi and player form competing explanations |
-| 1:25–1:50 | Explore Weirworks and legacy cradle | Compact dungeon loop, archive clue | Old consent interval provides a combined solution |
-| 1:50–2:05 | Cascade and Tavi confrontation | Authored team battle | Player earns the right to attempt consent before override |
-| 2:05–2:25 | Orralume rescue | Three-phase boss, battle Tune | Orralume rejects rollback and restores route/pressure together |
-| 2:25–2:40 | Changed town/orchard and dusk festival | Return-state rewards | First Waymark; Merrit hides an ancient service identity |
+| 0:00–0:03 | Perform final body checks; Skein wakes and offers Accord | Movement, naming, mutual Accord | `ROUTE PEER: RETURNED`; unplanned relay filament grows |
+| 0:03–0:06 | Ride Cable Approach; battle one Thrumble | 1v1 command, Assault intent | Relay swarm replays its route and Skein’s handshake |
+| 0:06–0:15 | Enter Hearthmere; short introductions | Wayglass, community cradle | Festival sync failed; Merrit’s rollback prevents a cascade |
+| 0:15–0:30 | Survey Upper Track; form first wild Accord | Visible duels, Open/Accord, free replacement | A root handshake preceded the reversed route |
+| 0:30–0:50 | Explore fork and optional loop | Voluntary switch, shared Focus, Rig | Checksum rings and old credentials imply more than a broken weir |
+| 0:50–1:10 | Reach Bellwether Orchard | Open-protocol Tune, habitat interaction | Orralume is missing; it and Thrumble answer Skein’s signal |
+| 1:10–1:30 | Complete lower route / optional return | Reserve edits, fuller intent mix | Tavi and player form competing explanations |
+| 1:30–1:55 | Explore Weirworks and legacy cradle | Compact dungeon loop, archive clue | Skein is admitted as a peer; old consent interval offers a solution |
+| 1:55–2:10 | Cascade and Tavi confrontation | Sequential 1v1 team battle | Player earns the right to attempt consent before override |
+| 2:10–2:30 | Orralume rescue | 1v1 three-phase boss, switching, battle Tune | Orralume recognizes Skein, rejects rollback, restores route/pressure |
+| 2:30–2:45 | Changed town/orchard and dusk festival | Return-state rewards | First Waymark; Merrit hides two linked ancient identifiers |
 
 An exploratory player spends the additional time on side branches, roster experimentation, and three short quests. The critical path never asks the player to patrol for levels.
 
@@ -118,24 +124,26 @@ No single activity should dominate for more than about 15 minutes in the first h
 
 ### Tavi Rook — Upper Control Platform
 
-- **Recommended team:** 3 wildkin, authored to demonstrate synergy rather than pure Aspect coverage.
-- **Duration target:** 4–7 minutes on first attempt.
+- **Recommended roster:** Enough reserves to demonstrate at least one voluntary switch; no final party-size limit is implied.
+- **Opposing sequence:** Reedimp builds Focus, then Tavi spends a round switching to Loamlet at a readable safe moment. When Loamlet becomes Spent, the weakened Reedimp returns for at most one brief handoff attempt; if already Spent, that beat is skipped. Kilnkit enters last and spends the inherited momentum.
+- **Duration target:** 5–8 minutes on first attempt.
 - **Narrative function:** resolve who leads an immediate safety decision; expose Tavi’s Red Wake fear and emergency-override position.
-- **Mechanical function:** exam on Setup and Guard intents before the guardian fight.
-- **Battle shape:** Tavi establishes a precisely linked shield/tempo engine, previews a charged finisher, and adapts once when the player interrupts it. Their partners still emote and improvise so coordination never reads as ownership.
+- **Mechanical function:** exam on Setup/Guard intents, action-cost switching, free replacement, and cross-switch Focus before the guardian fight.
+- **Battle shape:** Tavi establishes a sequential shield/tempo engine and makes one readable switch. Finishing Reedimp early disrupts that engine; otherwise its short return clarifies that switched reserves persist. Kilnkit remains the climax. Their partners still emote and improvise so coordination never reads as ownership.
 - **Failure handling:** instant retry prompt; “Review team” opens the nearby waypost; one short Tavi line changes after a loss.
 - **Aftermath:** full recovery before the cistern. The story does not punish the player with depleted resources for winning.
 
 ### Orralume — Resonance Cistern
 
-- **Recommended team:** any balanced trio; no single starter is privileged.
+- **Recommended roster:** Any healthy set of active/reserve partners; Skein is not required to occupy the active slot.
 - **Duration target:** 7–10 minutes on first clear.
 - **Narrative function:** rescue an autonomous synthetic coordinator, preserve its present identity, and vent the weir safely.
-- **Mechanical function:** combine all four intent reads with an authored field action.
+- **Mechanical function:** combine all four intent reads, switching under a known incoming action, reserve Resolve management, and an authored field action.
 - **Phase 1 — Panic:** clear Assault tells; sheltering and tempo control are strong.
 - **Phase 2 — Fold:** Orralume uses layered Guard and scale decoys; Break/Feint techniques create openings.
 - **Phase 3 — Root rollback:** Hush authorization creates Disrupt pressure. Tune exposes the old consent interval; Orralume’s own response, not the player’s command, replaces a damage race with a rescue finish.
 - **Failure handling:** retry from the control platform with a short phase hint based on where the team failed.
+- **Story recognition:** Orralume addresses Skein before battle even if Skein is in reserve. This grants no combat bonus and does not imply obedience.
 - **Aftermath:** Orralume leads the returning swarm through the map; the creature is not recruited.
 
 ## Exploration plan
@@ -185,42 +193,46 @@ Visible consequence is a required part of the reward, not polish to cut first.
 
 ### Gate A — Combat lab
 
-**Content:** Starter trio, Thrumble, Latchling, Loamlet; neutral test backdrop; several authored enemy teams; placeholder icons and animation. Even graybox silhouettes must mark each species’ integrated synthetic system and personality beat.
+**Content:** Skein, Briarkid, Kilnkit, Rillip, Thrumble, and Loamlet; neutral test backdrop; single wild duels and one sequential opposing team; placeholder icons and animation. Even graybox silhouettes must mark each species’ integrated synthetic system and personality beat.
 
 **Must prove:**
 
-- three active allies are readable;
-- choosing actions after enemy intents is interesting;
-- Focus arrives and is spent at a satisfying rhythm;
-- ordinary battles finish in 3–5 turns;
-- each of the six species has a reason to be selected.
+- one active wildkin per side is readable;
+- “Answer, stay, or switch” remains interesting after the obvious Aspect tutorial;
+- voluntary switching consumes the round, resolves first, and redirects the planned attack clearly;
+- free replacement after Spent is immediate and reserve Resolve persists;
+- Focus built by one wildkin is satisfying to spend with another;
+- ordinary wild duels finish in 3–6 rounds;
+- each of the six entries has a reason to stay active and a reason to hand off momentum;
 - Accord visually reads as a mutual handshake, not capture or hacking.
 
-**Stop condition:** Do not build the full map flow if the optimal answer is obvious every turn or battle resolution is slow.
+**Stop condition:** Do not build the full map flow if switching is an automatic Aspect correction, if staying in is almost always superior, or if sequential replacements make battles drag.
 
 ### Gate B — 45–60 minute graybox
 
-**Content:** Cable Approach, compressed civic-tech Hearthmere, one Sunken Track service map, compressed Weirworks/legacy cradle/cistern; one starter; six total playable species; abbreviated story; Orralume prototype. Tavi’s battle may use a temporary team.
+**Content:** Cable service bay and approach, compressed civic-tech Hearthmere, one Sunken Track service map, compressed Weirworks/legacy cradle/cistern; Skein plus five prototype species; abbreviated story; Orralume prototype. Tavi’s battle may use temporary data for its sequential roster.
 
 **Must prove:**
 
-- first battle and Accord timing;
+- Skein activation, first battle, first wild Accord, and switch-tutorial timing;
+- protagonist repair competence and Skein agency without opening exposition;
 - visible encounter navigation;
 - one route fork and shortcut;
 - evidence leading to a story conclusion;
-- rescue framing of the boss.
+- rescue framing of the boss;
+- the opening `ROUTE PEER: RETURNED` clue is noticed but not understood;
 - daily-life technology feels warm before root rollback becomes unsettling.
 
 **Stop condition:** Do not add species if the opening objective is unclear or players disengage before the orchard clue.
 
 ### Gate C — Content-complete slice
 
-**Content:** 6–8 maps, all five central characters, 12 playable species, Tavi battle, Orralume battle, three side quests, pre/post area states, complete main dialogue.
+**Content:** 6–8 maps, all five central characters, 12 playable wildkin entries (including the unique Skein), Tavi battle, Orralume battle, three side quests, pre/post area states, complete main dialogue.
 
 **Must prove:**
 
 - 2–3 hour pacing;
-- team experimentation without grinding;
+- reserve and switching experimentation without grinding;
 - local arc satisfaction;
 - mystery comprehension and curiosity;
 - organic-synthetic visual identity, social integration, and emotional attachment;
@@ -234,14 +246,14 @@ Polish battle readability, menus, encounter placement, audio cues, portraits, an
 
 ## Prototype roster allocation
 
-### Six-species graybox
+### Six-entry graybox
 
-- Briarkid, Kilnkit, Rillip.
-- Thrumble, Latchling, Loamlet.
+- Skein, Briarkid, Kilnkit, Rillip, Thrumble, and Loamlet.
 
-### Twelve-species content-complete target
+### Twelve-entry content-complete target
 
-- Add Reedimp, Sootnewt, Cairncap, Vellumoth, Rucklet, and Mirrorminnow.
+- Add Latchling, Reedimp, Sootnewt, Cairncap, Vellumoth, and Rucklet.
+- Mirrorminnow moves to the expansion roadmap so Skein does not increase the immediate 12-entry scope.
 - Orralume is a non-playable encounter and does not count toward the roster.
 
 ### Expansion target
@@ -264,13 +276,14 @@ Each uses existing maps and characters. None requires an exclusive system, a uni
 - Portrait set: protagonist-neutral framing plus Tavi, Mara, Merrit, and Edda; expressions kept to a small reusable set.
 - No lip sync or voice acting.
 - Major scene staging uses public interfaces, wildkin service/play animation, map movement, sound changes, screen tone, light overlays, and wildkin sprites.
-- Opening contains at most three brief tutorial prompts before free exploration.
+- Skein uses one canonical map sprite/battler and a small set of reusable behavior animations; configurable bodies are outside scope.
+- Opening contains at most three brief prompts across movement, Accord acceptance, and the first battle before free exploration.
 - Previously seen major-battle introductions are skippable after a retry.
 - Ambient audio carries the three-note clue, with a simultaneous visual pulse for players who cannot rely on sound.
 
 ## Difficulty and economy targets
 
-- Critical-path encounters alone keep an unchanged active trio within the expected readiness band.
+- Critical-path encounters alone keep Skein and any regularly used reserves within the expected readiness band.
 - Players who avoid all optional battles can still defeat Tavi with sound intent responses.
 - Optional encounters primarily provide roster choice, field observations, and technique experimentation—not required levels.
 - Field Kit starts with three refillable recovery charges and refills at wayposts.
@@ -284,28 +297,31 @@ Use at least five fresh players across Gates B and C before expanding the roster
 
 Record:
 
-- time to movement, first battle, first Accord, orchard, Tavi, and ending;
+- time to movement, Skein Accord, first battle, first wild Accord, first voluntary switch, orchard, Tavi, and ending;
 - number of avoidable encounters entered;
-- active trio changes and stated reasons;
+- active/reserve selection, voluntary switches, and stated reasons;
 - intent icons misunderstood or ignored;
 - failed Accord attempts and why;
 - dialogue skipped;
 - wrong turns lasting more than two minutes;
-- theories about the Hush, Merrit, Tavi, and Orralume;
+- theories about Skein, the Hush, Merrit, Tavi, and Orralume;
 - how testers describe wildkin origin, personhood, daily roles, Accord, and Reweaving in their own words;
 - moments players voluntarily revisit after the climax.
 
 ### Initial success thresholds
 
 - At least 4/5 players reach the first battle within 5 minutes.
-- At least 4/5 can explain Open/Accord after using it once.
-- Median ordinary battle stays under roughly 90 seconds after the tutorial.
+- At least 4/5 explain that Skein chose Accord and that the protagonist repaired its body rather than created its personality.
+- At least 4/5 can explain wild Open/Accord after using it once.
+- At least 4/5 understand voluntary-switch cost, incoming targeting, and free replacement after one demonstration each.
+- Median ordinary duel stays under roughly 75 seconds after the tutorial.
 - No tester reports needing to grind to pass Tavi or Orralume.
-- At least 3/5 change their trio voluntarily for a reason beyond a forced tutorial.
+- At least 3/5 switch voluntarily for a reason beyond simple Aspect advantage or a forced tutorial.
 - At least 4/5 can state the local cause-and-solution chain after finishing.
 - At least 3/5 offer a theory about the larger Hush without being prompted.
 - At least 4/5 identify wildkin as living synthetic beings without concluding they are emotionless robots.
 - At least 3/5 cite a useful or charming surface technology they would want to see more of.
+- At least 3/5 remember or theorize about `ROUTE PEER: RETURNED` without being prompted with the phrase.
 
 Thresholds flag investigation; they are not statistical proof with such a small sample.
 
@@ -315,9 +331,10 @@ The slice is “polished” only when:
 
 - its opening, two major battles, and ending can be completed without developer intervention;
 - all mandatory objectives and intent/Accord information are readable on keyboard and controller;
-- all 12 implemented species have a distinct battle use and complete bestiary/Accord text;
+- all 12 implemented entries have a distinct 1v1/switching use and complete bestiary/Accord text;
 - all 12 communicate an integrated synthetic body function, daily-life role/history, and individual behavior;
-- the active trio can be changed at each intended waypost;
+- the active wildkin and carried reserves can be changed at each intended waypost without assuming a final party-size limit;
+- Skein can be rested from active battle without breaking authored story scenes;
 - critical-path balance requires no repeated farming;
 - the pre/post Hearthmere and orchard states are visible;
 - retries, saves, and returns from side paths do not break quest state;
@@ -328,21 +345,28 @@ The slice is “polished” only when:
 
 | Risk | Early response |
 |---|---|
-| Three active wildkin create command overload | Test six species first; reduce each kit before reducing team identity. |
-| Intent UI makes combat deterministic | Use mixed intents, target choice, timing, and partial information—not invisible randomness. |
+| Switching becomes automatic type correction | Make enemy intent, current Resolve, Focus, and the lost action matter; keep Aspect multipliers modest. |
+| Switching is rarely worth a round | Use readable pressure and cross-switch Focus opportunities before inventing hazards or free-pivot states. |
+| Sequential teams make battles long | Keep ordinary wild encounters to one opponent, resolve replacements instantly, and cap Tavi’s roster/animations tightly. |
+| Intent UI makes combat deterministic | Use intent category, timing, Focus, and reserve tradeoffs—not invisible randomness. |
 | Accord feels automatic | Strengthen temperament interactions and presentation; do not reintroduce hidden capture odds first. |
 | Story requires too many bespoke scenes | Deliver clues through reusable interfaces, service behavior, creature placement, and altered ambience. |
 | Synthetic designs read as armored animals | Require integrated anatomy, growth needs, service history, and one personality behavior before art approval. |
 | Wildkin read as equipment rather than companions | Show refusal, play, personalization, independent community life, and voluntary Accord; avoid ownership UI language. |
 | The mystery reads as “technology bad” | Make Hearthmere attractive and capable; keep Merrit’s rescue action and Tavi’s fear concrete; make the combined technical solution mandatory. |
 | Root access makes normal Accord feel coercive | Reiterate mutual handshake behavior in play and make Orralume’s own response complete the rescue. |
-| Twelve species feel sparse | Improve encounter compositions and kits before authorizing 14 more art/data entries. |
+| Skein feels like a chosen-one legendary | Keep early stats ordinary, make recognition ambiguous, and require other characters/species for every solution. |
+| Skein feels owned because the protagonist built its body | Make Skein initiate Accord, refuse small expectations, grow an unplanned structure, and retain battle/rest freedom. |
+| Twelve playable entries feel sparse | Improve encounter compositions and kits before authorizing 14 more art/data entries. |
 | Backtracking slows the slice | Open authored shortcuts and change map states on return. |
 
 ## Decisions awaiting approval
 
 - A 2–3 hour target with 6–8 compact maps.
 - A staged roster of 6, then 12, then up to 26 playable entries.
+- Standard one-active-per-side combat with switching and sequential reserves; special multi-active formats deferred.
+- One canonical reconstructed companion, Skein, replacing a traditional starter choice.
+- Protagonist as cradle-repair apprentice/field mechanic pursuing Wayfinder certification.
 - Tavi and Orralume as the only mandatory major battles.
 - Three small side quests using existing spaces.
 - A combined open-protocol/precise-control solution rather than a simple machine shutdown.
