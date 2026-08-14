@@ -5,6 +5,6 @@ var $plugins =
 {"name":"Hushwake_WildkinCore","status":true,"description":"HUSHWAKE Milestone 1A - persistent Wildkin instances and roster.","parameters":{}},
 {"name":"Hushwake_BattleSystem","status":true,"description":"HUSHWAKE Milestone 1A - 1v1 Wildkin battle, switching, and lineups.","parameters":{}},
 {"name":"Hushwake_IntentAnswers","status":true,"description":"HUSHWAKE Milestone 1B - enemy Intent plans and deterministic Answers.","parameters":{}},
-{"name":"Hushwake_BattleHud","status":true,"description":"HUSHWAKE Milestone 1A.5 - compact battler overlays and unified battle HUD.","parameters":{"overheadWidth":"232","overheadHeight":"58","overheadGap":"8","edgeMargin":"8","enemyYOffset":"64","commandWidth":"192","techniqueListWidth":"320","switchListWidth":"496","showResolveNumbers":"false","resolveLabel":"Resolve"}},
+{"name":"Hushwake_BattleHud","status":true,"description":"HUSHWAKE Milestone 1A.5 - compact battler overlays and unified battle HUD.","parameters":{"overheadWidth":"232","overheadHeight":"58","overheadGap":"22","edgeMargin":"8","playerBattlerX":"270","playerBattlerY":"370","enemyBattlerX":"570","enemyBattlerY":"280","commandWidth":"192","techniqueListWidth":"320","switchListWidth":"496","showResolveNumbers":"false","resolveLabel":"Resolve"}},
 {"name":"Hushwake_BattleLab","status":true,"description":"HUSHWAKE Milestone 1A - direct graybox Battle Lab launcher.","parameters":{}}
 ];

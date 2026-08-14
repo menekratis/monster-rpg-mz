@@ -17,10 +17,10 @@
  * @default 58
  *
  * @param overheadGap
- * @text Battler Gap
+ * @text HUD-to-Battler Gap
  * @type number
  * @min 0
- * @default 8
+ * @default 22
  *
  * @param edgeMargin
  * @text Screen Edge Margin
@@ -28,11 +28,29 @@
  * @min 0
  * @default 8
  *
- * @param enemyYOffset
- * @text Enemy Battler Y Offset
+ * @param playerBattlerX
+ * @text Player Battler X
  * @type number
  * @min 0
- * @default 64
+ * @default 270
+ *
+ * @param playerBattlerY
+ * @text Player Battler Y
+ * @type number
+ * @min 0
+ * @default 370
+ *
+ * @param enemyBattlerX
+ * @text Enemy Battler X
+ * @type number
+ * @min 0
+ * @default 570
+ *
+ * @param enemyBattlerY
+ * @text Enemy Battler Y
+ * @type number
+ * @min 0
+ * @default 280
  *
  * @param commandWidth
  * @text Command Area Width
@@ -68,6 +86,9 @@
  * Presentation-only graybox HUD for one-active-per-side battles.
  *
  * Active battlers receive a compact, frameless name and Resolve bar overlay.
+ * Player and enemy home coordinates are configurable here so battle staging
+ * remains presentation-only. Player motion automatically faces and advances
+ * toward the configured enemy position.
  * The native battle log is restyled and moved into the bottom HUD beside the
  * command window. Technique help, target previews, switch guidance, Spent
  * messages, and handoff messages reuse that same bottom area.
@@ -106,9 +127,12 @@
     Hud.settings = {
         overheadWidth: numberParameter("overheadWidth", 232),
         overheadHeight: numberParameter("overheadHeight", 58),
-        overheadGap: Number(parameters.overheadGap || 8),
+        overheadGap: Number(parameters.overheadGap || 22),
         edgeMargin: Number(parameters.edgeMargin || 8),
-        enemyYOffset: numberParameter("enemyYOffset", 64),
+        playerBattlerX: numberParameter("playerBattlerX", 270),
+        playerBattlerY: numberParameter("playerBattlerY", 370),
+        enemyBattlerX: numberParameter("enemyBattlerX", 570),
+        enemyBattlerY: numberParameter("enemyBattlerY", 280),
         commandWidth: numberParameter("commandWidth", 192),
         techniqueListWidth: numberParameter("techniqueListWidth", 320),
         switchListWidth: numberParameter("switchListWidth", 496),
@@ -122,6 +146,17 @@
 
     Hud.enemyBattler = function() {
         return Battle.activeEnemy();
+    };
+
+    Hud.playerApproach = function() {
+        return {
+            x: Math.sign(
+                this.settings.enemyBattlerX - this.settings.playerBattlerX
+            ) || 1,
+            y: Math.sign(
+                this.settings.enemyBattlerY - this.settings.playerBattlerY
+            ) || -1
+        };
     };
 
     Hud.plannedIntent = function() {
@@ -666,10 +701,57 @@
             battler.isWildkin()
         ) {
             this.setHome(
-                battler.screenX(),
-                battler.screenY() + Hud.settings.enemyYOffset
+                Hud.settings.enemyBattlerX,
+                Hud.settings.enemyBattlerY
             );
         }
+    };
+
+    const _Sprite_Actor_setActorHome = Sprite_Actor.prototype.setActorHome;
+    Sprite_Actor.prototype.setActorHome = function(index) {
+        if (!Battle.isActive()) {
+            _Sprite_Actor_setActorHome.call(this, index);
+            return;
+        }
+        this.setHome(
+            Hud.settings.playerBattlerX,
+            Hud.settings.playerBattlerY
+        );
+        if (this._mainSprite) {
+            const approach = Hud.playerApproach();
+            this._mainSprite.scale.x = approach.x > 0 ? -1 : 1;
+        }
+    };
+
+    const _Sprite_Actor_moveToStartPosition =
+        Sprite_Actor.prototype.moveToStartPosition;
+    Sprite_Actor.prototype.moveToStartPosition = function() {
+        if (!Battle.isActive()) {
+            _Sprite_Actor_moveToStartPosition.call(this);
+            return;
+        }
+        const approach = Hud.playerApproach();
+        this.startMove(-approach.x * 220, -approach.y * 40, 0);
+    };
+
+    const _Sprite_Actor_stepForward = Sprite_Actor.prototype.stepForward;
+    Sprite_Actor.prototype.stepForward = function() {
+        if (!Battle.isActive()) {
+            _Sprite_Actor_stepForward.call(this);
+            return;
+        }
+        const approach = Hud.playerApproach();
+        this.startMove(approach.x * 48, approach.y * 12, 12);
+    };
+
+    const _Sprite_Actor_retreat = Sprite_Actor.prototype.retreat;
+    Sprite_Actor.prototype.retreat = function() {
+        if (!Battle.isActive()) {
+            _Sprite_Actor_retreat.call(this);
+            return;
+        }
+        const approach = Hud.playerApproach();
+        this.startMove(-approach.x * 300, -approach.y * 70, 30);
     };
 
     const _Scene_Battle_createAllWindows =
