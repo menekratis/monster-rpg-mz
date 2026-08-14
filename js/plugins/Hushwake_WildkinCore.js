@@ -51,18 +51,43 @@
     };
 
     Data.makeSkill = function(definition, id) {
+        const kind = String(definition.kind || "damage");
+        const target = String(definition.target || "opponent");
+        const isDamage = kind !== "support";
+        const intent = String(definition.intent || "");
+        const answer = definition.answer
+            ? {
+                  intent: String(definition.answer.intent || ""),
+                  effect: String(definition.answer.effect || ""),
+                  value: Number(definition.answer.value || 0),
+                  preview: String(definition.answer.preview || ""),
+                  result: String(definition.answer.result || "")
+              }
+            : null;
+        const noteLines = [
+            "<HushwakeTechnique:" + definition.key + ">",
+            "<Aspect:" + definition.aspect + ">",
+            "<Priority:" + Number(definition.priority || 0) + ">"
+        ];
+        if (intent) {
+            noteLines.push("<Intent:" + intent + ">");
+        }
+        if (answer) {
+            noteLines.push("<Answer:" + answer.intent + ">");
+        }
         const skill = {
             id: id,
             animationId: Number(definition.animationId || 1),
             damage: {
                 critical: false,
                 elementId: 0,
-                formula:
-                    "Math.max(1, a.atk * " +
-                    Number(definition.power || 1) +
-                    " - b.def * 0.5)",
-                type: 1,
-                variance: 5
+                formula: isDamage
+                    ? "Math.max(1, a.atk * " +
+                      Number(definition.power || 1) +
+                      " - b.def * 0.5)"
+                    : "0",
+                type: isDamage ? 1 : 0,
+                variance: isDamage ? 5 : 0
             },
             description: String(definition.description || ""),
             effects: [],
@@ -73,19 +98,12 @@
             messageType: 1,
             mpCost: 0,
             name: String(definition.name || definition.key),
-            note:
-                "<HushwakeTechnique:" +
-                definition.key +
-                ">\n<Aspect:" +
-                definition.aspect +
-                ">\n<Priority:" +
-                Number(definition.priority || 0) +
-                ">",
+            note: noteLines.join("\n"),
             occasion: 1,
             repeats: 1,
             requiredWtypeId1: 0,
             requiredWtypeId2: 0,
-            scope: 1,
+            scope: target === "self" ? 11 : 1,
             speed: 0,
             stypeId: 1,
             successRate: 100,
@@ -94,7 +112,11 @@
             hushwake: {
                 key: String(definition.key),
                 aspect: String(definition.aspect),
-                priority: Number(definition.priority || 0)
+                priority: Number(definition.priority || 0),
+                intent: intent,
+                answer: answer,
+                kind: kind,
+                target: target
             }
         };
         DataManager.extractMetadata(skill);

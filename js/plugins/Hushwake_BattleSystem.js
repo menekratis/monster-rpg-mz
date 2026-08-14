@@ -559,53 +559,6 @@
         return _Window_BattleStatus_basicGaugesY.call(this, rect);
     };
 
-    const _Window_BattleStatus_drawItemStatus =
-        Window_BattleStatus.prototype.drawItemStatus;
-    Window_BattleStatus.prototype.drawItemStatus = function(index) {
-        _Window_BattleStatus_drawItemStatus.call(this, index);
-        if (!Battle.isActive() || index !== 0) {
-            return;
-        }
-        const enemy = Battle.activeEnemy();
-        if (!enemy) {
-            return;
-        }
-        const rect = this.itemRectWithPadding(index);
-        const x = rect.x + 260;
-        const width = Math.max(0, rect.width - 260);
-        this.resetFontSettings();
-        this.drawText("Opponent: " + enemy.name(), x, rect.y + 12, width);
-        this.drawText(
-            "Aspects: " + Battle.aspectsOf(enemy).join("/"),
-            x,
-            rect.y + 48,
-            width
-        );
-        this.drawText(
-            "Resolve " + enemy.hp + "/" + enemy.mhp,
-            x,
-            rect.y + 84,
-            width
-        );
-    };
-
-    const _Window_BattleStatus_update = Window_BattleStatus.prototype.update;
-    Window_BattleStatus.prototype.update = function() {
-        _Window_BattleStatus_update.call(this);
-        if (!Battle.isActive()) {
-            this._hushwakeEnemyStatusKey = null;
-            return;
-        }
-        const enemy = Battle.activeEnemy();
-        const key = enemy
-            ? [enemy.index(), enemy.hp, enemy.mhp, enemy.isHidden()].join(":")
-            : "none";
-        if (key !== this._hushwakeEnemyStatusKey) {
-            this._hushwakeEnemyStatusKey = key;
-            this.refresh();
-        }
-    };
-
     const _Sprite_Gauge_label = Sprite_Gauge.prototype.label;
     Sprite_Gauge.prototype.label = function() {
         if (
@@ -618,36 +571,6 @@
             return "Resolve";
         }
         return _Sprite_Gauge_label.call(this);
-    };
-
-    const _Window_BattleEnemy_drawItem = Window_BattleEnemy.prototype.drawItem;
-    Window_BattleEnemy.prototype.drawItem = function(index) {
-        const action = BattleManager.inputtingAction();
-        const target = this._enemies[index];
-        if (
-            !Battle.isActive() ||
-            !action ||
-            !action.item() ||
-            !action.item().hushwake ||
-            !target
-        ) {
-            _Window_BattleEnemy_drawItem.call(this, index);
-            return;
-        }
-        const rect = this.itemLineRect(index);
-        const range = Battle.damageRange(action, target);
-        const label = Battle.aspectLabel(action, target);
-        const preview = range
-            ? label + "  " + range.min + "-" + range.max + " Resolve"
-            : label;
-        this.drawText(target.name(), rect.x, rect.y, 180);
-        this.drawText(
-            preview,
-            rect.x + 190,
-            rect.y,
-            rect.width - 190,
-            "right"
-        );
     };
 
     const _Window_BattleLog_displayAddedStates =
