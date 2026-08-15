@@ -16,7 +16,59 @@
     const Hushwake = (window.Hushwake = window.Hushwake || {});
     const Data = Hushwake.Data;
     const Battle = Hushwake.Battle;
+    const Encounters = Hushwake.Encounters;
     const BattleLab = (Hushwake.BattleLab = Hushwake.BattleLab || {});
+
+    BattleLab.testStrikeKey = "test_strike";
+
+    BattleLab.isTestStrikeEnabled = function() {
+        const encounter = Encounters ? Encounters.current() : null;
+        const metadata = encounter ? encounter.battleMetadata : null;
+        return !!(
+            Battle.isActive() &&
+            metadata &&
+            metadata.enableTestStrike === true
+        );
+    };
+
+    BattleLab.testStrikeSkill = function() {
+        return Data.technique(this.testStrikeKey);
+    };
+
+    BattleLab.isTestStrikeAction = function(action, target) {
+        const skill = action ? action.item() : null;
+        return !!(
+            this.isTestStrikeEnabled() &&
+            skill &&
+            skill.hushwake &&
+            skill.hushwake.key === this.testStrikeKey &&
+            target &&
+            target.isEnemy &&
+            target.isEnemy()
+        );
+    };
+
+    const _Game_Wildkin_skills = Game_Wildkin.prototype.skills;
+    Game_Wildkin.prototype.skills = function() {
+        const skills = _Game_Wildkin_skills.call(this);
+        if (!BattleLab.isTestStrikeEnabled()) {
+            return skills;
+        }
+        const testStrike = BattleLab.testStrikeSkill();
+        if (!testStrike || skills.some(skill => skill.id === testStrike.id)) {
+            return skills;
+        }
+        return skills.concat(testStrike);
+    };
+
+    const _Game_Action_makeDamageValue =
+        Game_Action.prototype.makeDamageValue;
+    Game_Action.prototype.makeDamageValue = function(target, critical) {
+        if (BattleLab.isTestStrikeAction(this, target)) {
+            return Math.max(0, target.hp);
+        }
+        return _Game_Action_makeDamageValue.call(this, target, critical);
+    };
 
     BattleLab.modes = {
         wild: {

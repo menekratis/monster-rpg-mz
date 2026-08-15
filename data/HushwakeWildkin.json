@@ -152,6 +152,16 @@
       "priority": 0,
       "iconIndex": 98,
       "animationId": 1
+    },
+    {
+      "key": "test_strike",
+      "name": "Test Strike",
+      "description": "[DEBUG] Makes the opposing Wildkin Spent for Battle Lab testing.",
+      "aspect": "Neutral",
+      "power": 1,
+      "priority": 100,
+      "iconIndex": 2,
+      "animationId": 1
     }
   ],
   "enemyTemplates": [
