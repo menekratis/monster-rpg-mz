@@ -349,7 +349,7 @@ The preferred eventual truth may combine 1 and 4: an inherited fabrication ecolo
 
 ## Levels and Field Data
 
-Wildkin use Levels. Player-facing progression is **Data** or **Field Data**, while native RPG Maker EXP storage may remain an implementation detail. Each opposing Wildkin or authored enemy instance defines a Data yield. When that opponent becomes Spent, its yield enters the battle Data pool; after a qualifying victory, every Wildkin in the selected battle lineup receives the full accumulated pool whether or not it became active. The reward is not split, and Level processing does not occur between opposing replacements.
+Wildkin use Levels. Player-facing progression is **Data** or **Field Data**, while native RPG Maker EXP storage may remain an implementation detail. Each opposing Wildkin or authored enemy instance defines a Data yield. When that opponent becomes Spent, its yield silently enters the battle Data pool. After a qualifying victory, the combined total is presented once and every selected Wildkin that is not Spent at synchronization receives the full pool whether or not it became active. Spent selected Wildkin receive none; the reward is not split or redistributed, and Level processing does not occur between opposing replacements.
 
 Level growth currently maps Resolve to HP, Force to ATK, Guard to DEF, and Tempo to AGI using provisional species curves. Reweaving is not triggered by this foundation milestone. Future level-based technique learning should attach to individual Wildkin and species technique data, with any four-technique replacement interface deferred until the broader kit system is proven.
 
@@ -415,5 +415,5 @@ Entries update after field observation rather than requiring repetitive defeat c
 - All current species and technique names are explicitly replaceable working names.
 - Wildkin are fully intelligent and verbal; their shared literal/low-context tendency is a baseline, not a single voice.
 - Skein's unusual trait is comparatively strong human social/emotional inference, not speech itself.
-- Spent opponents generate configured Data yields; selected battle-lineup members each receive the full accumulated Field Data pool after victory, and native EXP storage may support Levels internally.
+- Spent opponents silently generate configured Data yields; after victory the combined total is presented once and each selected non-Spent Wildkin receives the full accumulated Field Data pool, while Spent selected Wildkin receive none. Native EXP storage may support Levels internally.
 - Universal enemy-action prediction and the Answer system are not current combat foundations; limited prediction may return as a special ability.

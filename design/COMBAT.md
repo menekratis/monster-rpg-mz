@@ -232,11 +232,11 @@ Player-facing progression is **Data** or, after battle, **Field Data**. Internal
 
 - Each opposing Wildkin or authored enemy instance defines a Data yield. The yield enters a battle-local pool exactly once when that opponent becomes Spent.
 - The pool persists through sequential enemy replacement. Data is not synchronized and Levels do not change during the battle.
-- After a qualifying victory, every Wildkin in the player's currently selected battle lineup receives the full accumulated pool.
-- Participation is not required. Reserves receive the same amount as the active Wildkin.
-- The reward is not divided, and there are no participation bonuses or reserve penalties.
+- After a qualifying victory, every Wildkin in the player's selected battle lineup that is not Spent at synchronization receives the full accumulated pool.
+- Eligibility is evaluated at victory from final Spent/non-Spent state only. Participation, active time, damage dealt, and final-active status do not matter; an unused healthy reserve receives the same full amount as an active survivor.
+- A selected Wildkin that is Spent at victory receives no Field Data. Its missing reward is not split or redistributed; every eligible survivor still receives the full pool.
 - Wildkin outside the selected battle lineup receive no synchronized reward under the current rule; refuge catch-up remains an open design point.
-- Standard result language is **“Field Data synchronized.”** A Level threshold uses **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”**
+- Per-opponent accumulation is silent. After victory, show one combined result: **“Field Data synchronized.”** followed by **“[Total] Data received.”** Do not show separate opponent-yield or per-recipient gain messages. A Level threshold then uses **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”**
 - Levels update Resolve/HP, Force/ATK, Guard/DEF, and Tempo/AGI only during the post-victory synchronization flow.
 - Tuner encounters may define a Wild Coin victory reward. Use **Wild Coin** for one and **Wild Coins** otherwise. Wild Encounters normally define none.
 - Newly bonded Wildkin should eventually enter near the current readiness floor, but that onboarding rule is not implemented here.
@@ -278,7 +278,7 @@ If balance still produces grind, increase milestone readiness or reduce stat gro
 
 Tavi's eventual team is provisional and should use species available in the slice. Tavi is represented as a Tuner independently from the current opposing Wildkin. Their authored plan may later use Reedimp, Loamlet, and Kilnkit in sequence, but advanced AI, voluntary Tuner switching, Focus, and signatures are outside the current foundation.
 
-The present technical requirement is that Tavi's stable identity, text hooks, metadata, and ordered lineup survive every sequential replacement. The battle ends only when the entire lineup is Spent, and every member of the player's selected lineup receives the full Field Data reward on victory.
+The present technical requirement is that Tavi's stable identity, text hooks, metadata, and ordered lineup survive every sequential replacement. The battle ends only when the entire lineup is Spent, and every non-Spent member of the player's selected lineup receives the full Field Data reward on victory.
 
 ## Orralume battle specification
 
@@ -320,7 +320,7 @@ Do not use higher enemy health to compensate for an unreadable or shallow patter
 6. Does voluntary switching feel costly but useful, and is the incoming target rule immediately understood?
 7. Is free replacement after Spent fast and free of punitive extra damage?
 8. Does a Tuner remain clearly present as opponent while their Wildkin replace one another?
-9. Does each Spent opponent add its configured yield once, and does every selected lineup member receive the same accumulated total, including unused reserves?
+9. Does each Spent opponent silently add its configured yield once, and after victory does every selected non-Spent lineup member receive the same accumulated total, including unused healthy reserves, while Spent selected Wildkin receive none?
 10. Do Wild victories omit Wild Coins while Tuner victories show the configured Wild Coin reward?
 11. Are Level gains and resulting Resolve/Force/Guard/Tempo increases understandable after synchronization?
 12. Does choosing actions feel like partnership rather than remote control once Wildkin speak and exercise judgment?
@@ -336,7 +336,7 @@ Do not use higher enemy health to compensate for an unreadable or shallow patter
 - Up to four techniques remains a provisional kit target; Focus, signatures, and replacement UI are deferred.
 - Deterministic, consensual Accord remains future work; the Wayglass has no root authority.
 - Minimal randomness: small damage variance, no baseline misses or hidden criticals.
-- Each Spent opponent generates its configured Data yield; qualifying victories grant the full accumulated pool to every selected battle-lineup member, while defeat and Retreat grant no normal reward.
+- Each Spent opponent silently generates its configured Data yield; qualifying victories present the combined total once and grant the full pool to every selected non-Spent lineup member. Spent selected Wildkin receive none, rewards are not split, and defeat and Retreat grant no normal reward.
 - Tuner victories may grant encounter-configured Wild Coins; Wild victories normally do not.
 - Native MZ EXP storage, class curves, and level-up handling may implement player-facing Data and Levels.
 - Special multi-Wildkin formats remain possible later but are exceptions, not the base architecture.

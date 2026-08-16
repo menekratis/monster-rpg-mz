@@ -62,7 +62,7 @@ Progress is organized around short regional problems. Each major encounter is th
 
 ### 6. Respect for the player’s time
 
-Visible encounters, full Field Data for every Wildkin in the selected battle lineup, fast rematches, refillable field supplies, concise scenes, and no traversal moves tied to the current battle team keep friction low.
+Visible encounters, full Field Data for every non-Spent Wildkin in the selected battle lineup, fast rematches, refillable field supplies, concise scenes, and no traversal moves tied to the current battle team keep friction low.
 
 **Test:** Repetition must create a new decision, discovery, or mastery. If it only consumes time, remove it.
 
@@ -104,16 +104,16 @@ The loop should alternate activities every 5–12 minutes in the slice. Extended
 - Standard combat contains **one active wildkin per side**. Carried reserves enter by switching or free replacement after the active companion becomes Spent.
 - The final carried party-size limit is deliberately undecided. Design data and UI should not hard-code a three- or six-member assumption.
 - Additional bonded wildkin stay voluntarily at the nearest refuge, a social habitat and service station, and can be invited into the carried reserve roster at frequent wayposts.
-- Each opposing Wildkin generates its configured Data yield when it becomes Spent. After a qualifying victory, every Wildkin in the currently selected battle lineup receives the full accumulated Field Data pool. Participation is not required and the reward is never split.
+- Each opposing Wildkin silently adds its configured Data yield to the battle pool when it becomes Spent. After a qualifying victory, every selected Wildkin that is not Spent at synchronization receives the full accumulated pool. Participation is not required, unused healthy reserves qualify, and the reward is never split. Selected Wildkin that are Spent at victory receive no Field Data.
 - Wildkin outside the selected lineup do not receive this synchronized reward. Any future refuge catch-up rule is an open design point.
 - A newly bonded species enters near the current readiness floor, not at an unusable level.
 - Every prototype species has a reason to remain active and a reason it might hand off matchup responsibility or future shared momentum.
 
 ### Field Data and Levels
 
-Player-facing progression uses **Data**, or **Field Data** in post-battle context, while implementation may retain RPG Maker MZ's native EXP storage and class curves. Each opposing Wildkin contributes its configured Data yield to a battle-local pool when it becomes Spent. The pool persists across sequential replacements. Only after a qualifying victory does the complete accumulated pool synchronize to every Wildkin selected for that battle, explaining why active and reserve Wildkin receive the same full reward.
+Player-facing progression uses **Data**, or **Field Data** in post-battle context, while implementation may retain RPG Maker MZ's native EXP storage and class curves. Each opposing Wildkin silently contributes its configured Data yield to a battle-local pool when it becomes Spent, and the pool persists across sequential replacements. After a qualifying victory, the accumulated total is presented once and synchronizes in full to every selected Wildkin that is not Spent at that moment. Participation is not required; an unused healthy reserve receives the same full total as an active survivor, while a Spent selected Wildkin receives none.
 
-The standard result language is **“Field Data synchronized.”** When a threshold is crossed, use **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”** Data synchronization, Level processing, and resulting Resolve, Force, Guard, and Tempo growth occur after victory, never between opposing replacements. Participation bonuses, reserve penalties, refuge-wide rewards, Reweaving triggers, and final technique-replacement rules are not defined yet.
+The standard combined result language is **“Field Data synchronized.”** followed by **“[Total] Data received.”** This total appears once per qualifying victory; per-opponent yields and per-recipient gain messages are not shown. When an eligible Wildkin crosses a threshold, use **“Data threshold reached.”** followed by **“[Name] advanced to Level [N].”** Data synchronization, eligibility evaluation, Level processing, and resulting Resolve, Force, Guard, and Tempo growth occur after victory, never between opposing replacements. Participation bonuses, refuge-wide rewards, Reweaving triggers, and final technique-replacement rules are not defined yet.
 
 ### Wild Coins
 
@@ -259,7 +259,7 @@ These are targets, not immutable laws. Playtest observation outranks the stopwat
 - Type/Aspect outcomes previewed before action confirmation.
 - Deterministic Accord with the Open condition shown.
 - Refillable field-kit healing at wayposts; limited charges create choices without shopping chores.
-- Full accumulated Field Data for every selected battle-lineup member after victory and no Reweaving-by-grind requirements in the slice.
+- Full accumulated Field Data for every selected non-Spent battle-lineup member after victory, presented as one combined total, and no Reweaving-by-grind requirements in the slice.
 - Retry a lost major battle from immediately before it, with active/reserve-edit access.
 - Retreat succeeds against ordinary wild encounters unless the encounter is explicitly story-bound.
 - Quest log entries state the current lead in plain language.
@@ -327,7 +327,7 @@ The slice must prove the expensive uncertainties—1v1 switching combat, Skein a
 - **Setting identity:** the Merefold as a colorful technological society built into the Chorus, an inherited ecological communications lattice.
 - **Combat foundation:** one active wildkin per side, sequential reserves, meaningful action-cost switching, no universal enemy-action reveal, and room for future shared Focus.
 - **Encounter roles:** autonomous opponents use Wild Encounters; bonded opposing lineups use Tuner Battles with the Tuner represented independently.
-- **Progression foundation:** each Spent opponent adds its configured yield to a battle Data pool; every selected lineup member receives the full accumulated pool after a qualifying victory, and internal native EXP storage is acceptable. Tuner victories may grant encounter-configured Wild Coins; Wild victories normally do not.
+- **Progression foundation:** each Spent opponent silently adds its configured yield to a battle Data pool; after a qualifying victory the combined total is presented once and every selected Wildkin that is not Spent receives the full pool. Participation is not required, rewards are not split, and internal native EXP storage is acceptable. Tuner victories may grant encounter-configured Wild Coins; Wild victories normally do not.
 - **Wildkin cognition:** fully intelligent and verbal, with a literal/low-context baseline and individual variation; Skein is unusually socially perceptive.
 - **Protagonist:** cradle-repair apprentice pursuing Wayfinder certification.
 - **First companion:** one canonical unregistered wildkin, Skein, reconstructed from a damaged seedcore and choosing Accord during activation.

@@ -86,9 +86,9 @@ A **Wildkin Tuner**, normally shortened to **Tuner**, is a person who forms Acco
 
 ## Field Data synchronization
 
-Wayfinder and Tuner field systems record battle telemetry and translate it into **Field Data** that bonded Wildkin can inspect and integrate. Each opposing Wildkin generates a configured Data packet when it becomes Spent; those packets accumulate through sequential replacements. After a qualifying victory, the complete accumulated pool synchronizes to every Wildkin in the currently selected battle lineup, including reserves that never became active. The packet is not divided because each recipient receives the same information rather than a share of a physical resource.
+Wayfinder and Tuner field systems record battle telemetry and translate it into **Field Data** that bonded Wildkin can inspect and integrate. Each opposing Wildkin generates a configured Data packet when it becomes Spent; those packets accumulate silently through sequential replacements. After a qualifying victory, the complete accumulated pool is presented once and synchronizes to every Wildkin in the selected battle lineup that is not Spent at that moment, including healthy reserves that never became active. A Spent selected Wildkin cannot synchronize the packet. The reward is not divided or redistributed because every eligible recipient receives the same information rather than a share of a physical resource.
 
-This supports Levels without implying that combat experience belongs only to the creature that dealt damage. Synchronization and Level processing happen after victory, not between opponents. Wildkin outside the selected lineup receive no automatic synchronization under the current rule. Refuge catch-up, participation bonuses, reserve penalties, and Reweaving thresholds remain open design points.
+This supports Levels without implying that combat experience belongs only to the creature that dealt damage. Participation is not required, and final Spent/non-Spent state is evaluated when rewards synchronize after victory. Synchronization and Level processing happen after victory, not between opponents. Wildkin outside the selected lineup and selected Wildkin that are Spent receive no automatic synchronization under the current rule. Refuge catch-up, participation bonuses, and Reweaving thresholds remain open design points.
 
 ## Wild Coins
 
@@ -370,6 +370,6 @@ Only locations that produce a distinct local conflict and gameplay rhythm should
 - Hearthworks, the Open Chorus, and independent wildkin communities as provisional future pressures rather than immediate exposition.
 - A tightly connected Hearthmere route instead of an open-world slice.
 - “Wildkin Tuner,” shortened to “Tuner,” as the canonical role name for bonded lineup coordinators.
-- Field Data as per-opponent telemetry pooled when opposing Wildkin become Spent, then synchronized in full to every selected lineup member after victory; Tuner victories may additionally grant encounter-configured Wild Coins.
+- Field Data as per-opponent telemetry pooled silently when opposing Wildkin become Spent, then presented once and synchronized in full to every selected non-Spent lineup member after victory; participation is not required, rewards are not split, and Tuner victories may additionally grant encounter-configured Wild Coins.
 - Wildkin as fully intelligent and verbal, with a typically literal/low-context but individually varied social model.
 - Skein's comparative anomaly as stronger emotional/social inference, not unique speech.

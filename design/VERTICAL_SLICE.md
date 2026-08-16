@@ -80,7 +80,7 @@ Other villagers receive short functional or flavor conversations. Do not create 
 - Six Aspects and outcome preview.
 - Deterministic Accord and one temperament shortcut per wild species.
 - Active/reserve roster management at wayposts.
-- Per-opponent Data yields pooled as opposing Wildkin become Spent, then the full accumulated Field Data synchronized to every selected lineup member after a qualifying victory, whether active or reserve, with native-MZ-backed Levels.
+- Per-opponent Data yields silently pooled as opposing Wildkin become Spent, then one combined result after qualifying victory and the full accumulated Field Data synchronized to every selected non-Spent lineup member, whether active or unused reserve, with native-MZ-backed Levels.
 - Survey, Tune, and Rig authored field interactions.
 - Simple quest log and bestiary updates.
 - Immediate major-battle retry with active/reserve-edit access.
@@ -368,7 +368,7 @@ The slice is “polished” only when:
 - A staged roster of 6, then 12, then up to 26 playable entries.
 - Standard one-active-per-side combat with switching and sequential reserves; special multi-active formats deferred.
 - Wild/Tuner encounter distinction with stable Tuner identity independent from the active opposing Wildkin.
-- Each Spent opponent contributes configured Data to a battle pool; every selected lineup member receives the full accumulated Field Data after qualifying victory, using Levels and native MZ progression internally. Tuner victories may additionally grant encounter-configured Wild Coins.
+- Each Spent opponent silently contributes configured Data to a battle pool; after qualifying victory the combined total is shown once and every selected non-Spent lineup member receives the full accumulated Field Data. Participation is not required, Spent selected Wildkin receive none, and rewards are not split. Levels may use native MZ progression internally, and Tuner victories may additionally grant encounter-configured Wild Coins.
 - No universal Intent reveal or Answer system; Focus/signatures remain deferred.
 - Fully intelligent, verbal Wildkin with literal/low-context tendencies and individual voices; Skein is unusually socially perceptive.
 - One canonical reconstructed companion, Skein, replacing a traditional starter choice.

@@ -32,7 +32,8 @@
  *
  * @help
  * Pools Data yields from opposing Wildkin as they become Spent, then awards
- * the full accumulated amount to each selected lineup member only on victory.
+ * the full accumulated amount to each non-Spent selected lineup member only
+ * on victory.
  * Wild Coins reuse MZ's native party wallet. Data Levels reuse Game_Actor EXP,
  * class curves, changeExp, level-up handling, and level-based stat refresh.
  */
@@ -101,25 +102,16 @@
         };
     };
 
-    FieldData.queuePoolDebug = function(entry) {
+    FieldData.logPoolDebug = function(entry) {
         const encounter = Encounters.current();
         const metadata = encounter ? encounter.battleMetadata : null;
-        const logWindow = BattleManager._logWindow;
-        if (!metadata || !metadata.showDataPoolDebug || !logWindow) {
+        if (!metadata || !metadata.showDataPoolDebug) {
             return;
         }
-        logWindow.push(
-            "addText",
-            "Battle Lab: " +
-                entry.enemyName +
-                " yielded " +
-                entry.amount +
-                " Data. Pool: " +
-                entry.total +
-                " Data."
+        console.info(
+            "[HUSHWAKE Battle Lab] Field Data pooled.",
+            Object.assign({}, entry)
         );
-        logWindow.push("wait");
-        logWindow.push("clear");
     };
 
     FieldData.collectSpentEnemies = function(announce) {
@@ -163,7 +155,7 @@
             context.fieldDataEntries.push(entry);
             added.push(entry);
             if (announce !== false) {
-                this.queuePoolDebug(entry);
+                this.logPoolDebug(entry);
             }
         });
         return added;
@@ -212,6 +204,12 @@
         return level;
     };
 
+    FieldData.canSynchronize = function(wildkin) {
+        return !!wildkin &&
+            wildkin.hp > 0 &&
+            !wildkin.isDeathStateAffected();
+    };
+
     FieldData.makeReward = function() {
         const encounter = Encounters.current();
         const context = Battle.context();
@@ -222,7 +220,8 @@
         ) {
             return {
                 amount: 0,
-                recipients: []
+                recipients: [],
+                excludedSpent: []
             };
         }
         this.collectSpentEnemies(false);
@@ -233,7 +232,7 @@
         const instanceIds = Array.isArray(context.playerLineupIds)
             ? context.playerLineupIds
             : [];
-        const recipients = instanceIds
+        const selected = instanceIds
             .map(instanceId => {
                 const wildkin = $gameWildkinRoster.instance(instanceId);
                 if (!wildkin) {
@@ -242,17 +241,34 @@
                 return {
                     instanceId: instanceId,
                     name: wildkin.name(),
+                    wildkin: wildkin
+                };
+            })
+            .filter(entry => !!entry);
+        const excludedSpent = selected
+            .filter(entry => !this.canSynchronize(entry.wildkin))
+            .map(entry => ({
+                instanceId: entry.instanceId,
+                name: entry.name
+            }));
+        const recipients = selected
+            .filter(entry => this.canSynchronize(entry.wildkin))
+            .map(entry => {
+                const wildkin = entry.wildkin;
+                return {
+                    instanceId: entry.instanceId,
+                    name: entry.name,
                     amount: amount,
                     oldData: wildkin.currentExp(),
                     oldLevel: wildkin.level,
                     newLevel: this.projectedLevel(wildkin, amount),
                     oldStats: this.statSnapshot(wildkin)
                 };
-            })
-            .filter(recipient => !!recipient);
+            });
         return {
             amount: amount,
-            recipients: recipients
+            recipients: recipients,
+            excludedSpent: excludedSpent
         };
     };
 
@@ -267,35 +283,22 @@
     };
 
     FieldData.queueResultFlow = function(reward) {
-        if (!reward || reward.amount <= 0 || reward.recipients.length === 0) {
+        if (!reward || reward.amount <= 0) {
             return;
         }
-        this.queuePage(
-            [
-                this.settings.synchronizedText,
-                reward.amount +
-                    " " +
-                    this.settings.dataLabel +
-                    " synchronized to every selected Wildkin."
-            ],
-            66
-        );
-
-        for (let index = 0; index < reward.recipients.length; index += 3) {
-            this.queuePage(
-                reward.recipients
-                    .slice(index, index + 3)
-                    .map(
-                        recipient =>
-                            recipient.name +
-                            "  +" +
-                            recipient.amount +
-                            " " +
-                            this.settings.dataLabel
-                    ),
-                66
+        const excludedSpent = Array.isArray(reward.excludedSpent)
+            ? reward.excludedSpent
+            : [];
+        const summaryLines = [
+            this.settings.synchronizedText,
+            reward.amount + " " + this.settings.dataLabel + " received."
+        ];
+        if (excludedSpent.length > 0) {
+            summaryLines.push(
+                "Spent Wildkin could not synchronize Field Data."
             );
         }
+        this.queuePage(summaryLines, 66);
 
         const advancementLines = [];
         for (const recipient of reward.recipients) {

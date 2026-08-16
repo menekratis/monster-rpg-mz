@@ -12,3 +12,6 @@ Thumbs.db
 www/
 dist/
 build/
+
+# External reference projects - local only
+reference/
